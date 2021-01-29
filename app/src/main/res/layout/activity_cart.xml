@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingEnd="10dp"
-            android:text="10.090.000.00 đ"
+            android:text="10.090.000.000 đ"
             android:textColor="@color/primary_color"
             android:textSize="20sp"
             android:textStyle="bold"

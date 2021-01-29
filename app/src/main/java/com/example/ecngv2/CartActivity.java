@@ -66,8 +66,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.btn_cart_close:
                 finish();
+                break;
             case R.id.cart_btn_payment:
                 startActivity(new Intent(CartActivity.this, PaymentActivity.class));
+                break;
         }
     }
 }
