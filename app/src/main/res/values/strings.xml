@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ECNGv2</string>
+    <string name="_5_s_n_ph_m">5 sản phẩm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_suggestion_0">Tất cả</string>
+    <string name="title_suggestion_1">Công nghệ</string>
+    <string name="title_suggestion_2">Xe</string>
+    <string name="title_suggestion_3">Rượu</string>
+    <string name="title_suggestion_4">Mỹ phẩm</string>
+    <string name="title_suggestion_5">Đồ gia dụng</string>
+    <string name="title_suggestion_6">Dịch vụ</string>
+    <string name="title_suggestion_7">Trang sức</string>
+    <string name="title_suggestion_8">Xem thêm</string>
+
+</resources>

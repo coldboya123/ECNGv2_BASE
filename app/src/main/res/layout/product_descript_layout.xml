@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="10dp"
+    android:padding="10dp"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/product_descript"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Mô tả sản phẩm"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
+                android:textColor="@color/black"/>
+            <ImageView
+                android:layout_marginVertical="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/laptop_large"
+                android:scaleType="centerInside"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
+                android:textColor="@color/black"/>
+            <ImageView
+                android:layout_marginVertical="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/laptop_large"
+                android:scaleType="centerInside"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/product_btn_showdes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/primary_color"
+            android:text="Xem tất cả >"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
