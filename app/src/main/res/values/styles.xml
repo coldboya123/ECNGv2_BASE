@@ -6,4 +6,8 @@
         <item name="android:secondaryProgressTint">#2B2B2B</item>
         <item name="ratingBarStyle">@style/Widget.AppCompat.RatingBar.Small</item>
     </style>
+    <style name="CollapsingToolbarLayoutExpandedTextStyle" parent="Theme.AppCompat">
+        <item name="android:textColor">@android:color/transparent</item>
+        <item name="android:textSize">0sp</item>
+    </style>
 </resources>

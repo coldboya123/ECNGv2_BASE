@@ -27,13 +27,7 @@ public class FavoriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =inflater.inflate(R.layout.fragment_favorite, container, false);
-        listView = v.findViewById(R.id.fav_listview);
-        List<Integer> list = new ArrayList<>();
-        for(int i=0; i<20; i++){
-            list.add(i);
-        }
-        Adapter adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, list);
-        listView.setAdapter((ListAdapter) adapter);
+        ;
         return v;
     }
 }
