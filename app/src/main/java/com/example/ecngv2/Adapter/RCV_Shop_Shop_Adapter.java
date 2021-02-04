@@ -4,8 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -44,6 +49,9 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
             case HINT:
                 v = LayoutInflater.from(context).inflate(R.layout.shop_shop_hint, parent, false);
                 return new HintHolder(v);
+            case PRODUCT:
+                v = LayoutInflater.from(context).inflate(R.layout.shop_shop_product, parent, false);
+                return new ProductHolder(v);
         }
         return null;
     }
@@ -66,14 +74,23 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
             RCV_HLProduct_Adapter rcv_hlProduct_adapter = new RCV_HLProduct_Adapter(context, list_products);
             ((NewProductHolder) holder).recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
             ((NewProductHolder) holder).recyclerView.setAdapter(rcv_hlProduct_adapter);
-        }else if (holder instanceof HintHolder){
-            int x;
+        } else if (holder instanceof HintHolder){
+            ((HintHolder) holder).txt.setTextColor(context.getColor(R.color.primary_color));
+        } else if (holder instanceof ProductHolder){
+            List<Product> productList = new ArrayList<>();
+            loadData(productList);
+            ((ProductHolder) holder).recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+            RCV_Sugg_All_Adapter rcv_sugg_all_adapter = new RCV_Sugg_All_Adapter(context, productList);
+            ((ProductHolder) holder).recyclerView.setAdapter(rcv_sugg_all_adapter);
+            String[] list = new String[]{"--Chọn lọc--", "Giá tăng dần", "Giá giảm dần", "Yêu thích"};
+            ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, list);
+            ((ProductHolder) holder).spinner.setAdapter(adapter);
         }
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -106,13 +123,38 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
     }
     public class HintHolder extends RecyclerView.ViewHolder {
+        TextView txt;
         public HintHolder(@NonNull View itemView) {
             super(itemView);
+            txt = itemView.findViewById(R.id.shop_shop_hint_txt);
         }
     }
     public class ProductHolder extends RecyclerView.ViewHolder {
+        RecyclerView recyclerView;
+        Spinner spinner;
         public ProductHolder(@NonNull View itemView) {
             super(itemView);
+            recyclerView = itemView.findViewById(R.id.rcv_shop_shop_product);
+            spinner = itemView.findViewById(R.id.shop_shop_spinner);
         }
+    }
+
+    private void loadData(List<Product> list_products){
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.category_2, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.category_1, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.category_2, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.category_1, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+
     }
 }
