@@ -217,7 +217,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/payment_txtchangebank"
+                    android:id="@+id/payment_txtchangepayment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thay đổi"

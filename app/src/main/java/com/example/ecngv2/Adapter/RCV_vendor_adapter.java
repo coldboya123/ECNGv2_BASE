@@ -1,6 +1,7 @@
 package com.example.ecngv2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.R;
+import com.example.ecngv2.ShopActivity;
 
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class RCV_vendor_adapter extends RecyclerView.Adapter<RCV_vendor_adapter.
     @Override
     public void onBindViewHolder(@NonNull RCV_vendor_adapter.ViewHolder holder, int position) {
         holder.img.setImageResource(list.get(position));
+        holder.img.setOnClickListener(view -> context.startActivity(new Intent(context, ShopActivity.class)));
     }
 
     @Override

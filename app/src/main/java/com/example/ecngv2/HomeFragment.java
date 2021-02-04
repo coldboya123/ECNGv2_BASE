@@ -64,8 +64,8 @@ public class HomeFragment extends Fragment {
                     case R.id.shopping_cart:
                         context.startActivity(new Intent(getContext(), CartActivity.class));
                         return true;
-                    case R.id.notification:
-                        context.startActivity(new Intent(getContext(), CartActivity.class));
+//                    case R.id.notification:
+//                        context.startActivity(new Intent(getContext(), CartActivity.class));
                 }
                 return false;
             }

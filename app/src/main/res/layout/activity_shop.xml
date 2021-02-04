@@ -3,7 +3,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ShopActivity"
     android:orientation="vertical">
-    
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/black">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shop_banner"
+                android:alpha="0.5"/>
+            <androidx.appcompat.widget.Toolbar
+                app:layout_constraintTop_toTopOf="parent"
+                android:fitsSystemWindows="true"
+                android:id="@+id/shop_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                app:menu="@menu/menu_toolbar"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back_shop"
+                    android:background="@null"
+                    android:layout_marginEnd="10dp"/>
+                <SearchView
+                    android:id="@+id/searchbar"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/searchbar_background"/>
+            </androidx.appcompat.widget.Toolbar>
+            <ImageView
+                android:id="@+id/shop_avatar"
+                app:layout_constraintTop_toBottomOf="@id/shop_toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="20dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/category_1"/>
+            <TextView
+                android:id="@+id/shop_name"
+                app:layout_constraintTop_toTopOf="@id/shop_avatar"
+                app:layout_constraintStart_toEndOf="@id/shop_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="apple_long_store"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/shop_numfollow"
+                app:layout_constraintTop_toBottomOf="@id/shop_name"
+                app:layout_constraintStart_toStartOf="@id/shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="199 người theo dõi"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/shop_btn_follow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_radius_primary_color"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="5dp"
+                android:layout_marginEnd="20dp"
+                android:text="Theo dõi"
+                android:gravity="center"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/shop_avatar" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_radius_primary_color"
+                android:gravity="center"
+                android:paddingVertical="5dp"
+                android:text="Chat"
+                android:textColor="@color/primary_color"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@id/shop_btn_follow"
+                app:layout_constraintTop_toBottomOf="@id/shop_btn_follow"
+                app:layout_constraintStart_toStartOf="@id/shop_btn_follow"/>
+            <com.google.android.material.tabs.TabLayout
+                app:layout_constraintTop_toBottomOf="@id/shop_avatar"
+                android:layout_marginTop="10dp"
+                android:id="@+id/shop_tab"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabTextColor="@color/white"
+                android:background="@null"
+                app:tabRippleColor="@color/primary_color"
+                app:tabIndicatorColor="@color/primary_color"
+                app:tabSelectedTextColor="@color/primary_color"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/shop_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>

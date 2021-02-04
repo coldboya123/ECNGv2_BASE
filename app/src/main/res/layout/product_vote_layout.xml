@@ -82,7 +82,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="80"
+                        android:progress="70"
                         android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
                         android:progressDrawable="@drawable/progressbar_background"/>
@@ -91,7 +91,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="450"
+                        android:text="350"
                         android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
@@ -113,7 +113,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="80"
+                        android:progress="20"
                         android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
                         android:progressDrawable="@drawable/progressbar_background"/>
@@ -122,7 +122,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="40"
+                        android:text="100"
                         android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
@@ -144,7 +144,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="80"
+                        android:progress="10"
                         android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
                         android:progressDrawable="@drawable/progressbar_background"/>
@@ -153,7 +153,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="2"
+                        android:text="50"
                         android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
@@ -175,7 +175,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="80"
+                        android:progress="0"
                         android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
                         android:progressDrawable="@drawable/progressbar_background"/>
@@ -184,7 +184,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="5"
+                        android:text="0"
                         android:gravity="center"/>
                 </LinearLayout>
                 <LinearLayout
@@ -206,7 +206,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="80"
+                        android:progress="0"
                         android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
                         android:progressDrawable="@drawable/progressbar_background"/>
@@ -215,7 +215,7 @@
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="3"
+                        android:text="0"
                         android:gravity="center"/>
                 </LinearLayout>
             </LinearLayout>

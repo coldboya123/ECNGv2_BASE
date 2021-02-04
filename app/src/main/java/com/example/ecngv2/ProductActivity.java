@@ -1,6 +1,7 @@
 package com.example.ecngv2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,11 +33,12 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     ViewPager viewPager;
     int[] listImg;
     ConstraintLayout choose_type;
-    TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected;
+    TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
     ImageButton btn_closeDialog, btn_back, btn_cart;
     BottomSheetDialog dialog;
     int number;
     RecyclerView rcv;
+    AppCompatButton btn_buynow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +72,8 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color3.setOnClickListener(this);
         color4.setOnClickListener(this);
         color5.setOnClickListener(this);
+        btn_buynow.setOnClickListener(this);
+        viewShop.setOnClickListener(this);
     }
 
     private void init(){
@@ -93,6 +97,8 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color4 = dialog.findViewById(R.id.dialog_color4);
         color5 = dialog.findViewById(R.id.dialog_color5);
         color_selected = color1;
+        btn_buynow = dialog.findViewById(R.id.dialog_product_buynow);
+        viewShop = findViewById(R.id.product_viewshop);
     }
 
     @Override
@@ -105,6 +111,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.product_btn_cart:
+            case R.id.dialog_product_buynow:
                 startActivity(new Intent(ProductActivity.this, CartActivity.class));
                 break;
             case R.id.dialog_btn_plush:
@@ -144,6 +151,9 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.dialog_color5:
                 SetColorSelected(color_selected, color5);
                 color_selected = color5;
+                break;
+            case R.id.product_viewshop:
+                startActivity(new Intent(ProductActivity.this, ShopActivity.class));
                 break;
         }
     }
