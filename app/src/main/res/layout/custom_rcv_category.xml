@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="70dp"
+<LinearLayout android:layout_width="90dp"
     android:layout_height="80dp"
-    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
         app:cardCornerRadius="10dp">
         <ImageView
             android:layout_gravity="center"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:scaleType="centerCrop"
             android:id="@+id/cate_img"
-            android:src="@drawable/category_1"/>
+            android:src="@drawable/cate_batdongsan"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/cate_title"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:text="danh muc"/>
+        android:text="bat dong san"
+        android:maxLines="2"
+        android:textSize="13sp"
+        android:gravity="center"/>
 </LinearLayout>

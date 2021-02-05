@@ -78,7 +78,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
 
     private void init(){
         viewPager = findViewById(R.id.slide_product);
-        listImg = new int[]{R.drawable.laptop1, R.drawable.laptop2, R.drawable.laptop3, R.drawable.laptop4, R.drawable.laptop5};
+        listImg = new int[]{R.drawable.laptop1, R.drawable.laptop2, R.drawable.laptop3, R.drawable.laptop4, R.drawable.laptop5, R.drawable.laptop6, R.drawable.laptop7};
         choose_type = findViewById(R.id.choose_type);
         btn_back = findViewById(R.id.product_btn_back);
         btn_cart = findViewById(R.id.product_btn_cart);

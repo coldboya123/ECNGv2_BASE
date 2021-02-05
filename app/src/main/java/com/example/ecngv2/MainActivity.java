@@ -6,9 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Adapter;
@@ -74,4 +79,5 @@ public class MainActivity extends AppCompatActivity {
         userfragment = new UserFragment();
         acivefragment = homefragment;
     }
+
 }

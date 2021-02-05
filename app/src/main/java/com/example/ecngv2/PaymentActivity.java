@@ -109,7 +109,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
     private void loadData(List<PaymentProduct> list){
         list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
-        list.add(new PaymentProduct(R.drawable.category_1, 1, "Em người yêu", "10.000.000.000 đ"));
+        list.add(new PaymentProduct(R.drawable.chungcu, 1, "Biệt thự siêu to khổng lồ", "10.000.000.000 đ"));
         list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
         list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
         list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));

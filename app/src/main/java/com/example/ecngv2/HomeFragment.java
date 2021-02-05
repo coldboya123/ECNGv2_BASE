@@ -4,17 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -77,11 +72,17 @@ public class HomeFragment extends Fragment {
         viewPager.setAdapter(bannerAdapter);
 
         //Set Adapter for RecyclerView Category
-        categoryList.add(new Category("Đồng hồ", R.drawable.dongho));
-        categoryList.add(new Category("Mắt kính", R.drawable.matkinh));
-        categoryList.add(new Category("Công nghệ", R.drawable.laptop));
-        categoryList.add(new Category("Gái đẹp", R.drawable.category_1));
-        categoryList.add(new Category("Gái xinh", R.drawable.category_2));
+        categoryList.add(new Category("Bất Động Sản", R.drawable.cate_batdongsan));
+        categoryList.add(new Category("Công Nghệ", R.drawable.cate_congnghe));
+        categoryList.add(new Category("Đồng Hồ", R.drawable.cate_dongho));
+        categoryList.add(new Category("Gia Dụng", R.drawable.cate_giadung));
+        categoryList.add(new Category("Làm Đẹp", R.drawable.cate_lamdep));
+        categoryList.add(new Category("Mỹ Phẩm", R.drawable.cate_mypham));
+        categoryList.add(new Category("Thời Trang", R.drawable.cate_thoitrang));
+        categoryList.add(new Category("Thực Phẩm", R.drawable.cate_thucpham));
+        categoryList.add(new Category("Thú Cưng", R.drawable.cate_thucung));
+        categoryList.add(new Category("Trang Sức", R.drawable.cate_trangsuc));
+
         RCV_Category_Adapter rcv_category_adapter = new RCV_Category_Adapter(getContext(), categoryList);
         recycler_category.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         recycler_category.setNestedScrollingEnabled(false);

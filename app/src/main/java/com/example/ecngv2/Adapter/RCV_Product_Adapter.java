@@ -105,8 +105,8 @@ public class RCV_Product_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
             });
         } else if (holder instanceof VoteHolder){
             List<Comment> commentList = new ArrayList<>();
-            commentList.add(new Comment(R.drawable.category_1, R.drawable.laptop2, R.drawable.laptop3, (float) 5.0, "Bồ Tới", "Tuy hàng mã VN/A luôn trong tình trạng cháy hàng, các Store chỉ bán cho khách cọc với giá 32-33tr. Trên app Tiki báo hết hàng liên tục mình khá bực mình nhưng cứ 1 vài tiếng Tiki lại cập nhật lại tồn kho nên cũng mua được. Đặt 10h30..."));
-            commentList.add(new Comment(R.drawable.category_2, R.drawable.laptop2, R.drawable.laptop3, (float) 5.0, "Bồ Long", "Tuy hàng mã VN/A luôn trong tình trạng cháy hàng, các Store chỉ bán cho khách cọc với giá 32-33tr. Trên app Tiki báo hết hàng liên tục mình khá bực mình nhưng cứ 1 vài tiếng Tiki lại cập nhật lại tồn kho nên cũng mua được. Đặt 10h30..."));
+            commentList.add(new Comment(R.drawable.cate_batdongsan, R.drawable.laptop2, R.drawable.laptop3, (float) 5.0, "Bồ Tới", "Tuy hàng mã VN/A luôn trong tình trạng cháy hàng, các Store chỉ bán cho khách cọc với giá 32-33tr. Trên app Tiki báo hết hàng liên tục mình khá bực mình nhưng cứ 1 vài tiếng Tiki lại cập nhật lại tồn kho nên cũng mua được. Đặt 10h30..."));
+            commentList.add(new Comment(R.drawable.cate_batdongsan, R.drawable.laptop2, R.drawable.laptop3, (float) 5.0, "Bồ Long", "Tuy hàng mã VN/A luôn trong tình trạng cháy hàng, các Store chỉ bán cho khách cọc với giá 32-33tr. Trên app Tiki báo hết hàng liên tục mình khá bực mình nhưng cứ 1 vài tiếng Tiki lại cập nhật lại tồn kho nên cũng mua được. Đặt 10h30..."));
             ((VoteHolder) holder).rcv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
             ((VoteHolder) holder).rcv.setAdapter(new RCV_Product_Comment(context, commentList));
         } else if (holder instanceof MoreHolder){
@@ -141,22 +141,39 @@ public class RCV_Product_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private void loadData(List<Product> list_products){
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.category_2, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.category_1, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.category_2, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.category_1, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", "999.000.000d", (float) 5));
     }
 
     public class ProductShopHolder extends RecyclerView.ViewHolder{
