@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Comment;
-import com.example.ecngv2.Model.Product;
-import com.example.ecngv2.Model.ProductShop;
+import com.example.ecngv2.Model.Object.Comment;
+import com.example.ecngv2.Model.Object.Product;
+import com.example.ecngv2.Model.Object.ProductShop;
 import com.example.ecngv2.R;
 
 import java.util.ArrayList;

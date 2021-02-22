@@ -6,10 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.ecngv2.Shop_Member_Fragment;
-import com.example.ecngv2.Shop_Product_Fragment;
-import com.example.ecngv2.Shop_Profile_Fragment;
-import com.example.ecngv2.Shop_ShopFragment;
+import com.example.ecngv2.View.Shop.Member.Shop_Member_Fragment;
+import com.example.ecngv2.View.Shop.Product.Shop_Product_Fragment;
+import com.example.ecngv2.View.Shop.Profile.Shop_Profile_Fragment;
+import com.example.ecngv2.View.Shop.Shop.Shop_ShopFragment;
 
 
 public class ViewPager_Shop_Adapter extends FragmentPagerAdapter {

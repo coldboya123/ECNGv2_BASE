@@ -2,21 +2,19 @@ package com.example.ecngv2.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Product;
-import com.example.ecngv2.ProductActivity;
+import com.example.ecngv2.Model.Object.Product;
+import com.example.ecngv2.View.Product.ProductActivity;
 import com.example.ecngv2.R;
 
 import java.util.List;

@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Cart;
+import com.example.ecngv2.Model.Object.Cart;
 import com.example.ecngv2.R;
 
 import java.util.List;

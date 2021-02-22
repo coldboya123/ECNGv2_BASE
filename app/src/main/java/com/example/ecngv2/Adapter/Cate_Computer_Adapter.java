@@ -11,11 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Category;
-import com.example.ecngv2.Model.ItemCateTab;
+import com.example.ecngv2.Model.Object.ItemCateTab;
 import com.example.ecngv2.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Cate_Computer_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.R;
-import com.example.ecngv2.ShopActivity;
+import com.example.ecngv2.View.Shop.ShopActivity;
 
 import java.util.List;
 

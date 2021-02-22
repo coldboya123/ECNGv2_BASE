@@ -10,12 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.PaymentProduct;
+import com.example.ecngv2.Model.Object.PaymentProduct;
 import com.example.ecngv2.R;
 
 import java.util.List;
-
-import javax.xml.namespace.QName;
 
 public class RCV_Payment_Adapter extends RecyclerView.Adapter<RCV_Payment_Adapter.Holder> {
 

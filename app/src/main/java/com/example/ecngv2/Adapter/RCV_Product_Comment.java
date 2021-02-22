@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Comment;
+import com.example.ecngv2.Model.Object.Comment;
 import com.example.ecngv2.R;
 
 import java.util.List;

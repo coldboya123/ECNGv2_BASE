@@ -2,7 +2,6 @@ package com.example.ecngv2.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Product;
+import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
 
 import java.util.ArrayList;

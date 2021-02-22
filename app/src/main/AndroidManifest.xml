@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ecngv2">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/fa"
@@ -9,11 +16,14 @@
         android:roundIcon="@drawable/fa"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
-        <activity android:name=".ShopActivity"></activity>
-        <activity android:name=".PaymentActivity" />
-        <activity android:name=".CartActivity" />
-        <activity android:name=".ProductActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".View.Login.LoginActivity" />
+
+
+        <activity android:name=".View.Shop.ShopActivity" />
+        <activity android:name=".View.Payment.PaymentActivity" />
+        <activity android:name=".View.Cart.CartActivity" />
+        <activity android:name=".View.Product.ProductActivity" />
+        <activity android:name=".View.MainActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
