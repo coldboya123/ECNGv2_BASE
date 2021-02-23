@@ -16,9 +16,11 @@
         android:roundIcon="@drawable/fa"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <activity android:name=".View.Register.RegisterActivity"></activity>
+        <activity android:name=".View.ForgotPwd.ForgotPwdActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity android:name=".View.Login.LoginActivity" />
         <activity android:name=".View.Shop.ShopActivity" />
         <activity android:name=".View.Payment.PaymentActivity" />

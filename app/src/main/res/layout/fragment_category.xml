@@ -51,7 +51,8 @@
         app:indicator_gravity="fill"
         app:tab_height="80dp"
         app:tab_margin="10dp"
-        app:tab_mode="scrollable" />
+        app:tab_mode="scrollable"
+        />
     <TextView
         android:textColor="@color/black"
         android:background="#EDEDED"
@@ -61,7 +62,9 @@
         android:id="@+id/title_cate"
         app:layout_constraintHorizontal_weight="1"
         android:layout_width="0dp"
+        android:textStyle="bold"
         android:text="title"
+        android:padding="5dp"
         android:layout_height="wrap_content"/>
     <androidx.core.widget.NestedScrollView
         app:layout_constraintTop_toBottomOf="@+id/title_cate"

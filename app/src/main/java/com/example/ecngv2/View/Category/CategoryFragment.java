@@ -166,6 +166,11 @@ public class CategoryFragment extends Fragment {
             list.add(new Cate_tabItem("Thời trang nam",  R.drawable.suit_1, R.drawable.suit_2));
             list.add(new Cate_tabItem("Rượu",  R.drawable.wine_1, R.drawable.wine_2));
             list.add(new Cate_tabItem("Căn hộ",  R.drawable.skyline_1, R.drawable.skyline_2));
+            list.add(new Cate_tabItem("Máy tính & Laptop", R.drawable.devices, R.drawable.devices_actived));
+            list.add(new Cate_tabItem("Thời trang nữ",  R.drawable.dress_1, R.drawable.dress_2));
+            list.add(new Cate_tabItem("Thời trang nam",  R.drawable.suit_1, R.drawable.suit_2));
+            list.add(new Cate_tabItem("Rượu",  R.drawable.wine_1, R.drawable.wine_2));
+            list.add(new Cate_tabItem("Căn hộ",  R.drawable.skyline_1, R.drawable.skyline_2));
         }
 
         @Override

@@ -16,4 +16,5 @@
     <color name="bg_dark">#EFEFEF</color>
     <color name="bg_dark_1">#F8F8F8</color>
     <color name="colorGoogle">#C94131</color>
+    <color name="colorWarning">#FF5722</color>
 </resources>
