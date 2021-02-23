@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String SERVER_NAME = "http://103.97.125.250/WebService.php";
+    public static String SERVER_NAME = "http://192.168.1.239/ECNG/WebService.php";
 
     BottomNavigationView bottomNavigationView;
     FragmentManager fm = getSupportFragmentManager();
