@@ -1,7 +1,4 @@
-package com.example.ecngv2.Model.Login;
-
-import android.content.Context;
-import android.util.Log;
+package com.example.ecngv2.Model.Register;
 
 import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.WebService.WebService;
@@ -14,13 +11,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class ModelLogin {
-    public boolean CheckLogin(String user, String pwd){
+public class ModelRegister {
+    public boolean Register(String user, String pwd, String email){
         String url = MainActivity.SERVER_NAME;
         List<HashMap<String, String>> attrs = new ArrayList<>();
 
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("function", "login");
+        hashMap.put("function", "register");
 
         HashMap<String, String> hsUser = new HashMap<>();
         hsUser.put("user", user);
@@ -28,9 +25,13 @@ public class ModelLogin {
         HashMap<String, String> hsPwd = new HashMap<>();
         hsPwd.put("pwd", pwd);
 
+        HashMap<String, String> hsEmail = new HashMap<>();
+        hsEmail.put("email", email);
+
         attrs.add(hashMap);
         attrs.add(hsUser);
         attrs.add(hsPwd);
+        attrs.add(hsEmail);
 
         WebService webService = new WebService(url, attrs);
         webService.execute();
