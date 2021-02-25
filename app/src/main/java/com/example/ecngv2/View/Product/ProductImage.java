@@ -26,6 +26,7 @@ public class ProductImage extends AppCompatActivity {
         List<Integer> list = (List<Integer>) i.getSerializableExtra("list");
         int pos = i.getIntExtra("position", 0);
         sliderView.setSliderAdapter(new SliderViewProductZoomAdapter(this, list));
+        sliderView.setCurrentPagePosition(pos);
         btn_back.setOnClickListener(view -> finish());
     }
 

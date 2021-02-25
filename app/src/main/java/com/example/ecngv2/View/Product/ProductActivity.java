@@ -8,10 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -33,7 +38,7 @@ import java.util.List;
 
 public class ProductActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ViewPager viewPager;
+    AlertDialog alertDialog;
     List<Integer> listImg;
     ConstraintLayout choose_type;
     TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
@@ -41,7 +46,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     BottomSheetDialog dialog;
     int number;
     RecyclerView rcv;
-    AppCompatButton btn_buynow;
+    AppCompatButton btn_buynow, btn_addtocart;
     SliderView sliderView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +88,9 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color3.setOnClickListener(this);
         color4.setOnClickListener(this);
         color5.setOnClickListener(this);
-
         btn_buynow.setOnClickListener(this);
+        btn_addtocart.setOnClickListener(this);
+
         viewShop.setOnClickListener(this);
     }
 
@@ -118,8 +124,9 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color4 = dialog.findViewById(R.id.dialog_color4);
         color5 = dialog.findViewById(R.id.dialog_color5);
         color_selected = color1;
-
         btn_buynow = dialog.findViewById(R.id.dialog_product_buynow);
+        btn_addtocart = dialog.findViewById(R.id.dialog_product_addtocart);
+
         viewShop = findViewById(R.id.product_viewshop);
     }
 
@@ -136,6 +143,33 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.product_btn_cart:
             case R.id.dialog_product_buynow:
                 startActivity(new Intent(ProductActivity.this, CartActivity.class));
+                break;
+            case R.id.dialog_product_addtocart:
+                dialog.hide();
+//                new AlertDialog.Builder(this)
+//                        .setMessage("Đã thêm vào giỏ hàng")
+//                        .show();
+//                Dialog d = new Dialog(this);
+//                d.setContentView(R.layout.dialog_addtocart_layout);
+//                Window window = d.getWindow();
+//                window.getAttributes().windowAnimations = R.style.DialogAnimation;
+//                WindowManager.LayoutParams wlp = window.getAttributes();
+//                wlp.gravity = Gravity.TOP;
+//                wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+//                window.setAttributes(wlp);
+//                d.show();
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+                View layoutView = getLayoutInflater().inflate(R.layout.dialog_addtocart_layout, null);
+                dialogBuilder.setView(layoutView);
+                alertDialog = dialogBuilder.create();
+                Window window = alertDialog.getWindow();
+                window.getAttributes().windowAnimations = R.style.DialogAnimation;
+                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                WindowManager.LayoutParams wlp = window.getAttributes();
+                wlp.gravity = Gravity.TOP|Gravity.CENTER;
+                wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                window.setAttributes(wlp);
+                alertDialog.show();
                 break;
             case R.id.dialog_btn_plush:
                 if (number > 1){

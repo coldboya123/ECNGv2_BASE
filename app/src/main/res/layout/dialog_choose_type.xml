@@ -216,6 +216,7 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="@id/dialog_line3">
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dialog_product_addtocart"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/primary_color"
