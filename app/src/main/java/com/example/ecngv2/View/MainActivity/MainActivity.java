@@ -8,6 +8,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -72,6 +74,25 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, CartActivity.class));
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        android.os.Process.killProcess(android.os.Process.myPid());
+
+        super.onBackPressed();
+    }
+
+    //    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+//            // do something on back.
+//            System.exit(0);
+//            Log.d("test", "onKeyDown: ");
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
     private void init(){
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         homefragment = new HomeFragment();

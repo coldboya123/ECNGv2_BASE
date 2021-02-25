@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.Product.ProductImage"></activity>
+        <activity android:name=".View.Product.ProductImage" />
         <activity android:name=".View.Register.RegisterActivity" />
         <activity android:name=".View.ForgotPwd.ForgotPwdActivity" />
         <activity android:name=".View.Login.LoginActivity" />
@@ -27,6 +27,13 @@
         <activity android:name=".View.Cart.CartActivity" />
         <activity android:name=".View.Product.ProductActivity" />
         <activity android:name=".View.MainActivity.MainActivity">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".View.Wellcome.WellcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

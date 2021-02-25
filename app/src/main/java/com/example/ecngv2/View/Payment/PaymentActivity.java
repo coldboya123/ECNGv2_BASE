@@ -2,6 +2,7 @@ package com.example.ecngv2.View.Payment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,9 +43,9 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     ColorStateList colorStateList;
     LinearLayout payment_item_1, payment_item_2, payment_item_3, payment_item_selected;
     Spinner spinner_tinh, spinner_huyen, spinner_xa;
-    SQLiteDatabase db;
     String[] tinh, huyen, xa;
     AppCompatButton btn_apply_edit_address;
+    ConstraintLayout radio_shipping_item1, radio_shipping_item2, radio_shipping_item3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,16 +59,22 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         window.setBackgroundDrawable(background);
         address_dialog = new BottomSheetDialog(this);
         address_dialog.setContentView(R.layout.dialog_choose_address);
+
         shipping_dialog = new BottomSheetDialog(this);
         shipping_dialog.setContentView(R.layout.dialog_choose_shipping);
+
         payment_dialog = new BottomSheetDialog(this);
         payment_dialog.setContentView(R.layout.dialog_choose_payment);
+
         edit_address_dialog = new BottomSheetDialog(this);
         edit_address_dialog.setContentView(R.layout.dialog_edit_address);
+
         init();
         loadData(list);
+
         rcv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         rcv.setAdapter(new RCV_Payment_Adapter(this, list));
+
         btn_close.setOnClickListener(this);
 
         btn_change_address.setOnClickListener(this);
@@ -83,9 +90,9 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
         btn_change_shipping.setOnClickListener(this);
         hide_shipping_dialog.setOnClickListener(this);
-        radio_shipping_1.setOnClickListener(this);
-        radio_shipping_2.setOnClickListener(this);
-        radio_shipping_3.setOnClickListener(this);
+        radio_shipping_item1.setOnClickListener(this);
+        radio_shipping_item2.setOnClickListener(this);
+        radio_shipping_item3.setOnClickListener(this);
         radio_shipping_1.setButtonTintList(colorStateList);
         radio_shipping_2.setButtonTintList(colorStateList);
         radio_shipping_3.setButtonTintList(colorStateList);
@@ -130,6 +137,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         spinner_huyen = edit_address_dialog.findViewById(R.id.spinner_huyen);
         spinner_xa = edit_address_dialog.findViewById(R.id.spinner_xa);
         btn_apply_edit_address = edit_address_dialog.findViewById(R.id.edit_address_btn_apply);
+
         btn_change_shipping = findViewById(R.id.payment_txtchangeship);
         hide_shipping_dialog = shipping_dialog.findViewById(R.id.dialog_chooseshipping_hide);
         radio_shipping_1 = shipping_dialog.findViewById(R.id.radio_btn_shipping1);
@@ -137,12 +145,17 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         radio_shipping_3 = shipping_dialog.findViewById(R.id.radio_btn_shipping3);
         radio_shipping_checked = radio_shipping_1;
         radio_shipping_checked.setChecked(true);
+        radio_shipping_item1 = shipping_dialog.findViewById(R.id.radio_shipping_item1);
+        radio_shipping_item2 = shipping_dialog.findViewById(R.id.radio_shipping_item2);
+        radio_shipping_item3 = shipping_dialog.findViewById(R.id.radio_shipping_item3);
+
         btn_change_payment = findViewById(R.id.payment_txtchangepayment);
         hide_payment_dialog = payment_dialog.findViewById(R.id.dialog_choosepayment_hide);
         payment_item_1 = payment_dialog.findViewById(R.id.payment_choosepayment_item1);
         payment_item_2 = payment_dialog.findViewById(R.id.payment_choosepayment_item2);
         payment_item_3 = payment_dialog.findViewById(R.id.payment_choosepayment_item3);
         payment_item_selected = payment_item_1;
+
         colorStateList = new ColorStateList(
                 new int[][]{
                         new int[]{-android.R.attr.state_checked},
@@ -190,17 +203,17 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.dialog_chooseshipping_hide:
                 shipping_dialog.hide();
                 break;
-            case R.id.radio_btn_shipping1:
+            case R.id.radio_shipping_item1:
                 radio_shipping_1.setChecked(true);
                 radio_shipping_checked.setChecked(false);
                 radio_shipping_checked = radio_shipping_1;
                 break;
-            case R.id.radio_btn_shipping2:
+            case R.id.radio_shipping_item2:
                 radio_shipping_2.setChecked(true);
                 radio_shipping_checked.setChecked(false);
                 radio_shipping_checked = radio_shipping_2;
                 break;
-            case R.id.radio_btn_shipping3:
+            case R.id.radio_shipping_item3:
                 radio_shipping_3.setChecked(true);
                 radio_shipping_checked.setChecked(false);
                 radio_shipping_checked = radio_shipping_3;

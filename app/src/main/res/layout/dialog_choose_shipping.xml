@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/radio_shipping_item1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
@@ -140,7 +141,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/logo_gnh1"/>
+                    android:src="@drawable/logo_ghn1"/>
                 <TextView
                     android:id="@+id/radius_shipping3"
                     app:layout_constraintTop_toTopOf="@id/radio_shipping_img3"
