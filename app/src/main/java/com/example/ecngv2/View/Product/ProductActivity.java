@@ -19,16 +19,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.ecngv2.Adapter.RCV_Product_Adapter;
-import com.example.ecngv2.Adapter.SliderViewPagerAdapter;
+import com.example.ecngv2.Adapter.SliderViewProductAdapter;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.Shop.ShopActivity;
 import com.example.ecngv2.View.Cart.CartActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductActivity extends AppCompatActivity implements View.OnClickListener {
 
     ViewPager viewPager;
-    int[] listImg;
+    List<Integer> listImg;
     ConstraintLayout choose_type;
     TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
     ImageButton btn_closeDialog, btn_back, btn_cart;
@@ -36,6 +42,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     int number;
     RecyclerView rcv;
     AppCompatButton btn_buynow;
+    SliderView sliderView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,32 +57,48 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
 
         dialog = new BottomSheetDialog(this);
         dialog.setContentView(R.layout.dialog_choose_type);
+
         init();
+
         choose_type.setOnClickListener(this);
         btn_back.setOnClickListener(this);
         btn_cart.setOnClickListener(this);
-        SliderViewPagerAdapter sliderAdapter = new SliderViewPagerAdapter(this, listImg);
-        viewPager.setAdapter(sliderAdapter);
+
+        sliderView.setSliderAdapter(new SliderViewProductAdapter(this, listImg));
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+
         if (number == 1){
             btn_minus.setEnabled(false);
         }
         btn_plush.setOnClickListener(this);
         btn_minus.setOnClickListener(this);
+
         RCV_Product_Adapter adapter = new RCV_Product_Adapter(this);
         rcv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         rcv.setAdapter(adapter);
+
         color1.setOnClickListener(this);
         color2.setOnClickListener(this);
         color3.setOnClickListener(this);
         color4.setOnClickListener(this);
         color5.setOnClickListener(this);
+
         btn_buynow.setOnClickListener(this);
         viewShop.setOnClickListener(this);
     }
 
+
     private void init(){
-        viewPager = findViewById(R.id.slide_product);
-        listImg = new int[]{R.drawable.laptop1, R.drawable.laptop2, R.drawable.laptop3, R.drawable.laptop4, R.drawable.laptop5, R.drawable.laptop6, R.drawable.laptop7};
+        sliderView = findViewById(R.id.slide_product);
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.laptop1);
+        listImg.add(R.drawable.laptop2);
+        listImg.add(R.drawable.laptop3);
+        listImg.add(R.drawable.laptop4);
+        listImg.add(R.drawable.laptop5);
+        listImg.add(R.drawable.laptop6);
+
         choose_type = findViewById(R.id.choose_type);
         btn_back = findViewById(R.id.product_btn_back);
         btn_cart = findViewById(R.id.product_btn_cart);
@@ -88,16 +111,19 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         btn_plush= dialog.findViewById(R.id.dialog_btn_plush);
         btn_minus = dialog.findViewById(R.id.idalog_btnminus);
         btn_closeDialog.setOnClickListener(this);
+
         color1 = dialog.findViewById(R.id.dialog_color1);
         color2 = dialog.findViewById(R.id.dialog_color2);
         color3 = dialog.findViewById(R.id.dialog_color3);
         color4 = dialog.findViewById(R.id.dialog_color4);
         color5 = dialog.findViewById(R.id.dialog_color5);
         color_selected = color1;
+
         btn_buynow = dialog.findViewById(R.id.dialog_product_buynow);
         viewShop = findViewById(R.id.product_viewshop);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()){

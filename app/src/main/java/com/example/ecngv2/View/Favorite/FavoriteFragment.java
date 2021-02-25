@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.example.ecngv2.R;
 import com.example.ecngv2.customListview;
 
@@ -30,7 +32,8 @@ public class FavoriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v =inflater.inflate(R.layout.fragment_favorite, container, false);
-        ;
+        SubsamplingScaleImageView img = v.findViewById(R.id.fav_image);
+        img.setImage(ImageSource.resource(R.drawable.dienthoai1));
         return v;
     }
 }

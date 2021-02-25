@@ -18,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.ecngv2.Adapter.RCV_Category_Adapter;
 import com.example.ecngv2.Adapter.RCV_Home_Adapter;
+import com.example.ecngv2.Adapter.SliderViewHomeAdapter;
 import com.example.ecngv2.Adapter.SliderViewPagerAdapter;
 import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Fragment.AllSuggestionFragment;
@@ -26,6 +27,9 @@ import com.example.ecngv2.View.Fragment.TechSuggestionFragment;
 import com.example.ecngv2.Model.Object.Category;
 import com.example.ecngv2.R;
 import com.google.android.material.tabs.TabLayout;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +41,10 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
-    ViewPager viewPager;
+//    ViewPager viewPager;
+    SliderView sliderView;
     List<Integer> list;
+    List<Integer> banners;
     List<Category> categoryList;
     RecyclerView recycler_category, recycler_home;
     TabLayout tabLayout;
@@ -58,9 +64,9 @@ public class HomeFragment extends Fragment {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.shopping_cart:
-                        context.startActivity(new Intent(getContext(), CartActivity.class));
-                        return true;
+//                    case R.id.shopping_cart:
+//                        context.startActivity(new Intent(getContext(), CartActivity.class));
+//                        return true;
 //                    case R.id.notification:
 //                        context.startActivity(new Intent(getContext(), CartActivity.class));
                 }
@@ -69,9 +75,13 @@ public class HomeFragment extends Fragment {
         });
 
         //Set Adapter for ViewPager
-        int[] imagesRes = new int[]{R.drawable.slider_1, R.drawable.slider_2, R.drawable.slider_3, R.drawable.slider_4, R.drawable.slider_5};
-        SliderViewPagerAdapter bannerAdapter = new SliderViewPagerAdapter(getContext(), imagesRes);
-        viewPager.setAdapter(bannerAdapter);
+//        int[] imagesRes = new int[]{R.drawable.slider_1, R.drawable.slider_2, R.drawable.slider_3, R.drawable.slider_4, R.drawable.slider_5};
+//        SliderViewPagerAdapter bannerAdapter = new SliderViewPagerAdapter(getContext(), imagesRes);
+//        viewPager.setAdapter(bannerAdapter);
+        sliderView.setSliderAdapter(new SliderViewHomeAdapter(getContext(), banners));
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.startAutoCycle();
 
         //Set Adapter for RecyclerView Category
         categoryList.add(new Category("Bất Động Sản", R.drawable.cate_batdongsan));
@@ -148,7 +158,8 @@ public class HomeFragment extends Fragment {
 
     private void init(View v){
         recycler_home = v.findViewById(R.id.recycler_home);
-        viewPager = v.findViewById(R.id.slide_banner);
+//        viewPager = v.findViewById(R.id.slide_banner);
+        sliderView = v.findViewById(R.id.slide_banner);
         tabLayout = v.findViewById(R.id.tab_suggestion);
         toolbar = v.findViewById(R.id.toolbar);
         list = new ArrayList<>();
@@ -158,5 +169,13 @@ public class HomeFragment extends Fragment {
         fragmentBike = new BikeSuggestionFragment();
         fragmentTech = new TechSuggestionFragment();
         acivefragment = fragmentAll;
+
+        banners = new ArrayList<>();
+        banners.add(R.drawable.slider_1);
+        banners.add(R.drawable.slider_2);
+        banners.add(R.drawable.slider_3);
+        banners.add(R.drawable.slider_4);
+        banners.add(R.drawable.slider_5);
+
     }
 }

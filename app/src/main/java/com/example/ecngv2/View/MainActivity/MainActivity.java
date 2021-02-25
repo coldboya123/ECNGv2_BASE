@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
+import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Category.CategoryFragment;
 import com.example.ecngv2.View.Favorite.FavoriteFragment;
 import com.example.ecngv2.View.Home.HomeFragment;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static String SERVER_NAME = "http://192.168.1.239/ECNG/WebService.php";
 
+    LinearLayout cart;
     BottomNavigationView bottomNavigationView;
     FragmentManager fm = getSupportFragmentManager();
     Fragment homefragment, categoryfragment, favoritefragment, userfragment, acivefragment;
@@ -63,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+
+        cart.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, CartActivity.class));
+        });
     }
     private void init(){
         bottomNavigationView = findViewById(R.id.bottomnavigation);
@@ -71,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         favoritefragment = new FavoriteFragment();
         userfragment = new UserFragment();
         acivefragment = homefragment;
+        cart = findViewById(R.id.cart);
     }
 
 }

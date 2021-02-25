@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Product.ProductImage"
+    android:background="@color/black_primary">
+    <ImageButton
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:id="@+id/product_image_back"
+        android:src="@drawable/ic_back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <com.smarteist.autoimageslider.SliderView
+        android:background="@color/white"
+        android:id="@+id/slide_product_zoom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="600"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="@color/primary_color"
+        app:sliderIndicatorUnselectedColor="@color/dark"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

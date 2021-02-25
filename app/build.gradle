@@ -49,4 +49,7 @@ dependencies {
     compileOnly 'com.google.android.wearable:wearable:2.6.0'
     implementation 'com.facebook.android:facebook-login:[5,6)'
     implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation 'com.github.smarteist:autoimageslider:1.4.0-appcompat'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
+    implementation 'com.zolad:zoominimageview:1.0.0'
 }
