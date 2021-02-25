@@ -42,7 +42,7 @@
                     android:isIndicator="true"
                     android:numStars="5"
                     android:paddingTop="0dp"
-                    android:theme="@style/RatingBarSmallTheme"
+                    style="@style/CustomRatingBar"
                     android:layout_gravity="center_horizontal"
                     android:rating="5"/>
                 <TextView
@@ -74,8 +74,8 @@
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        android:theme="@style/RatingBarSmallTheme"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/CustomRatingBar"
+                        android:layout_gravity="center_vertical"
                         android:rating="5"/>
                     <ProgressBar
                         android:layout_weight="4"
@@ -105,8 +105,8 @@
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        android:theme="@style/RatingBarSmallTheme"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/CustomRatingBar"
+                        android:layout_gravity="center_vertical"
                         android:rating="4"/>
                     <ProgressBar
                         android:layout_weight="4"
@@ -136,8 +136,8 @@
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        android:theme="@style/RatingBarSmallTheme"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/CustomRatingBar"
+                        android:layout_gravity="center_vertical"
                         android:rating="3"/>
                     <ProgressBar
                         android:layout_weight="4"
@@ -167,8 +167,8 @@
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        android:theme="@style/RatingBarSmallTheme"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/CustomRatingBar"
+                        android:layout_gravity="center_vertical"
                         android:rating="2"/>
                     <ProgressBar
                         android:layout_weight="4"
@@ -198,8 +198,8 @@
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        android:theme="@style/RatingBarSmallTheme"
-                        android:layout_gravity="center_horizontal"
+                        style="@style/CustomRatingBar"
+                        android:layout_gravity="center_vertical"
                         android:rating="1"/>
                     <ProgressBar
                         android:layout_weight="4"

@@ -44,7 +44,7 @@
                 android:numStars="5"
                 android:isIndicator="true"
                 android:layout_marginStart="10dp"
-                android:theme="@style/RatingBarSmallTheme"/>
+                style="@style/CustomRatingBar" />
             <TextView
                 android:id="@+id/numrating_product"
                 android:textSize="13sp"
@@ -54,7 +54,8 @@
                 android:text="(999+)"
                 android:textColor="#FFC120"
                 app:layout_constraintTop_toTopOf="@+id/rating_product"
-                app:layout_constraintStart_toEndOf="@id/rating_product"/>
+                app:layout_constraintStart_toEndOf="@id/rating_product"
+                app:layout_constraintBottom_toBottomOf="@id/rating_product"/>
             <TextView
                 android:id="@+id/price_product"
                 app:layout_constraintBottom_toBottomOf="parent"

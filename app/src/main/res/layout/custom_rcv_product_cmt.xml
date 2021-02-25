@@ -34,8 +34,7 @@
         android:isIndicator="true"
         android:numStars="5"
         android:paddingTop="0dp"
-        android:theme="@style/RatingBarSmallTheme"
-        android:layout_gravity="center_horizontal"
+        style="@style/CustomRatingBar"
         android:rating="5"/>
     <TextView
         android:layout_marginTop="5dp"
