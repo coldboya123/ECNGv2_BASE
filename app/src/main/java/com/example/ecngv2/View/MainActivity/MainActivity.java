@@ -77,21 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        android.os.Process.killProcess(android.os.Process.myPid());
-
+        finishAffinity();
+        System.exit(0);
         super.onBackPressed();
     }
 
-    //    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-//            // do something on back.
-//            System.exit(0);
-//            Log.d("test", "onKeyDown: ");
-//            return true;
-//        }
-//        return super.onKeyDown(keyCode, event);
-//    }
 
     private void init(){
         bottomNavigationView = findViewById(R.id.bottomnavigation);
