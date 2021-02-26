@@ -42,12 +42,13 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     List<Integer> listImg;
     ConstraintLayout choose_type;
     TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
-    ImageButton btn_closeDialog, btn_back, btn_cart;
+    ImageButton btn_closeDialog, btn_back, btn_cart, btn_like;
     BottomSheetDialog dialog;
     int number;
     RecyclerView rcv;
     AppCompatButton btn_buynow, btn_addtocart;
     SliderView sliderView;
+    boolean check_like = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         choose_type.setOnClickListener(this);
         btn_back.setOnClickListener(this);
         btn_cart.setOnClickListener(this);
+        btn_like.setOnClickListener(this);
 
         sliderView.setSliderAdapter(new SliderViewProductAdapter(this, listImg));
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
@@ -108,6 +110,8 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         choose_type = findViewById(R.id.choose_type);
         btn_back = findViewById(R.id.product_btn_back);
         btn_cart = findViewById(R.id.product_btn_cart);
+        btn_like = findViewById(R.id.product_btn_like);
+
         rcv = findViewById(R.id.rcv_product);
         txtPrice1 = dialog.findViewById(R.id.dialog_price1);
         txtPrice1.setPaintFlags(txtPrice1.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -139,6 +143,28 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.product_btn_back:
                 finish();
+                break;
+            case R.id.product_btn_like:
+                if (!check_like){
+                    btn_like.setImageResource(R.drawable.ic_heart_selected);
+                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+                    View layoutView = getLayoutInflater().inflate(R.layout.dialog_like_product, null);
+                    dialogBuilder.setView(layoutView);
+                    alertDialog = dialogBuilder.create();
+                    Window window = alertDialog.getWindow();
+                    window.getAttributes().windowAnimations = R.style.DialogAnimation;
+                    window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    WindowManager.LayoutParams wlp = window.getAttributes();
+                    wlp.gravity = Gravity.TOP|Gravity.CENTER;
+                    wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+                    window.setAttributes(wlp);
+                    alertDialog.show();
+                    check_like = !check_like;
+                } else {
+//                    btn_like.setImageResource(0);
+                    btn_like.setImageResource(R.drawable.ic_heart);
+                    check_like = !check_like;
+                }
                 break;
             case R.id.product_btn_cart:
             case R.id.dialog_product_buynow:

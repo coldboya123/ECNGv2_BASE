@@ -14,7 +14,7 @@
             android:layout_gravity="center"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:scaleType="centerCrop"
+            android:scaleType="centerInside"
             android:id="@+id/cate_img"
             android:src="@drawable/cate_batdongsan"/>
     </androidx.cardview.widget.CardView>

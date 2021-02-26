@@ -22,7 +22,7 @@ public class WellcomeActivity extends AppCompatActivity {
 
         new Thread(() -> {
             try{
-                Thread.sleep(500);
+                Thread.sleep(100);
             } catch (Exception e){
 
             }finally {

@@ -68,14 +68,14 @@ public class CategoryFragment extends Fragment {
                     computer_adapter.notifyDataSetChanged();
                     rcv_catetab.setAdapter(computer_adapter);
                 }else if (position == 1){
-                    title.setText("Thời trang nữ");
+                    title.setText("Thời trang nam");
                     listItem = new ArrayList<>();
                     loadData1(listItem);
                     computer_adapter = new Cate_Computer_Adapter(getContext(), listItem);
                     computer_adapter.notifyDataSetChanged();
                     rcv_catetab.setAdapter(computer_adapter);
                 }else if (position == 2){
-                    title.setText("Thời trang nam");
+                    title.setText("Thời trang nữ");
                 }else if (position == 3){
                     title.setText("Rượu");
                 }else if (position == 4){
@@ -94,64 +94,75 @@ public class CategoryFragment extends Fragment {
     private void loadData0(List<ItemCateTab> listItem){
         List<Category> listcate;
         listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listcate.add(new Category("Lenovo", R.drawable.laptop));
+        listcate.add(new Category("Macbook", R.drawable.logo_mac));
+        listcate.add(new Category("Dell", R.drawable.logo_dell));
+        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
+        listcate.add(new Category("Asus", R.drawable.logo_asus));
+        listcate.add(new Category("Acer", R.drawable.logo_acer));
+        listcate.add(new Category("LG", R.drawable.logo_lg));
+        listcate.add(new Category("Lenovo", R.drawable.logo_lenovo));
         listItem.add(new ItemCateTab("Danh mục phổ biến", listcate));
         listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listcate.add(new Category("Lenovo", R.drawable.laptop));
+        listcate.add(new Category("Macbook", R.drawable.logo_mac));
+        listcate.add(new Category("Dell", R.drawable.logo_dell));
+        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
+        listcate.add(new Category("Asus", R.drawable.logo_asus));
+        listcate.add(new Category("Acer", R.drawable.logo_acer));
+        listcate.add(new Category("LG", R.drawable.logo_lg));
+        listcate.add(new Category("Lenovo", R.drawable.logo_lenovo));
         listItem.add(new ItemCateTab("Laptop", listcate));
         listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
+        listcate.add(new Category("Macbook", R.drawable.logo_mac));
+        listcate.add(new Category("Dell", R.drawable.logo_dell));
+        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
+        listcate.add(new Category("Asus", R.drawable.logo_asus));
+        listcate.add(new Category("Acer", R.drawable.logo_acer));
+        listcate.add(new Category("LG", R.drawable.logo_lg));
         listItem.add(new ItemCateTab("Máy tính", listcate));
     }
     private void loadData1(List<ItemCateTab> listItem){
         List<Category> listcate;
         listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listcate.add(new Category("Lenovo", R.drawable.laptop));
+        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
+        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
+        listcate.add(new Category("Zara", R.drawable.logo_zara));
+        listcate.add(new Category("Guess", R.drawable.logo_guess));
+        listcate.add(new Category("H&M", R.drawable.logo_h_m));
+        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
+        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
         listItem.add(new ItemCateTab("Danh mục phổ biến", listcate));
         listcate = new ArrayList<>();
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listcate.add(new Category("Lenovo", R.drawable.laptop));
-        listItem.add(new ItemCateTab("Laptop", listcate));
+        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
+        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
+        listcate.add(new Category("Zara", R.drawable.logo_zara));
+        listcate.add(new Category("Guess", R.drawable.logo_guess));
+        listcate.add(new Category("H&M", R.drawable.logo_h_m));
+        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
+        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
+        listItem.add(new ItemCateTab("Vest", listcate));
         listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listcate.add(new Category("Macbook", R.drawable.laptop));
-        listcate.add(new Category("Dell", R.drawable.laptop));
-        listcate.add(new Category("Samsung", R.drawable.laptop));
-        listcate.add(new Category("Asus", R.drawable.laptop));
-        listcate.add(new Category("Acer", R.drawable.laptop));
-        listcate.add(new Category("LG", R.drawable.laptop));
-        listItem.add(new ItemCateTab("Máy tính", listcate));
+        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
+        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
+        listcate.add(new Category("Zara", R.drawable.logo_zara));
+        listcate.add(new Category("Guess", R.drawable.logo_guess));
+        listcate.add(new Category("H&M", R.drawable.logo_h_m));
+        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
+        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
+        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
+        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
+        listcate.add(new Category("Zara", R.drawable.logo_zara));
+        listcate.add(new Category("Guess", R.drawable.logo_guess));
+        listcate.add(new Category("H&M", R.drawable.logo_h_m));
+        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
+        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
+        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
+        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
+        listcate.add(new Category("Zara", R.drawable.logo_zara));
+        listcate.add(new Category("Guess", R.drawable.logo_guess));
+        listcate.add(new Category("H&M", R.drawable.logo_h_m));
+        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
+        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
+        listItem.add(new ItemCateTab("Shoe", listcate));
     }
 
 
@@ -162,13 +173,8 @@ public class CategoryFragment extends Fragment {
         public MyTabAdapter() {
             list = new ArrayList<>();
             list.add(new Cate_tabItem("Máy tính & Laptop", R.drawable.devices, R.drawable.devices_actived));
-            list.add(new Cate_tabItem("Thời trang nữ",  R.drawable.dress_1, R.drawable.dress_2));
             list.add(new Cate_tabItem("Thời trang nam",  R.drawable.suit_1, R.drawable.suit_2));
-            list.add(new Cate_tabItem("Rượu",  R.drawable.wine_1, R.drawable.wine_2));
-            list.add(new Cate_tabItem("Căn hộ",  R.drawable.skyline_1, R.drawable.skyline_2));
-            list.add(new Cate_tabItem("Máy tính & Laptop", R.drawable.devices, R.drawable.devices_actived));
             list.add(new Cate_tabItem("Thời trang nữ",  R.drawable.dress_1, R.drawable.dress_2));
-            list.add(new Cate_tabItem("Thời trang nam",  R.drawable.suit_1, R.drawable.suit_2));
             list.add(new Cate_tabItem("Rượu",  R.drawable.wine_1, R.drawable.wine_2));
             list.add(new Cate_tabItem("Căn hộ",  R.drawable.skyline_1, R.drawable.skyline_2));
         }
