@@ -11,11 +11,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ecngv2.Adapter.RCV_CateDetail_Cate_Adapter;
 import com.example.ecngv2.Adapter.RCV_CateDetail_TradeMark_Adapter;
 import com.example.ecngv2.Adapter.SliderViewHomeAdapter;
+import com.example.ecngv2.Model.Object.Category;
 import com.example.ecngv2.R;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -28,9 +32,13 @@ public class CateDetailActivity extends AppCompatActivity {
 
     Intent intent;
     SliderView sliderView;
+    Spinner spinner_rating;
+    RecyclerView rcv_trademark, rcv_cate;
     List<Integer> banners;
-    RecyclerView rcv_trademark;
     List<Integer> list_trademark_img;
+    List<Category> list_cate;
+    List<Integer> list_rating_sort;
+    List<String> list_rating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +54,8 @@ public class CateDetailActivity extends AppCompatActivity {
         intent = getIntent();
         Toast.makeText(this, intent.getIntExtra("position", -1)+"", Toast.LENGTH_SHORT).show();
 
+        spinner_rating.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list_rating));
+
         sliderView.setSliderAdapter(new SliderViewHomeAdapter(this, banners));
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
@@ -53,6 +63,9 @@ public class CateDetailActivity extends AppCompatActivity {
 
         rcv_trademark.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.HORIZONTAL, false));
         rcv_trademark.setAdapter(new RCV_CateDetail_TradeMark_Adapter(this, list_trademark_img));
+
+        rcv_cate.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        rcv_cate.setAdapter(new RCV_CateDetail_Cate_Adapter(this, list_cate));
     }
 
     private void init(){
@@ -63,6 +76,21 @@ public class CateDetailActivity extends AppCompatActivity {
         banners.add(R.drawable.slider_3);
         banners.add(R.drawable.slider_4);
         banners.add(R.drawable.slider_5);
+
+        spinner_rating = findViewById(R.id.catedetail_sort_rating);
+        list_rating_sort = new ArrayList<>();
+        list_rating_sort.add(0);
+        list_rating_sort.add(1);
+        list_rating_sort.add(2);
+        list_rating_sort.add(3);
+        list_rating_sort.add(4);
+        list_rating_sort.add(5);
+        list_rating = new ArrayList<>();
+        list_rating.add("Đánh giá");
+        list_rating.add("4 * trở lên");
+        list_rating.add("Đánh ");
+        list_rating.add("Đánh giá");
+        list_rating.add("Đánh giá");
 
         rcv_trademark = findViewById(R.id.catedetail_rcv_trademark);
         list_trademark_img = new ArrayList<>();
@@ -77,5 +105,17 @@ public class CateDetailActivity extends AppCompatActivity {
         list_trademark_img.add(R.drawable.logo_h_m);
         list_trademark_img.add(R.drawable.logo_guess);
         list_trademark_img.add(R.drawable.logo_ralph_lauren);
+
+        rcv_cate = findViewById(R.id.catedetail_rcv_cate);
+        list_cate = new ArrayList<>();
+        list_cate.add(new Category("Smart phone", R.drawable.dienthoai1));
+        list_cate.add(new Category("Laptop", R.drawable.laptop4));
+        list_cate.add(new Category("Tablet", R.drawable.tablet));
+        list_cate.add(new Category("Smart watch", R.drawable.dongho));
+        list_cate.add(new Category("Phụ kiện", R.drawable.cate_dongho));
+        list_cate.add(new Category("Smart phone", R.drawable.dienthoai1));
+        list_cate.add(new Category("Laptop", R.drawable.laptop4));
+        list_cate.add(new Category("Tablet", R.drawable.tablet));
+
     }
 }

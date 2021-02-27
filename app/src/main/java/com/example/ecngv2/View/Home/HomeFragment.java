@@ -41,7 +41,6 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
-//    ViewPager viewPager;
     SliderView sliderView;
     List<Integer> list;
     List<Integer> banners;
@@ -74,10 +73,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //Set Adapter for ViewPager
-//        int[] imagesRes = new int[]{R.drawable.slider_1, R.drawable.slider_2, R.drawable.slider_3, R.drawable.slider_4, R.drawable.slider_5};
-//        SliderViewPagerAdapter bannerAdapter = new SliderViewPagerAdapter(getContext(), imagesRes);
-//        viewPager.setAdapter(bannerAdapter);
         sliderView.setSliderAdapter(new SliderViewHomeAdapter(getContext(), banners));
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);

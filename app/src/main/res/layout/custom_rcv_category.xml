@@ -2,8 +2,8 @@
 <LinearLayout
     android:id="@+id/cate_block"
     android:layout_width="90dp"
-    android:layout_height="80dp"
-    android:layout_marginTop="5dp"
+    android:layout_height="wrap_content"
+    android:paddingVertical="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -22,12 +22,12 @@
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/cate_title"
         android:layout_gravity="center"
         android:textStyle="bold"
         android:text="bat dong san"
-        android:maxLines="2"
+        android:maxLines="1"
         android:textSize="13sp"
         android:gravity="center"/>
 </LinearLayout>

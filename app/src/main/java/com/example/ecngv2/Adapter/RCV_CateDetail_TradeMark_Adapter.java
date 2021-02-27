@@ -17,6 +17,7 @@ public class RCV_CateDetail_TradeMark_Adapter extends RecyclerView.Adapter<RCV_C
 
     Context context;
     List<Integer> list;
+    boolean check_selected = false;
 
     public RCV_CateDetail_TradeMark_Adapter(Context context, List<Integer> list) {
         this.context = context;
@@ -33,6 +34,16 @@ public class RCV_CateDetail_TradeMark_Adapter extends RecyclerView.Adapter<RCV_C
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.img.setImageResource(list.get(position));
+        holder.img.setOnClickListener(view -> {
+            if (check_selected){
+                holder.img.setBackground(context.getDrawable(R.drawable.border_primary_color));
+                check_selected = !check_selected;
+            }
+            else {
+                holder.img.setBackgroundResource(0);
+                check_selected = !check_selected;
+            }
+        });
     }
 
     @Override
