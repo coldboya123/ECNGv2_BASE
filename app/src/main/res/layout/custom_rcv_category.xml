@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="90dp"
+<LinearLayout
+    android:id="@+id/cate_block"
+    android:layout_width="90dp"
     android:layout_height="80dp"
     android:layout_marginTop="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"

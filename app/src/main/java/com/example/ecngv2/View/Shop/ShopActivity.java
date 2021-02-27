@@ -34,6 +34,7 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
         window.setStatusBarColor(getColor(android.R.color.transparent));
 //        window.setNavigationBarColor(getColor(android.R.color.transparent));
         window.setBackgroundDrawable(background);
+
         init();
         ViewPager_Shop_Adapter adapter = new ViewPager_Shop_Adapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
