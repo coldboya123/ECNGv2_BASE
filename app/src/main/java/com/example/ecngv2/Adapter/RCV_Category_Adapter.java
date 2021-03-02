@@ -42,6 +42,7 @@ public class RCV_Category_Adapter extends RecyclerView.Adapter<RCV_Category_Adap
         holder.cate_block.setOnClickListener(view -> {
             Intent intent = new Intent(context, CateDetailActivity.class);
             intent.putExtra("position", position);
+            intent.putExtra("title", list.get(position).getTitle());
             context.startActivity(intent);
         })  ;
     }

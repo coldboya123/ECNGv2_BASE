@@ -2,7 +2,7 @@
 <LinearLayout
     android:id="@+id/cate_block"
     android:layout_width="90dp"
-    android:layout_height="wrap_content"
+    android:layout_height="75dp"
     android:paddingVertical="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
