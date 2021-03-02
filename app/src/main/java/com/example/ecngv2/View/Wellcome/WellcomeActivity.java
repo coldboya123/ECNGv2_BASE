@@ -27,6 +27,7 @@ public class WellcomeActivity extends AppCompatActivity {
 
             }finally {
                 startActivity(new Intent(getBaseContext(), MainActivity.class));
+                finish();
             }
         }).start();
     }
