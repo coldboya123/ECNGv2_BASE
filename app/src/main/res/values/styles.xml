@@ -41,4 +41,9 @@
     <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem" />
 
     <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem" />
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

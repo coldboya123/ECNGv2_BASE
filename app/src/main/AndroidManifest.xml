@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.CateDetail.CateDetailActivity"></activity>
+        <activity android:name=".View.SettingAccount.SettingAccountActivity"></activity>
+        <activity android:name=".View.CateDetail.CateDetailActivity" />
         <activity android:name=".View.Product.ProductImage" />
         <activity android:name=".View.Register.RegisterActivity" />
         <activity android:name=".View.ForgotPwd.ForgotPwdActivity" />

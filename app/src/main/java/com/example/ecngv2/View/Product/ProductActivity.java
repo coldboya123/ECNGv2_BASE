@@ -46,9 +46,10 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     BottomSheetDialog dialog;
     int number;
     RecyclerView rcv;
-    AppCompatButton btn_buynow, btn_addtocart;
+    AppCompatButton btn_buynow, btn_addtocart, dialog_btn_buybow, dialog_btn_addtocart;
     SliderView sliderView;
     boolean check_like = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +76,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
 
-        if (number == 1){
+        if (number == 1) {
             btn_minus.setEnabled(false);
         }
         btn_plush.setOnClickListener(this);
@@ -90,6 +91,9 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color3.setOnClickListener(this);
         color4.setOnClickListener(this);
         color5.setOnClickListener(this);
+        dialog_btn_buybow.setOnClickListener(this);
+        dialog_btn_addtocart.setOnClickListener(this);
+
         btn_buynow.setOnClickListener(this);
         btn_addtocart.setOnClickListener(this);
 
@@ -97,7 +101,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    private void init(){
+    private void init() {
         sliderView = findViewById(R.id.slide_product);
         listImg = new ArrayList<>();
         listImg.add(R.drawable.laptop1);
@@ -118,7 +122,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         btn_closeDialog = dialog.findViewById(R.id.btn_close_dialog);
         txt_number = dialog.findViewById(R.id.dialog_product_number);
         number = Integer.parseInt(txt_number.getText().toString());
-        btn_plush= dialog.findViewById(R.id.dialog_btn_plush);
+        btn_plush = dialog.findViewById(R.id.dialog_btn_plush);
         btn_minus = dialog.findViewById(R.id.idalog_btnminus);
         btn_closeDialog.setOnClickListener(this);
 
@@ -128,24 +132,29 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         color4 = dialog.findViewById(R.id.dialog_color4);
         color5 = dialog.findViewById(R.id.dialog_color5);
         color_selected = color1;
-        btn_buynow = dialog.findViewById(R.id.dialog_product_buynow);
-        btn_addtocart = dialog.findViewById(R.id.dialog_product_addtocart);
+        dialog_btn_buybow = dialog.findViewById(R.id.dialog_product_buynow);
+        dialog_btn_addtocart = dialog.findViewById(R.id.dialog_product_addtocart);
 
         viewShop = findViewById(R.id.product_viewshop);
+
+        btn_buynow = findViewById(R.id.product_btn_buynow);
+        btn_addtocart = findViewById(R.id.product_btn_addtocart);
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.choose_type:
                 dialog.show();
+                dialog_btn_addtocart.setVisibility(View.VISIBLE);
+                dialog_btn_buybow.setVisibility(View.VISIBLE);
                 break;
             case R.id.product_btn_back:
                 finish();
                 break;
             case R.id.product_btn_like:
-                if (!check_like){
+                if (!check_like) {
                     btn_like.setImageResource(R.drawable.ic_heart_selected);
                     AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
                     View layoutView = getLayoutInflater().inflate(R.layout.dialog_like_product, null);
@@ -155,7 +164,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                     window.getAttributes().windowAnimations = R.style.DialogAnimation;
                     window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                     WindowManager.LayoutParams wlp = window.getAttributes();
-                    wlp.gravity = Gravity.TOP|Gravity.CENTER;
+                    wlp.gravity = Gravity.TOP | Gravity.CENTER;
                     wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
                     window.setAttributes(wlp);
                     alertDialog.show();
@@ -166,24 +175,26 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                     check_like = !check_like;
                 }
                 break;
+
+            case R.id.product_btn_buynow:
+                dialog.show();
+                dialog_btn_addtocart.setVisibility(View.GONE);
+                dialog_btn_buybow.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.product_btn_addtocart:
+                dialog.show();
+                dialog_btn_buybow.setVisibility(View.GONE);
+                dialog_btn_addtocart.setVisibility(View.VISIBLE);
+                break;
+
             case R.id.product_btn_cart:
             case R.id.dialog_product_buynow:
                 startActivity(new Intent(ProductActivity.this, CartActivity.class));
                 break;
+
             case R.id.dialog_product_addtocart:
                 dialog.hide();
-//                new AlertDialog.Builder(this)
-//                        .setMessage("Đã thêm vào giỏ hàng")
-//                        .show();
-//                Dialog d = new Dialog(this);
-//                d.setContentView(R.layout.dialog_addtocart_layout);
-//                Window window = d.getWindow();
-//                window.getAttributes().windowAnimations = R.style.DialogAnimation;
-//                WindowManager.LayoutParams wlp = window.getAttributes();
-//                wlp.gravity = Gravity.TOP;
-//                wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-//                window.setAttributes(wlp);
-//                d.show();
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
                 View layoutView = getLayoutInflater().inflate(R.layout.dialog_addtocart_layout, null);
                 dialogBuilder.setView(layoutView);
@@ -192,23 +203,23 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                 window.getAttributes().windowAnimations = R.style.DialogAnimation;
                 window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 WindowManager.LayoutParams wlp = window.getAttributes();
-                wlp.gravity = Gravity.TOP|Gravity.CENTER;
+                wlp.gravity = Gravity.TOP | Gravity.CENTER;
                 wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
                 window.setAttributes(wlp);
                 alertDialog.show();
                 break;
             case R.id.dialog_btn_plush:
-                if (number > 1){
+                if (number > 1) {
                     btn_minus.setEnabled(true);
                 }
-                txt_number.setText(number+1+"");
+                txt_number.setText(number + 1 + "");
                 number++;
                 break;
             case R.id.idalog_btnminus:
-                if (number == 1){
+                if (number == 1) {
                     btn_minus.setEnabled(false);
-                }else {
-                    txt_number.setText(number-1+"");
+                } else {
+                    txt_number.setText(number - 1 + "");
                     number--;
                 }
                 break;
@@ -241,7 +252,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private void SetColorSelected(TextView temp, TextView selected){
+    private void SetColorSelected(TextView temp, TextView selected) {
         temp.setBackground(getDrawable(R.drawable.border_dark));
         temp.setTextColor(getColor(R.color.black));
         selected.setBackground(getDrawable(R.drawable.border_primary_color));
