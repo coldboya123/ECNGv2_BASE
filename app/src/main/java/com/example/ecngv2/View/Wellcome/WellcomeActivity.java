@@ -13,13 +13,13 @@ import android.widget.TextView;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.MainActivity.MainActivity;
 
-public class WellcomeActivity extends AppCompatActivity {
+import java.util.Locale;
 
+public class WellcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
-
         new Thread(() -> {
             try{
                 Thread.sleep(500);

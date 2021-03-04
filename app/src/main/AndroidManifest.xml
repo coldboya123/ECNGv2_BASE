@@ -7,6 +7,7 @@
 
     <uses-feature android:name="android.hardware.type.watch" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -18,7 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.SettingAccount.SettingAccountActivity"></activity>
+        <activity android:name=".View.User.Profile.ChangePasswordActivity"></activity>
+        <activity android:name=".View.User.Profile.UserProfileActivity" />
+        <activity android:name=".View.SettingAccount.SettingAccountActivity" />
         <activity android:name=".View.CateDetail.CateDetailActivity" />
         <activity android:name=".View.Product.ProductImage" />
         <activity android:name=".View.Register.RegisterActivity" />

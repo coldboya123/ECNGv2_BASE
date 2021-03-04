@@ -21,7 +21,7 @@
             android:background="@drawable/appbar_background"
             app:layout_collapseMode="pin"
             android:layout_gravity="bottom"
-            app:menu="@menu/menu_toolbar">
+            app:menu="@menu/menu_toolbar_user">
             <TextView
                 android:text="Cá nhân"
                 android:textSize="22sp"
@@ -155,70 +155,142 @@
                 android:background="@color/white"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="15dp">
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_weight="1">
                     <ImageView
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/user_confirm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/ic_cho_duyet"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Chờ xác nhận"
-                        android:textSize="11sp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_cho_lay_hang"/>
+                        app:layout_constraintTop_toTopOf="@id/user_confirm"
+                        app:layout_constraintEnd_toEndOf="@id/user_confirm"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textSize="10sp"
+                        android:background="@drawable/radius"
+                        android:backgroundTint="@color/colorWarning"
+                        android:textColor="@color/white"/>
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Chờ lấy hàng"
-                        android:textSize="11sp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/ic_dang_giao"/>
-                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/user_confirm"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Đang giao"
                         android:textSize="11sp"/>
-                </LinearLayout>
-                <LinearLayout
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:layout_weight="1">
                     <ImageView
+                        android:id="@+id/user_pickup"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_cho_lay_hang"/>
+                    <TextView
+                        app:layout_constraintTop_toTopOf="@id/user_pickup"
+                        app:layout_constraintEnd_toEndOf="@id/user_pickup"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="10sp"
+                        android:background="@drawable/radius"
+                        android:backgroundTint="@color/colorWarning"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/user_pickup"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đang giao"
+                        android:textSize="11sp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/user_delivering"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_dang_giao"/>
+                    <TextView
+                        app:layout_constraintTop_toTopOf="@id/user_delivering"
+                        app:layout_constraintEnd_toEndOf="@id/user_delivering"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textSize="10sp"
+                        android:background="@drawable/radius"
+                        android:backgroundTint="@color/colorWarning"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/user_delivering"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đang giao"
+                        android:textSize="11sp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/user_delivered"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/ic_da_giao"/>
                     <TextView
+                        app:layout_constraintTop_toTopOf="@id/user_delivered"
+                        app:layout_constraintEnd_toEndOf="@id/user_delivered"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textSize="10sp"
+                        android:background="@drawable/radius"
+                        android:backgroundTint="@color/colorWarning"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        app:layout_constraintTop_toBottomOf="@id/user_delivered"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Đã giao"
+                        android:text="Đang giao"
                         android:textSize="11sp"/>
-                </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -254,7 +326,7 @@
                     android:textColor="@color/black"
                     android:gravity="center"
                     android:drawablePadding="10dp"
-                    android:drawableStart="@drawable/ic_member_small"/>
+                    android:drawableStart="@drawable/ic_member"/>
                 <ImageView
                     app:layout_constraintTop_toTopOf="@id/user_member"
                     app:layout_constraintBottom_toBottomOf="@id/user_member"
@@ -384,7 +456,7 @@
                     android:textColor="@color/black"
                     android:gravity="center"
                     android:drawablePadding="10dp"
-                    android:drawableStart="@drawable/ic_setting"/>
+                    android:drawableStart="@drawable/ic_settingacc"/>
                 <ImageView
                     app:layout_constraintTop_toTopOf="@id/user_setting"
                     app:layout_constraintBottom_toBottomOf="@id/user_setting"
@@ -402,15 +474,15 @@
                 android:text="Đăng xuất"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
-            <TextView
-                app:layout_constraintTop_toBottomOf="@id/user_btn_logout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="ECNG v 1.1.0"
-                android:layout_marginTop="10dp"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+<!--            <TextView-->
+<!--                app:layout_constraintTop_toBottomOf="@id/user_btn_logout"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:text="ECNG v 1.1.0"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
 
             <View
                 app:layout_constraintTop_toBottomOf="@id/user_block_order_manager"

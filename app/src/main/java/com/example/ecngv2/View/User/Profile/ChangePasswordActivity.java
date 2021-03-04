@@ -1,10 +1,9 @@
-package com.example.ecngv2.View.SettingAccount;
+package com.example.ecngv2.View.User.Profile;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -13,16 +12,16 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.ecngv2.R;
-import com.example.ecngv2.View.User.Profile.UserProfileActivity;
 
-public class SettingAccountActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChangePasswordActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_back;
-    ConstraintLayout btn_profile;
+    AppCompatButton btn_confirm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_account);
+        setContentView(R.layout.activity_change_password);
 
         Window window = getWindow();
         @SuppressLint("UseCompatLoadingForDrawables") Drawable background = getDrawable(R.drawable.appbar_background);
@@ -32,24 +31,23 @@ public class SettingAccountActivity extends AppCompatActivity implements View.On
         window.setBackgroundDrawable(background);
 
         init();
-        btn_back.setOnClickListener(this);
-        btn_profile.setOnClickListener(this);
-    }
 
-    private void init(){
-        btn_back = findViewById(R.id.settingacc_btn_back);
-        btn_profile = findViewById(R.id.settingacc_block_profile);
+        btn_back.setOnClickListener(this);
+        btn_confirm.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.settingacc_btn_back:
+            case R.id.changepwd_btn_back:
+            case R.id.changepwd_btn_confirm:
                 finish();
                 break;
-            case R.id.settingacc_block_profile:
-                startActivity(new Intent(SettingAccountActivity.this, UserProfileActivity.class));
-                break;
         }
+    }
+
+    private void init(){
+        btn_back = findViewById(R.id.changepwd_btn_back);
+        btn_confirm = findViewById(R.id.changepwd_btn_confirm);
     }
 }

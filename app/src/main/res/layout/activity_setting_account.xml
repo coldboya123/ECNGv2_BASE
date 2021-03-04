@@ -20,8 +20,7 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:background="@drawable/appbar_background"
             app:layout_collapseMode="pin"
-            android:layout_gravity="bottom"
-            app:menu="@menu/menu_toolbar">
+            android:layout_gravity="bottom">
             <Button
                 android:id="@+id/settingacc_btn_back"
                 android:layout_width="wrap_content"
