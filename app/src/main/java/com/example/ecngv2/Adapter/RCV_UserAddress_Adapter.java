@@ -74,7 +74,7 @@ public class RCV_UserAddress_Adapter extends RecyclerView.Adapter<RCV_UserAddres
                 listPopupWindow = new ListPopupWindow(context);
                 listPopupWindow.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, new String[]{"Đặt mặc định", "Chỉnh sửa", "Xóa"}));
                 listPopupWindow.setAnchorView(holder.btnMore);
-                listPopupWindow.setWidth(300);
+                listPopupWindow.setWidth(ListPopupWindow.WRAP_CONTENT);
                 listPopupWindow.setOnItemClickListener((adapterView, view1, i, l) -> {
                     switch (i) {
                         case 0:
