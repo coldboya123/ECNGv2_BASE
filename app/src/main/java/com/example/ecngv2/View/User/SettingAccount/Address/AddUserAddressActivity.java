@@ -6,9 +6,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -54,6 +56,16 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
         }
         txtCity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrCity));
 
+        txtCity.setOnItemClickListener((adapterView, view, i, l) -> {
+            List<String> arrDistrict = new ArrayList<>();
+            listDistrict = modelAddress.getDistrict("https://vapi.vnappmob.com/api/province/district/" + listCity.get(i).getId());
+            for (int j = 0; j < listDistrict.size(); j++) {
+                arrDistrict.add(listDistrict.get(j).getName());
+            }
+            txtDistric.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrDistrict));
+        });
+
+
         txtDistric.setOnClickListener(this);
         txtWard.setOnClickListener(this);
         btn_back.setOnClickListener(this);
@@ -71,48 +83,27 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.user_address_edit_btn_back:
+            case R.id.user_address_add_btn_back:
             case R.id.user_address_edit_btn_save:
                 finish();
                 break;
             case R.id.user_address_edit_txtdistric:
-                String id_city = "";
-                for (int i=0; i<listCity.size(); i++){
-                    if (listCity.get(i).getName().equals(txtCity.getText().toString())){
-                        id_city = listCity.get(i).getId();
-                        break;
-                    }
-                }
-                if (!id_city.isEmpty()) {
-                    List<String> arrDistrict = new ArrayList<>();
-                    listDistrict = modelAddress.getDistrict("https://vapi.vnappmob.com/api/province/district/" + id_city);
-                    for (int i = 0; i < listDistrict.size(); i++) {
-                        arrDistrict.add(listDistrict.get(i).getName());
-                    }
-                    txtDistric.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrDistrict));
-                } else Toast.makeText(this, "Vui lòng chọn Tỉnh/Thành", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.user_address_edit_txtward:
-                if (listDistrict.isEmpty()){
-                    Toast.makeText(this, "Vui lòng chọn Quận/Huyện", Toast.LENGTH_SHORT).show();
+                if (listDistrict.isEmpty()) {
+                    Toast.makeText(this, "Vui lòng chọn Tỉnh/Thành", Toast.LENGTH_SHORT).show();
                 } else {
-                    String id_district = "";
-                    for (int i=0; i<listDistrict.size(); i++){
-                        if (listDistrict.get(i).getName().equals(txtDistric.getText().toString())){
-                            id_district = listDistrict.get(i).getId();
-                            break;
-                        }
-                    }
-                    if (id_district.isEmpty()){
-                        Toast.makeText(this, "Vui lòng chọn Quận/Huyện", Toast.LENGTH_SHORT).show();
-                    } else {
+                    txtDistric.setOnItemClickListener((adapterView, view1, i, l) -> {
                         List<String> arrWard = new ArrayList<>();
-                        listWard = modelAddress.getWard("https://vapi.vnappmob.com/api/province/ward/" + id_district);
-                        for (int i = 0; i < listWard.size(); i++) {
-                            arrWard.add(listWard.get(i).getName());
+                        listWard = modelAddress.getWard("https://vapi.vnappmob.com/api/province/ward/" + listDistrict.get(i).getId());
+                        for (int j = 0; j < listWard.size(); j++) {
+                            arrWard.add(listWard.get(j).getName());
                         }
                         txtWard.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrWard));
-                    }
+                    });
+                }
+                break;
+            case R.id.user_address_edit_txtward:
+                if (listWard.isEmpty()){
+                    Toast.makeText(this, "Vui lòng chọn Quận/Huyện", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
