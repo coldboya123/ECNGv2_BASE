@@ -19,9 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.User.Profile.ChangePasswordActivity"></activity>
-        <activity android:name=".View.User.Profile.UserProfileActivity" />
-        <activity android:name=".View.SettingAccount.SettingAccountActivity" />
+        <activity android:name=".View.User.SettingAccount.Address.AddUserAddressActivity"></activity>
+        <activity android:name=".View.User.SettingAccount.Address.EditUserAddressActivity" />
+        <activity android:name=".View.User.SettingAccount.Address.UserAddressActivity" />
+        <activity android:name=".View.User.SettingAccount.Profile.ChangePasswordActivity" />
+        <activity android:name=".View.User.SettingAccount.Profile.UserProfileActivity" />
+        <activity android:name=".View.User.SettingAccount.SettingAccountActivity" />
         <activity android:name=".View.CateDetail.CateDetailActivity" />
         <activity android:name=".View.Product.ProductImage" />
         <activity android:name=".View.Register.RegisterActivity" />

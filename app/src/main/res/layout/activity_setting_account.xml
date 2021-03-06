@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_2"
-    tools:context=".View.SettingAccount.SettingAccountActivity">
+    tools:context=".View.User.SettingAccount.SettingAccountActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_settingacc"
         app:layout_constraintTop_toTopOf="parent"

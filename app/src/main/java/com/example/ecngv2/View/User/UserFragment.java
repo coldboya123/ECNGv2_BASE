@@ -9,11 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.ecngv2.R;
-import com.example.ecngv2.View.Login.LoginActivity;
-import com.example.ecngv2.View.SettingAccount.SettingAccountActivity;
+import com.example.ecngv2.View.User.SettingAccount.SettingAccountActivity;
 
 public class UserFragment extends Fragment implements View.OnClickListener {
 

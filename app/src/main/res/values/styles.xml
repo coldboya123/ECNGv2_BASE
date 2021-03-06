@@ -46,4 +46,8 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="SpinnerMore" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/ic_more_dark</item>
+    </style>
 </resources>

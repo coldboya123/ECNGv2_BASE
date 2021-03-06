@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/user_address_block"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="15dp"
+    android:layout_marginBottom="2dp">
+    <TextView
+        android:id="@+id/user_address_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Đức Huy"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/user_address_default"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/user_address_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Mặc định]"
+        android:textColor="@color/primary_color"
+        android:layout_marginStart="20dp"/>
+    <ImageButton
+        android:id="@+id/user_address_btn_more"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_dark"
+        android:background="@null"/>
+    <TextView
+        android:id="@+id/user_address_phone"
+        app:layout_constraintTop_toBottomOf="@id/user_address_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0327347087"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/user_address_address"
+        app:layout_constraintTop_toBottomOf="@id/user_address_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="99A Cộng Hòa, Phường 4, Quận Tân Bình, TP. Hồ Chí Minh"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
