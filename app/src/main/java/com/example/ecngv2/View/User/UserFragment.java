@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.example.ecngv2.View.User.SettingAccount.SettingAccountActivity;
 
 public class UserFragment extends Fragment implements View.OnClickListener, IUserView {
 
+    SwipeRefreshLayout refreshLayout;
     ConstraintLayout block_logined, block_logouted, btn_settingacc;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
@@ -40,6 +42,8 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         View v = inflater.inflate(R.layout.fragment_user, container, false);
         init(v);
 
+        refreshLayout.setOnRefreshListener(() -> refreshLayout.setRefreshing(false));
+
         presenter = new UserPresenter(this, getContext());
         presenter.CheckLogin();
 
@@ -52,6 +56,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     }
 
     private void init(View v){
+        refreshLayout = v.findViewById(R.id.refresh_user);
         block_logined = v.findViewById(R.id.user_block_logined);
         btn_register = v.findViewById(R.id.user_btn_register);
         block_logouted = v.findViewById(R.id.user_block_logouted);
