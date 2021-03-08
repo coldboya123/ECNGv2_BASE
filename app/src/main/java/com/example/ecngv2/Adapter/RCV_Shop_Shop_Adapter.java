@@ -16,6 +16,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,9 +61,16 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof SliderHolder){
-            int[] imagesRes = new int[]{R.drawable.slider_1, R.drawable.slider_2, R.drawable.slider_3, R.drawable.slider_4, R.drawable.slider_5};
-            SliderViewPagerAdapter bannerAdapter = new SliderViewPagerAdapter(context, imagesRes);
-            ((SliderHolder) holder).viewPager.setAdapter(bannerAdapter);
+            List<Integer> banners = new ArrayList<>();
+            banners.add(R.drawable.slider_1);
+            banners.add(R.drawable.slider_2);
+            banners.add(R.drawable.slider_3);
+            banners.add(R.drawable.slider_4);
+            banners.add(R.drawable.slider_5);
+            ((SliderHolder)holder).sliderView.setSliderAdapter(new SliderViewHomeAdapter(context, banners));
+            ((SliderHolder)holder).sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+            ((SliderHolder)holder).sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+            ((SliderHolder)holder).sliderView.startAutoCycle();
         } else if (holder instanceof NewProductHolder){
             List<Product> list_products = new ArrayList<>();
             list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
@@ -112,10 +122,10 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public class SliderHolder extends RecyclerView.ViewHolder {
-        ViewPager viewPager;
+        SliderView sliderView;
         public SliderHolder(@NonNull View itemView) {
             super(itemView);
-            viewPager = itemView.findViewById(R.id.shop_slider);
+            sliderView = itemView.findViewById(R.id.shop_slider);
         }
     }
     public class NewProductHolder extends RecyclerView.ViewHolder {

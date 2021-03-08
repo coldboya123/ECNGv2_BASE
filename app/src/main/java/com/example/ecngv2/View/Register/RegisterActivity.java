@@ -12,50 +12,45 @@ import android.widget.Toast;
 import com.example.ecngv2.Presenter.Register.RegisterPresenter;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.Login.LoginActivity;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, IRegisterView {
 
-    TextView btn_login;
     AppCompatButton btn_reg;
-    com.google.android.material.textfield.TextInputEditText txtuser, txtpwd, txtemail;
-    String user, pwd, email;
+    TextInputEditText txtpwd, txtemail;
+    String pwd, email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
         init();
-        btn_login.setOnClickListener(this);
         btn_reg.setOnClickListener(this);
     }
 
     private void init(){
-        btn_login = findViewById(R.id.reg_txt_login);
-        btn_reg = findViewById(R.id.reg_btn_reg);
-        txtuser = findViewById(R.id.reg_user);
-        txtpwd = findViewById(R.id.reg_pwd);
-        txtemail = findViewById(R.id.reg_email);
+        btn_reg = findViewById(R.id.register_btn_reg);
+        txtemail = findViewById(R.id.register_txtemail);
+        txtpwd = findViewById(R.id.register_txtpwd);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.reg_txt_login:
+            case R.id.register_btn_reg:
+//                RegisterPresenter presenter = new RegisterPresenter(this);
+//                email = txtemail.getText().toString();
+//                pwd = txtpwd.getText().toString();
+//                presenter.ProcessRegister(pwd, email);
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-                break;
-            case R.id.reg_btn_reg:
-                RegisterPresenter presenter = new RegisterPresenter(this);
-                user = txtuser.getText().toString();
-                pwd = txtpwd.getText().toString();
-                email = txtemail.getText().toString();
-                presenter.ProcessRegister(user, pwd, email);
+                finish();
                 break;
         }
     }
 
     @Override
     public void RegisterSuccess() {
-        Toast.makeText(this, "Register success with user: "+ user, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Register success with user: "+ user, Toast.LENGTH_SHORT).show();
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 

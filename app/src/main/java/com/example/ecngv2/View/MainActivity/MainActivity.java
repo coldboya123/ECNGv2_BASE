@@ -8,15 +8,13 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Category.CategoryFragment;
-import com.example.ecngv2.View.Favorite.FavoriteFragment;
+import com.example.ecngv2.View.Notification.NotificationFragment;
 import com.example.ecngv2.View.Home.HomeFragment;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.User.UserFragment;
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout cart;
     BottomNavigationView bottomNavigationView;
     FragmentManager fm = getSupportFragmentManager();
-    Fragment homefragment, categoryfragment, favoritefragment, userfragment, acivefragment;
+    Fragment homefragment, categoryfragment, notifragment, userfragment, acivefragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         init();
         fm.beginTransaction().add(R.id.main_container, userfragment, "user").hide(userfragment).commit();
-        fm.beginTransaction().add(R.id.main_container, favoritefragment, "favorite").hide(favoritefragment).commit();
+        fm.beginTransaction().add(R.id.main_container, notifragment, "favorite").hide(notifragment).commit();
         fm.beginTransaction().add(R.id.main_container, categoryfragment, "category").hide(categoryfragment).commit();
         fm.beginTransaction().add(R.id.main_container, homefragment, "home").commit();
 
@@ -58,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
                     fm.beginTransaction().hide(acivefragment).show(categoryfragment).commit();
                     acivefragment = categoryfragment;
                     return true;
-                case R.id.bottomnavigation_favorite:
-                    fm.beginTransaction().hide(acivefragment).show(favoritefragment).commit();
-                    acivefragment = favoritefragment;
+                case R.id.bottomnavigation_notification:
+                    fm.beginTransaction().hide(acivefragment).show(notifragment).commit();
+                    acivefragment = notifragment;
                     return true;
                 case R.id.bottomnavigation_user:
                     fm.beginTransaction().hide(acivefragment).show(userfragment).commit();
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         homefragment = new HomeFragment();
         categoryfragment = new CategoryFragment();
-        favoritefragment = new FavoriteFragment();
+        notifragment = new NotificationFragment();
         userfragment = new UserFragment();
         acivefragment = homefragment;
         cart = findViewById(R.id.cart);

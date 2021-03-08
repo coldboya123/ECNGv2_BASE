@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity implements View.OnClickListener {
 
+    SwipeRefreshLayout refreshLayout;
     RecyclerView rcv;
     ImageButton btn_close;
     AppCompatButton btn_paymnet;
@@ -40,6 +42,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         window.setBackgroundDrawable(background);
 
         init();
+
+        refreshLayout.setOnRefreshListener(() -> refreshLayout.setRefreshing(false));
+
         List<Cart> cartList = new ArrayList<>();
         getData(cartList);
         rcv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
@@ -50,6 +55,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init(){
+        refreshLayout = findViewById(R.id.refresh_cart);
         rcv = findViewById(R.id.rcv_cart);
         btn_close = findViewById(R.id.btn_cart_close);
         btn_paymnet = findViewById(R.id.cart_btn_payment);

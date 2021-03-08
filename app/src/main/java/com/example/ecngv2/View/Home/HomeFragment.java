@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.ecngv2.Adapter.RCV_Category_Adapter;
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    SwipeRefreshLayout refreshLayout;
     SliderView sliderView;
     List<Integer> list;
     List<Integer> banners;
@@ -56,6 +58,9 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         Context context = getContext();
         init(v);
+
+        refreshLayout.setOnRefreshListener(() -> refreshLayout.setRefreshing(false));
+
         FragmentManager fm = getChildFragmentManager();
 
         //set Onclick for toolbar
@@ -152,6 +157,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void init(View v){
+        refreshLayout = v.findViewById(R.id.refresh_home);
+
         recycler_home = v.findViewById(R.id.recycler_home);
 //        viewPager = v.findViewById(R.id.slide_banner);
         sliderView = v.findViewById(R.id.slide_banner);

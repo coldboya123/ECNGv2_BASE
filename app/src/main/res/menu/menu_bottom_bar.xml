@@ -6,9 +6,9 @@
     <item android:title="Danh mục"
         android:id="@+id/bottomnavigation_category"
         android:icon="@drawable/ic_category"/>
-    <item android:title="Yêu thích"
-        android:id="@+id/bottomnavigation_favorite"
-        android:icon="@drawable/ic_favorite"/>
+    <item android:title="Thông báo"
+        android:id="@+id/bottomnavigation_notification"
+        android:icon="@drawable/ic_noti"/>
     <item android:title="Cá nhân"
         android:id="@+id/bottomnavigation_user"
         android:icon="@drawable/ic_person"

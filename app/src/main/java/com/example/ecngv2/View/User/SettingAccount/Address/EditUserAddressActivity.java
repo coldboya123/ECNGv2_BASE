@@ -1,13 +1,8 @@
 package com.example.ecngv2.View.User.SettingAccount.Address;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,16 +11,17 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 import com.example.ecngv2.Model.Object.City;
 import com.example.ecngv2.Model.Object.District;
-import com.example.ecngv2.Model.Object.UserAddress;
 import com.example.ecngv2.Model.Object.Ward;
 import com.example.ecngv2.Model.User.Address.ModelAddress;
 import com.example.ecngv2.R;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,6 +100,7 @@ public class EditUserAddressActivity extends AppCompatActivity implements View.O
         btn_save = findViewById(R.id.user_address_edit_btn_save);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()){
