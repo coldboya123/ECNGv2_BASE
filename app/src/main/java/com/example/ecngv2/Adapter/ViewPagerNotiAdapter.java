@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.ecngv2.View.Shop.Member.Shop_Member_Fragment;
-import com.example.ecngv2.View.Shop.Product.Shop_Product_Fragment;
-import com.example.ecngv2.View.Shop.Profile.Shop_Profile_Fragment;
-import com.example.ecngv2.View.Shop.Shop.Shop_ShopFragment;
+import com.example.ecngv2.View.Notification.NotiHomeFragment;
+import com.example.ecngv2.View.Notification.NotiOrderFragment;
+import com.example.ecngv2.View.Notification.NotiProductFragment;
+import com.example.ecngv2.View.Notification.NotiSecureFragment;
 
-
-public class ViewPager_Shop_Adapter extends FragmentPagerAdapter {
-    public ViewPager_Shop_Adapter(@NonNull FragmentManager fm) {
+public class ViewPagerNotiAdapter extends FragmentPagerAdapter {
+    public ViewPagerNotiAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -22,13 +21,13 @@ public class ViewPager_Shop_Adapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Shop_ShopFragment();
+                return new NotiHomeFragment();
             case 1:
-                return new Shop_Product_Fragment();
+                return new NotiOrderFragment();
             case 2:
-                return new Shop_Member_Fragment();
+                return new NotiProductFragment();
             case 3:
-                return new Shop_Profile_Fragment();
+                return new NotiSecureFragment();
         }
         return null;
     }
@@ -43,13 +42,13 @@ public class ViewPager_Shop_Adapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return "Cửa hàng";
+                return "ECNG";
             case 1:
-                return "Sản phẩm";
+                return "Đơn hàng";
             case 2:
-                return "Thành viên";
+                return "Sản phẩm";
             case 3:
-                return "Hồ sơ";
+                return "Bảo mật";
         }
         return null;
     }

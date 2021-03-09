@@ -23,7 +23,7 @@
             <SearchView
                 android:id="@+id/searchbar"
                 android:layout_width="match_parent"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_height="30dp"
                 android:background="@drawable/searchbar_background"
                 app:layout_anchor="@id/appbar"

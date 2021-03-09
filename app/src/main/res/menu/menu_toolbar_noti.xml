@@ -1,10 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/chat"
+        android:id="@+id/toolbar_noti_chat"
         android:icon="@drawable/ic_chat"
         android:title="Chat"
         android:contentDescription="Chat"
+        android:iconTint="#FFFFFF"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_noti_more"
+        android:icon="@drawable/ic_more"
+        android:title="More"
+        android:contentDescription="More"
         android:iconTint="#FFFFFF"
         app:showAsAction="ifRoom" />
 </menu>

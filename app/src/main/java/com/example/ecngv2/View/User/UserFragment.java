@@ -21,10 +21,12 @@ import com.example.ecngv2.View.Login.LoginActivity;
 import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
 import com.example.ecngv2.View.User.SettingAccount.SettingAccountActivity;
+import com.google.android.material.imageview.ShapeableImageView;
 
 public class UserFragment extends Fragment implements View.OnClickListener, IUserView {
 
     SwipeRefreshLayout refreshLayout;
+    ShapeableImageView avatar;
     ConstraintLayout block_logined, block_logouted, btn_settingacc;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
@@ -57,6 +59,8 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
 
     private void init(View v){
         refreshLayout = v.findViewById(R.id.refresh_user);
+
+        avatar = v.findViewById(R.id.user_avatar);
         block_logined = v.findViewById(R.id.user_block_logined);
         btn_register = v.findViewById(R.id.user_btn_register);
         block_logouted = v.findViewById(R.id.user_block_logouted);
@@ -97,6 +101,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     @Override
     public void Logined() {
         checkLogin = true;
+        avatar.setImageResource(R.drawable.tenor);
         block_logouted.setVisibility(View.GONE);
         block_logined.setVisibility(View.VISIBLE);
         btn_logout.setVisibility(View.VISIBLE);
