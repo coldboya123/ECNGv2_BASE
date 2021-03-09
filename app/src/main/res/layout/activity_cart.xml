@@ -95,7 +95,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cart_btn_payment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/background_radius_primary_color"
                 android:text="Tiến Hành Thanh Toán"
