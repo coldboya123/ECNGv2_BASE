@@ -43,8 +43,8 @@ public class RCV_Noti_Secure_Adapter extends RecyclerView.Adapter<RCV_Noti_Secur
             holder.txtContent.setTypeface(holder.txtContent.getTypeface(), Typeface.BOLD);
         } else {
             holder.txtStatus.setVisibility(View.VISIBLE);
-            holder.txtDate.setTypeface(holder.txtDate.getTypeface(), Typeface.ITALIC);
-            holder.txtContent.setTypeface(holder.txtContent.getTypeface(), Typeface.ITALIC);
+            holder.txtDate.setTypeface(null, Typeface.NORMAL);
+            holder.txtContent.setTypeface(null, Typeface.NORMAL);
         }
         holder.txtDate.setText(secure.getDate());
         holder.txtContent.setText(secure.getContent());

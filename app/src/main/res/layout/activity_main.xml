@@ -33,7 +33,8 @@
             app:menu="@menu/menu_bottom_bar"
             app:itemIconTint="@drawable/bottom_navigation_item_color"
             app:itemRippleColor="#9FEDA7"
-            app:labelVisibilityMode="labeled"/>
+            app:labelVisibilityMode="labeled"
+            style="@style/MyBottomNavigationView"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:id="@+id/cart"
@@ -60,12 +61,14 @@
                 android:textColor="#ffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100.000.000d"/>
+                android:text="100.000.000d"
+                android:textSize="12sp"/>
             <TextView
                 android:textColor="#ffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_5_s_n_ph_m"/>
+                android:text="@string/_5_s_n_ph_m"
+                android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

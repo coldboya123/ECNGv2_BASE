@@ -9,8 +9,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
 import com.example.ecngv2.Adapter.ViewPagerNotiAdapter;
 import com.example.ecngv2.R;
@@ -23,6 +25,7 @@ public class NotificationFragment extends Fragment {
     SwipeRefreshLayout refreshLayout;
     ViewPager viewPager;
     TabLayout tabLayout;
+    Toolbar toolbar;
 
     public NotificationFragment() {
         // Required empty public constructor
@@ -36,8 +39,16 @@ public class NotificationFragment extends Fragment {
 
         init(v);
 
-        int[] icons = {R.drawable.ic_home_primary, R.drawable.ic_order_noti, R.drawable.ic_new_product, R.drawable.ic_secure};
+        toolbar.setOnMenuItemClickListener(menuItem -> {
+            switch (menuItem.getItemId()){
+                case R.id.toolbar_noti_more:
 
+                    break;
+            }
+            return false;
+        });
+
+        int[] icons = {R.drawable.ic_home_primary, R.drawable.ic_order_noti, R.drawable.ic_new_product, R.drawable.ic_secure};
         viewPager.setAdapter(new ViewPagerNotiAdapter(getChildFragmentManager()));
         viewPager.setOffscreenPageLimit(4);
         tabLayout.setupWithViewPager(viewPager);
@@ -51,6 +62,7 @@ public class NotificationFragment extends Fragment {
 
     private void init(View v){
         refreshLayout = v.findViewById(R.id.refresh_noti);
+        toolbar = v.findViewById(R.id.toolbar);
         viewPager = v.findViewById(R.id.noti_viewpager);
         tabLayout = v.findViewById(R.id.noti_tab);
     }
