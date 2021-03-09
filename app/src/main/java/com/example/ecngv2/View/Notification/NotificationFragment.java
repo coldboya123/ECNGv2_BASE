@@ -25,7 +25,6 @@ public class NotificationFragment extends Fragment {
     SwipeRefreshLayout refreshLayout;
     ViewPager viewPager;
     TabLayout tabLayout;
-    Toolbar toolbar;
 
     public NotificationFragment() {
         // Required empty public constructor
@@ -38,15 +37,6 @@ public class NotificationFragment extends Fragment {
         View v =inflater.inflate(R.layout.fragment_noti, container, false);
 
         init(v);
-
-        toolbar.setOnMenuItemClickListener(menuItem -> {
-            switch (menuItem.getItemId()){
-                case R.id.toolbar_noti_more:
-
-                    break;
-            }
-            return false;
-        });
 
         int[] icons = {R.drawable.ic_home_primary, R.drawable.ic_order_noti, R.drawable.ic_new_product, R.drawable.ic_secure};
         viewPager.setAdapter(new ViewPagerNotiAdapter(getChildFragmentManager()));
@@ -62,7 +52,6 @@ public class NotificationFragment extends Fragment {
 
     private void init(View v){
         refreshLayout = v.findViewById(R.id.refresh_noti);
-        toolbar = v.findViewById(R.id.toolbar);
         viewPager = v.findViewById(R.id.noti_viewpager);
         tabLayout = v.findViewById(R.id.noti_tab);
     }

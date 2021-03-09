@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -19,17 +20,18 @@ import android.widget.LinearLayout;
 import com.example.ecngv2.Adapter.ViewpagerMainAdapter;
 import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Category.CategoryFragment;
+import com.example.ecngv2.View.Login.LoginActivity;
 import com.example.ecngv2.View.Notification.NotificationFragment;
 import com.example.ecngv2.View.Home.HomeFragment;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.User.UserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener, View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
 
     public static String SERVER_NAME = "http://192.168.1.239/ECNG/WebService.php";
 
-    LinearLayout cart;
+    LinearLayout cart, block_total;
     ViewPager viewPager;
     BottomNavigationView bottomNavigationView;
 
@@ -47,17 +49,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         init();
 
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        if (preferences.getString("username", "").isEmpty()){
+            bottomNavigationView.setPadding(0, 0, 0, 0);
+            block_total.getLayoutParams().width = 0;
+            cart.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, LoginActivity.class)));
+        } else {
+            float scale = getResources().getDisplayMetrics().density;
+            int padding_in_px = (int) (60 * scale + 0.5f);
+            bottomNavigationView.setPadding(0, 0, padding_in_px, 0);
+            block_total.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
+            cart.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
+        }
+
         viewPager.setAdapter(new ViewpagerMainAdapter(getSupportFragmentManager()));
         viewPager.setOffscreenPageLimit(4);
         viewPager.addOnPageChangeListener(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        cart.setOnClickListener(this);
     }
 
     private void init(){
         viewPager = findViewById(R.id.main_viewpager);
         bottomNavigationView = findViewById(R.id.bottomnavigation);
         cart = findViewById(R.id.cart);
+        block_total = findViewById(R.id.main_block_total);
     }
 
     @Override
@@ -89,10 +104,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
-    @Override
-    public void onClick(View view) {
-        startActivity(new Intent(MainActivity.this, CartActivity.class));
-    }
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

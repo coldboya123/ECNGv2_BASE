@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"/>
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:paddingEnd="70dp"
+            android:paddingEnd="60dp"
             android:paddingStart="0dp"
             android:id="@+id/bottomnavigation"
             android:layout_width="match_parent"
@@ -52,6 +52,7 @@
             android:layout_marginEnd="5dp"
             android:contentDescription="TODO" />
         <LinearLayout
+            android:id="@+id/main_block_total"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
