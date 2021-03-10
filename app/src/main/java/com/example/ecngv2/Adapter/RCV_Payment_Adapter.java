@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Object.PaymentProduct;
+import com.example.ecngv2.Model.Object.ProductCartItem;
 import com.example.ecngv2.R;
 
 import java.util.List;
@@ -18,9 +18,9 @@ import java.util.List;
 public class RCV_Payment_Adapter extends RecyclerView.Adapter<RCV_Payment_Adapter.Holder> {
 
     Context context;
-    List<PaymentProduct> list;
+    List<ProductCartItem> list;
 
-    public RCV_Payment_Adapter(Context context, List<PaymentProduct> list) {
+    public RCV_Payment_Adapter(Context context, List<ProductCartItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -34,11 +34,11 @@ public class RCV_Payment_Adapter extends RecyclerView.Adapter<RCV_Payment_Adapte
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        PaymentProduct  product = list.get(position);
+        ProductCartItem product = list.get(position);
         holder.img.setImageResource(product.getImg());
         holder.name.setText(product.getName());
         holder.num.setText("Số lượng: "+ product.getNum());
-        holder.price.setText(product.getPrice());
+        holder.price.setText(String.format("%,d", product.getPrice())+" đ");
     }
 
     @Override

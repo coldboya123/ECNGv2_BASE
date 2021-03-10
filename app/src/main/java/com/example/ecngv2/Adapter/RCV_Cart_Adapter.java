@@ -4,27 +4,33 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecngv2.Model.Object.Cart;
+import com.example.ecngv2.Adapter.Handle.HandleRCVCartItemAdapter;
+import com.example.ecngv2.Adapter.Handle.HandleRCVCartAdapter;
+import com.example.ecngv2.Model.Object.ProductCart;
 import com.example.ecngv2.R;
+import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.List;
 
-public class RCV_Cart_Adapter extends RecyclerView.Adapter<RCV_Cart_Adapter.Holder> {
+public class RCV_Cart_Adapter extends RecyclerView.Adapter<RCV_Cart_Adapter.Holder> implements HandleRCVCartItemAdapter {
 
     Context context;
-    List<Cart> list;
+    List<ProductCart> list;
+    RecyclerView recyclerView;
+    HandleRCVCartAdapter handle;
 
-    public RCV_Cart_Adapter(Context context, List<Cart> list) {
+    public RCV_Cart_Adapter(Context context, List<ProductCart> list, HandleRCVCartAdapter handle) {
         this.context = context;
         this.list = list;
+        this.handle = handle;
     }
 
     @NonNull
@@ -36,18 +42,18 @@ public class RCV_Cart_Adapter extends RecyclerView.Adapter<RCV_Cart_Adapter.Hold
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        Cart cart = list.get(position);
-        holder.img.setImageResource(cart.getImg());
+        ProductCart cart = list.get(position);
         holder.shop.setText(cart.getShop());
-        holder.product.setText(cart.getProduct());
-        holder.price.setText(cart.getPrice());
-        holder.btn_del.setOnClickListener(view ->{
-//            holder.item.setVisibility(View.GONE);
-            list.remove(position);
+        holder.recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+        holder.recyclerView.setAdapter(new RCV_Cart_Item_Adapter(context, cart.getList(), this));
+        holder.check.setOnCheckedChangeListener((compoundButton, b) -> {
+            for (int i=0; i<cart.getList().size(); i++){
+                cart.getList().get(i).setCheck(b);
+            }
             notifyDataSetChanged();
-            //ád
-            int asd;
+            handle.UpdateTotalPrice(getTotalPrice());
         });
+        recyclerView = holder.recyclerView;
     }
 
     @Override
@@ -55,19 +61,46 @@ public class RCV_Cart_Adapter extends RecyclerView.Adapter<RCV_Cart_Adapter.Hold
         return list.size();
     }
 
+    @Override
+    public void removeItem() {
+        for (int i=0; i<list.size(); i++){
+            if (list.get(i).getList().size()==0){
+                list.remove(i);
+                notifyDataSetChanged();
+            }
+        }
+    }
+
+    @Override
+    public void updateTotalPrice() {
+        handle.UpdateTotalPrice(getTotalPrice());
+
+    }
+
+    public int getTotalPrice(){
+        int total = 0;
+        for (int i=0; i<list.size(); i++){
+            for (int j=0; j<list.get(i).getList().size(); j++){
+                if (list.get(i).getList().get(j).isCheck()){
+                    total += (list.get(i).getList().get(j).getPrice() * list.get(i).getList().get(j).getNum());
+                }
+            }
+        }
+        return total;
+    }
+
     public class Holder extends RecyclerView.ViewHolder {
-        ImageView img;
-        TextView shop, product, price;
-        ImageButton btn_del;
-        CardView item;
+        RecyclerView recyclerView;
+        TextView shop;
+        ConstraintLayout block;
+        MaterialCheckBox check;
+
         public Holder(@NonNull View itemView) {
             super(itemView);
-            img = itemView.findViewById(R.id.cart_img);
-            shop = itemView.findViewById(R.id.cart_shop_name);
-            product = itemView.findViewById(R.id.cart_product_name);
-            price = itemView.findViewById(R.id.cart_price);
-            btn_del = itemView.findViewById(R.id.cart_btn_del);
-            item = itemView.findViewById(R.id.cart_item);
+            shop = itemView.findViewById(R.id.cart_shop);
+            recyclerView = itemView.findViewById(R.id.rcv_cart);
+            block = itemView.findViewById(R.id.cart_block);
+            check = itemView.findViewById(R.id.cart_check);
         }
     }
 }

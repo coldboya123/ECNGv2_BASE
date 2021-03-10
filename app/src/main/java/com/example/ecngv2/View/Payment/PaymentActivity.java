@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ecngv2.Adapter.RCV_Payment_Adapter;
-import com.example.ecngv2.Model.Object.PaymentProduct;
+import com.example.ecngv2.Model.Object.ProductCartItem;
 import com.example.ecngv2.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -36,7 +35,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     EditText voucher;
     ImageButton btn_close, edit_address_1, edit_address_2, hide_edit_address_dialog;
     TextView btn_change_address, btn_change_shipping, btn_change_payment;
-    List<PaymentProduct> list;
+    List<ProductCartItem> list;
     BottomSheetDialog address_dialog, shipping_dialog, payment_dialog, edit_address_dialog;
     ImageButton hide_address_dialog, hide_shipping_dialog, hide_payment_dialog;
     RadioButton radio_address_1, radio_address_2, radio_shipping_1, radio_shipping_2, radio_shipping_3, radio_shipping_checked;
@@ -113,12 +112,12 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         spinner_xa.setAdapter(adapterXa);
     }
 
-    private void loadData(List<PaymentProduct> list){
-        list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
-        list.add(new PaymentProduct(R.drawable.chungcu, 1, "Biệt thự siêu to khổng lồ", "10.000.000.000 đ"));
-        list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
-        list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
-        list.add(new PaymentProduct(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", "10.000.000 đ"));
+    private void loadData(List<ProductCartItem> list){
+        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "Đen", true));
+        list.add(new ProductCartItem(R.drawable.chungcu, 1, "Biệt thự siêu to khổng lồ", 1000000000, "1000m2", true));
+        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "16GB", true));
+        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "32GB", true));
+        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "64GB", true));
     }
 
     private void init(){
