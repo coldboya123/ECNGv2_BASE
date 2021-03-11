@@ -21,30 +21,34 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.ecngv2.Adapter.Handle.HandleRCVPaymentAdapter;
 import com.example.ecngv2.Adapter.RCV_Payment_Adapter;
+import com.example.ecngv2.Model.Object.ProductCart;
 import com.example.ecngv2.Model.Object.ProductCartItem;
+import com.example.ecngv2.Model.Object.ProductPayment;
 import com.example.ecngv2.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaymentActivity extends AppCompatActivity implements View.OnClickListener {
+public class PaymentActivity extends AppCompatActivity implements View.OnClickListener, HandleRCVPaymentAdapter {
 
     RecyclerView rcv;
     EditText voucher;
     ImageButton btn_close, edit_address_1, edit_address_2, hide_edit_address_dialog;
-    TextView btn_change_address, btn_change_shipping, btn_change_payment;
-    List<ProductCartItem> list;
-    BottomSheetDialog address_dialog, shipping_dialog, payment_dialog, edit_address_dialog;
-    ImageButton hide_address_dialog, hide_shipping_dialog, hide_payment_dialog;
-    RadioButton radio_address_1, radio_address_2, radio_shipping_1, radio_shipping_2, radio_shipping_3, radio_shipping_checked;
+    TextView btn_change_address, btn_change_payment, total;
+    List<ProductPayment> list;
+    List<ProductCartItem> cartItems;
+    BottomSheetDialog address_dialog, payment_dialog, edit_address_dialog;
+    ImageButton hide_address_dialog, hide_payment_dialog;
+    RadioButton radio_address_1, radio_address_2;
     ColorStateList colorStateList;
     LinearLayout payment_item_1, payment_item_2, payment_item_3, payment_item_selected;
     Spinner spinner_tinh, spinner_huyen, spinner_xa;
     String[] tinh, huyen, xa;
     AppCompatButton btn_apply_edit_address;
-    ConstraintLayout radio_shipping_item1, radio_shipping_item2, radio_shipping_item3;
+    RCV_Payment_Adapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +63,6 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         address_dialog = new BottomSheetDialog(this);
         address_dialog.setContentView(R.layout.dialog_choose_address);
 
-        shipping_dialog = new BottomSheetDialog(this);
-        shipping_dialog.setContentView(R.layout.dialog_choose_shipping);
-
         payment_dialog = new BottomSheetDialog(this);
         payment_dialog.setContentView(R.layout.dialog_choose_payment);
 
@@ -69,10 +70,12 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         edit_address_dialog.setContentView(R.layout.dialog_edit_address);
 
         init();
-        loadData(list);
-
+        loadData();
+        adapter = new RCV_Payment_Adapter(this, list, this);
         rcv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        rcv.setAdapter(new RCV_Payment_Adapter(this, list));
+        rcv.setAdapter(adapter);
+
+        total.setText(String.format("%,d", getTotal(list))+" đ");
 
         btn_close.setOnClickListener(this);
 
@@ -86,15 +89,6 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         edit_address_2.setOnClickListener(this);
         hide_edit_address_dialog.setOnClickListener(this);
         btn_apply_edit_address.setOnClickListener(this);
-
-        btn_change_shipping.setOnClickListener(this);
-        hide_shipping_dialog.setOnClickListener(this);
-        radio_shipping_item1.setOnClickListener(this);
-        radio_shipping_item2.setOnClickListener(this);
-        radio_shipping_item3.setOnClickListener(this);
-        radio_shipping_1.setButtonTintList(colorStateList);
-        radio_shipping_2.setButtonTintList(colorStateList);
-        radio_shipping_3.setButtonTintList(colorStateList);
 
         btn_change_payment.setOnClickListener(this);
         hide_payment_dialog.setOnClickListener(this);
@@ -112,17 +106,36 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         spinner_xa.setAdapter(adapterXa);
     }
 
-    private void loadData(List<ProductCartItem> list){
-        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "Đen", true));
-        list.add(new ProductCartItem(R.drawable.chungcu, 1, "Biệt thự siêu to khổng lồ", 1000000000, "1000m2", true));
-        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "16GB", true));
-        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "32GB", true));
-        list.add(new ProductCartItem(R.drawable.laptop1, 2, "Điện thoại Ipad 12 pro 2020", 10000000, "64GB", true));
+    private int getTotal(List<ProductPayment> list){
+        int total = 0;
+        for (int i=0; i<list.size(); i++){
+            for (int j=0; j<list.get(i).getList().size(); j++){
+                total += (list.get(i).getList().get(j).getPrice() * list.get(i).getList().get(j).getNum());
+            }
+            total += list.get(i).getShipping();
+        }
+        return total;
+    }
+
+    private void loadData(){
+        list = new ArrayList<>();
+
+        cartItems = new ArrayList<>();
+        cartItems.add(new ProductCartItem(R.drawable.laptop2, 2, "Laptop Dell Latitude 1280", 30000000, "Đen", true));
+        cartItems.add(new ProductCartItem(R.drawable.laptop3, 1, "Laptop Dell Latitude 1280", 30000000, "Xanh", true));
+        cartItems.add(new ProductCartItem(R.drawable.laptop5, 1, "Laptop Dell Latitude 1280", 30000000, "Đỏ", true));
+        list.add(new ProductPayment("apple_long_butterfly", cartItems, 0));
+
+        cartItems = new ArrayList<>();
+        cartItems.add(new ProductCartItem(R.drawable.dienthoai2, 2, "Laptop Dell Latitude 1280", 30000000, "RAM 12GB", true));
+        cartItems.add(new ProductCartItem(R.drawable.dienthoai1, 1, "Laptop Dell Latitude 1280", 30000000, "RAM 12GB", true));
+        list.add(new ProductPayment("toi_tai_tu", cartItems, 0));
     }
 
     private void init(){
+        total = findViewById(R.id.payment_total);
+
         rcv = findViewById(R.id.rcv_payment);
-        voucher = findViewById(R.id.payment_edit_voucher);
         btn_close = findViewById(R.id.payment_btn_close);
         list = new ArrayList<>();
         btn_change_address = findViewById(R.id.payment_txtchangeadd);
@@ -137,18 +150,6 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         spinner_xa = edit_address_dialog.findViewById(R.id.spinner_xa);
         btn_apply_edit_address = edit_address_dialog.findViewById(R.id.edit_address_btn_apply);
 
-        btn_change_shipping = findViewById(R.id.payment_txtchangeship);
-        hide_shipping_dialog = shipping_dialog.findViewById(R.id.dialog_chooseshipping_hide);
-        radio_shipping_1 = shipping_dialog.findViewById(R.id.radio_btn_shipping1);
-        radio_shipping_2 = shipping_dialog.findViewById(R.id.radio_btn_shipping2);
-        radio_shipping_3 = shipping_dialog.findViewById(R.id.radio_btn_shipping3);
-        radio_shipping_checked = radio_shipping_1;
-        radio_shipping_checked.setChecked(true);
-        radio_shipping_item1 = shipping_dialog.findViewById(R.id.radio_shipping_item1);
-        radio_shipping_item2 = shipping_dialog.findViewById(R.id.radio_shipping_item2);
-        radio_shipping_item3 = shipping_dialog.findViewById(R.id.radio_shipping_item3);
-
-        btn_change_payment = findViewById(R.id.payment_txtchangepayment);
         hide_payment_dialog = payment_dialog.findViewById(R.id.dialog_choosepayment_hide);
         payment_item_1 = payment_dialog.findViewById(R.id.payment_choosepayment_item1);
         payment_item_2 = payment_dialog.findViewById(R.id.payment_choosepayment_item2);
@@ -196,30 +197,6 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.edit_address_btn_close:
                 edit_address_dialog.hide();
                 break;
-            case R.id.payment_txtchangeship:
-                shipping_dialog.show();
-                break;
-            case R.id.dialog_chooseshipping_hide:
-                shipping_dialog.hide();
-                break;
-            case R.id.radio_shipping_item1:
-                radio_shipping_1.setChecked(true);
-                radio_shipping_checked.setChecked(false);
-                radio_shipping_checked = radio_shipping_1;
-                break;
-            case R.id.radio_shipping_item2:
-                radio_shipping_2.setChecked(true);
-                radio_shipping_checked.setChecked(false);
-                radio_shipping_checked = radio_shipping_2;
-                break;
-            case R.id.radio_shipping_item3:
-                radio_shipping_3.setChecked(true);
-                radio_shipping_checked.setChecked(false);
-                radio_shipping_checked = radio_shipping_3;
-                break;
-            case R.id.payment_txtchangepayment:
-                payment_dialog.show();
-                break;
             case R.id.dialog_choosepayment_hide:
                 payment_dialog.hide();
                 break;
@@ -245,5 +222,10 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         tinh = new String[]{"Chọn Tỉnh/Thành phố", "TP.Hồ Chí Minh", "Hà Nội", "Cần Thơ", "Đà Nẵng", "Ninh Thuận", "Bạc Liêu", "..."};
         huyen = new String[]{"Chọn Quận/Huyện", "Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8"};
         xa = new String[]{"Chọn Phường/Xã", "Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7"};
+    }
+
+    @Override
+    public void updateTotal() {
+        total.setText(String.format("%,d", getTotal(list))+" đ");
     }
 }

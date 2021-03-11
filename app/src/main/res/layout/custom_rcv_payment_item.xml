@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_2"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/payment_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginVertical="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dienthoai2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/payment_product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/payment_img"
+        app:layout_constraintStart_toEndOf="@id/payment_img"
+        app:layout_constraintTop_toTopOf="@id/payment_img"
+        app:layout_constraintEnd_toStartOf="@id/payment_product_price">
+
+        <TextView
+            android:id="@+id/payment_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="Laptop Dell Latitude "
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/payment_product_property"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="Phân loại: Đen"
+            android:textSize="12sp"
+            android:paddingHorizontal="5dp"
+            android:background="@color/dark_2"/>
+
+        <TextView
+            android:id="@+id/payment_product_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số lượng: 2"
+            android:paddingTop="5dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/payment_product_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/payment_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="30.000.000đ"
+        android:textColor="@color/primary_color" />
+</androidx.constraintlayout.widget.ConstraintLayout>

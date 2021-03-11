@@ -1,159 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="20dp"
-    android:backgroundTint="@color/white">
-    <TextView
-        android:id="@+id/dialog_txtchoose_shipping"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Chọn đơn vị vận chuyển"
-        android:textSize="16sp"/>
-    <ImageButton
-        android:id="@+id/dialog_chooseshipping_hide"
-        app:layout_constraintTop_toTopOf="@id/dialog_txtchoose_shipping"
-        app:layout_constraintBottom_toBottomOf="@id/dialog_txtchoose_shipping"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_down_arrow"
-        android:backgroundTint="@color/white"/>
-    <RadioGroup
-        app:layout_constraintTop_toBottomOf="@id/dialog_txtchoose_shipping"
-        app:layout_constraintStart_toStartOf="parent"
+    android:background="@color/dark_2">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/dialog_shipping_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/radio_shipping_item1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-            <RadioButton
-                app:layout_constraintTop_toTopOf="@id/radio_shipping1"
-                app:layout_constraintBottom_toBottomOf="@id/radio_shipping1"
-                app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/radio_btn_shipping1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dialog_chooseshipping_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/border_primary_color"
+                android:text="Đồng ý"
+                android:layout_marginEnd="5dp"
+                android:textColor="@color/primary_color"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="@id/dialog_shipping_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/dialog_shipping_txt" />
+
+            <TextView
+                android:id="@+id/dialog_shipping_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"/>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/radio_shipping1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/radio_btn_shipping1"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgroung_radius_dark_2"
-                android:padding="10dp">
-                <ImageView
-                    android:id="@+id/radio_shipping_img1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_ghn"/>
-                <TextView
-                    android:id="@+id/radius_shipping1"
-                    app:layout_constraintTop_toTopOf="@id/radio_shipping_img1"
-                    app:layout_constraintStart_toEndOf="@id/radio_shipping_img1"
-                    app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:layout_marginStart="20dp"
-                    android:text="Giao hàng nhanh"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:gravity="center|start"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:text="Chọn đơn vị vận chuyển"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/radio_shipping_item2"
-            android:layout_width="match_parent"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/radio_shipping_block1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="10dp"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/dialog_shipping_appbar">
+
+        <RadioButton
+            android:id="@+id/radio_btn_shipping1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-            <RadioButton
-                app:layout_constraintTop_toTopOf="@id/radio_shipping2"
-                app:layout_constraintBottom_toBottomOf="@id/radio_shipping2"
-                app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/radio_btn_shipping2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/radio_shipping2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/radio_btn_shipping2"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/backgroung_radius_dark_2"
-                android:padding="10dp">
-                <ImageView
-                    android:id="@+id/radio_shipping_img2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_ghtk"/>
-                <TextView
-                    android:id="@+id/radius_shipping2"
-                    app:layout_constraintTop_toTopOf="@id/radio_shipping_img2"
-                    app:layout_constraintStart_toEndOf="@id/radio_shipping_img2"
-                    app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"
-                    android:layout_marginStart="20dp"
-                    android:text="Giao hàng tiết kiệm"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:layout_constraintBottom_toBottomOf="@id/radio_shipping1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/radio_shipping1"
+            android:clickable="false"
+            android:focusable="false"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/radio_shipping_item3"
-            android:layout_width="match_parent"
+            android:id="@+id/radio_shipping1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-            <RadioButton
-                app:layout_constraintTop_toTopOf="@id/radio_shipping3"
-                app:layout_constraintBottom_toBottomOf="@id/radio_shipping3"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/radio_btn_shipping1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/radio_shipping_img1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo_ghn"
                 app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/radio_btn_shipping3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/radio_shipping3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/radio_btn_shipping3"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/backgroung_radius_dark_2"
-                android:padding="10dp">
-                <ImageView
-                    android:id="@+id/radio_shipping_img3"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_ghn1"/>
+                app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img1"
+                app:layout_constraintStart_toEndOf="@id/radio_shipping_img1"
+                app:layout_constraintTop_toTopOf="@id/radio_shipping_img1">
+
                 <TextView
-                    android:id="@+id/radius_shipping3"
-                    app:layout_constraintTop_toTopOf="@id/radio_shipping_img3"
-                    app:layout_constraintStart_toEndOf="@id/radio_shipping_img3"
-                    app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img3"
+                    android:id="@+id/radius_shipping_name1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Giao hàng nhanh"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Giao hàng nhanh"/>
+                    android:text="32.000 đ"
+                    android:textColor="@color/primary_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/radius_shipping_name1"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_time1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radius_shipping_name1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/radio_shipping_block2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/radio_shipping_block1">
+
+        <RadioButton
+            android:id="@+id/radio_btn_shipping2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:layout_constraintBottom_toBottomOf="@id/radio_shipping2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/radio_shipping2"
+            android:clickable="false"
+            android:focusable="false"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/radio_shipping2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/radio_btn_shipping2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/radio_shipping_img2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo_ghtk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img2"
+                app:layout_constraintStart_toEndOf="@id/radio_shipping_img2"
+                app:layout_constraintTop_toTopOf="@id/radio_shipping_img2">
+
+                <TextView
+                    android:id="@+id/radius_shipping_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Giao hàng tiết kiệm"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_price2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="38.000 đ"
+                    android:textColor="@color/primary_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/radius_shipping_name2"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radius_shipping_name2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/radio_shipping_block3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="10dp"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/radio_shipping_block2">
+
+        <RadioButton
+            android:id="@+id/radio_btn_shipping3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            app:layout_constraintBottom_toBottomOf="@id/radio_shipping3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/radio_shipping3"
+            android:clickable="false"
+            android:focusable="false"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/radio_shipping3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/radio_btn_shipping3"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/radio_shipping_img3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo_grabexpress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/radio_shipping_img3"
+                app:layout_constraintStart_toEndOf="@id/radio_shipping_img3"
+                app:layout_constraintTop_toTopOf="@id/radio_shipping_img3">
+
+                <TextView
+                    android:id="@+id/radius_shipping_name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="GrabExpress"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_price3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="52.000 đ"
+                    android:textColor="@color/primary_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/radius_shipping_name3"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/radius_shipping_time3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/radius_shipping_name3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

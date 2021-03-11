@@ -49,7 +49,7 @@
         android:layout_marginStart="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@id/cart_img"
-        app:layout_constraintEnd_toStartOf="@id/dialog_number"
+        app:layout_constraintEnd_toStartOf="@id/cart_number"
         app:layout_constraintStart_toEndOf="@id/cart_img"
         app:layout_constraintTop_toTopOf="@id/cart_img">
 

@@ -47,8 +47,8 @@
         android:id="@+id/payment_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/payment_appbar"
-        app:layout_constraintBottom_toTopOf="@id/payment_payment">
+        app:layout_constraintBottom_toTopOf="@id/payment_payment"
+        app:layout_constraintTop_toBottomOf="@id/payment_appbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,35 +58,8 @@
             android:paddingBottom="5dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
-
-                <TextView
-                    android:id="@+id/payment_txtinfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Thông tin đơn hàng"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv_payment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintHeight_max="250dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/dark_2"
-                    app:layout_constraintTop_toBottomOf="@id/payment_txtinfo"/>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:background="@color/white"
                 android:padding="10dp">
 
@@ -96,8 +69,11 @@
                     android:layout_height="wrap_content"
                     android:text="Địa chỉ nhận hàng"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
+                    android:gravity="center"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/ic_location"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,8 +101,9 @@
                 <TextView
                     android:id="@+id/payment_address"
                     android:layout_width="0dp"
-                    android:paddingBottom="10dp"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:textSize="13sp"
                     android:text="99A Cộng Hòa, phường 4, quận Tân Bình, thành phố Hồ Chí Minh"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -136,188 +113,123 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:background="@color/white"
-                android:paddingHorizontal="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="20dp">
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
-                    android:id="@+id/payment_txtshipping"
+                    android:id="@+id/payment_txtinfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đơn vị vận chuyển"
+                    android:text="Thông tin đơn hàng"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
                     android:textStyle="bold"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/payment_txtchangeship"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_payment"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thay đổi"
-                    android:textColor="@color/primary_color"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_txtshipping"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/payment_txtshipping" />
-
-                <ImageView
-                    android:id="@+id/payment_shipping_img"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/logo_ghn"
-                    app:layout_constraintStart_toStartOf="@id/payment_txtshipping"
-                    app:layout_constraintTop_toBottomOf="@id/payment_txtshipping" />
-
-                <TextView
-                    android:id="@+id/payment_shipping_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:text="Giao hàng nhanh"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_shipping_img"
-                    app:layout_constraintStart_toEndOf="@id/payment_shipping_img"
-                    app:layout_constraintTop_toTopOf="@id/payment_shipping_img" />
-
-                <TextView
-                    android:id="@+id/payment_shipping_cost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:text="150.000 đ"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_shipping_img"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/payment_shipping_img" />
+                    android:layout_marginTop="10dp"
+                    android:background="@color/dark_2"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txtinfo" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/white"
                 android:paddingHorizontal="10dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="20dp">
-
                 <TextView
-                    android:id="@+id/payment_txtbank"
+                    android:id="@+id/payment_txtmethod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Phương thức thanh toán"
                     android:textColor="@color/black"
-                    android:textSize="17sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/payment_txtchangepayment"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/payment_method_1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Thay đổi"
-                    android:textColor="@color/primary_color"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_txtbank"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/payment_txtbank" />
-
-                <ImageView
-                    android:id="@+id/payment_bank_img"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="15dp"
-                    android:src="@drawable/logo_techcombank"
-                    app:layout_constraintStart_toStartOf="@id/payment_txtbank"
-                    app:layout_constraintTop_toBottomOf="@id/payment_txtbank" />
-
-                <TextView
-                    android:id="@+id/payment_bank_name"
-                    android:layout_width="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingHorizontal="10dp"
+                    android:background="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@id/payment_txtmethod">
+                    <RadioButton
+                        android:id="@+id/radio_btn_payment_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleX="0.9"
+                        android:scaleY="0.9"
+                        app:layout_constraintBottom_toBottomOf="@id/payment_method_name_1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/payment_method_name_1"
+                        android:clickable="false"
+                        android:focusable="false"/>
+                    <TextView
+                        android:id="@+id/payment_method_name_1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/radio_btn_payment_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="Thanh toán VNPay"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/payment_method_2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
-                    android:text="Techcombank"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_bank_img"
-                    app:layout_constraintStart_toEndOf="@id/payment_bank_img"
-                    app:layout_constraintTop_toTopOf="@id/payment_bank_img" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:background="@color/white"
-                android:padding="10dp">
-
-                <TextView
-                    android:id="@+id/payment_txtvoucher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mã khuyến mãi thành viên"
-                    android:textColor="@color/primary_color"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/payment_voucher_hint"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/radius"
-                    android:backgroundTint="@color/dark_1"
-                    android:gravity="center"
-                    android:text=" ? "
-                    android:textColor="@color/primary_color"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_txtvoucher"
-                    app:layout_constraintStart_toEndOf="@id/payment_txtvoucher"
-                    app:layout_constraintTop_toTopOf="@id/payment_txtvoucher" />
-
-                <EditText
-                    android:id="@+id/payment_edit_voucher"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/edittext_background"
-                    android:drawableLeft="@drawable/ic_cardbank"
-                    android:textColor="@color/primary_color"
-                    android:padding="5dp"
-                    android:drawablePadding="10dp"
-                    android:textAllCaps="true"
-                    android:textCursorDrawable="@null"
-                    app:layout_constraintEnd_toStartOf="@id/payment_btn_apply"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/payment_txtvoucher"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/payment_btn_apply"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:background="@drawable/border_radius_primary_color"
-                    android:text="Áp dụng"
-                    android:textAllCaps="false"
-                    android:textColor="@color/primary_color"
-                    app:layout_constraintBottom_toBottomOf="@id/payment_edit_voucher"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/payment_edit_voucher"
-                    app:strokeColor="@color/primary_color" />
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingHorizontal="10dp"
+                    android:background="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:layout_constraintTop_toBottomOf="@id/payment_method_1">
+                    <RadioButton
+                        android:id="@+id/radio_btn_payment_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleX="0.9"
+                        android:scaleY="0.9"
+                        app:layout_constraintBottom_toBottomOf="@id/payment_method_name_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/payment_method_name_2"
+                        android:clickable="false"
+                        android:focusable="false"/>
+                    <TextView
+                        android:id="@+id/payment_method_name_2"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/radio_btn_payment_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="Thanh toán trực tiếp"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/dark_2"
         app:layout_constraintBottom_toTopOf="@id/payment_payment" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/payment_payment"
         android:layout_width="match_parent"
@@ -328,7 +240,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/cart_txttotal"
+            android:id="@+id/payment_txttotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
@@ -338,11 +250,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/cart_total"
+            android:id="@+id/payment_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingEnd="10dp"
-            android:text="10.090.150.000 đ"
+            android:text="0 đ"
             android:textColor="@color/primary_color"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -350,7 +262,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/cart_btn_payment"
+            android:id="@+id/payment_btn_payment"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_margin="10dp"
@@ -359,6 +271,6 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/cart_total" />
+            app:layout_constraintTop_toBottomOf="@id/payment_total" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
