@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="black_primary">#1B1A1A</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_color2">#0f7519</color>
     <color name="primary_color1">#00790C</color>
     <color name="primary_color">#00AA10</color>
     <color name="primary_color_light">#E6FDE9</color>
@@ -19,4 +20,5 @@
     <color name="bg_dark_1">#F8F8F8</color>
     <color name="colorGoogle">#C94131</color>
     <color name="colorWarning">#FF5722</color>
+    <color name="yellow">#FFC120</color>
 </resources>

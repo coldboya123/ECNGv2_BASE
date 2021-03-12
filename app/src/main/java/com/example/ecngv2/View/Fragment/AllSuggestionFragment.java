@@ -39,8 +39,8 @@ public class AllSuggestionFragment extends Fragment {
         return v;
     }
     private void loadData(List<Product> list_products){
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG ZT125 ECNG ZT125 ECNG", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG.ZT125 ECNG ZT125 ECNG", "20.000.000d", (float) 4.5));
         list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
         list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", "20.000.000d", (float) 4.5));
         list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", "20.000.000d", (float) 4.5));

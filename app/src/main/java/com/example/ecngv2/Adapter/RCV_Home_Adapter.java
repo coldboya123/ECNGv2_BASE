@@ -76,17 +76,17 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((Vendor_Holder) holder).recyclerViewvendor.setAdapter(rcv_vendor_adapter);
         } else if (holder instanceof HLProduct_Holder){
             List<Product> list_products = new ArrayList<>();
-            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-            list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre...", "999.000.000d", (float) 5));
-            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
+            list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
+            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
             RCV_HLProduct_Adapter rcv_hlProduct_adapter = new RCV_HLProduct_Adapter(context, list_products);
             ((HLProduct_Holder) holder).recyclerView_HLProduct.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
             ((HLProduct_Holder) holder).recyclerView_HLProduct.setAdapter(rcv_hlProduct_adapter);
