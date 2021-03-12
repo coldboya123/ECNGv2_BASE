@@ -133,7 +133,6 @@ public class RCV_Payment_Adapter extends RecyclerView.Adapter<RCV_Payment_Adapte
         radio_shipping_2 = shipping_dialog.findViewById(R.id.radio_btn_shipping2);
         radio_shipping_3 = shipping_dialog.findViewById(R.id.radio_btn_shipping3);
         radio_shipping_checked = radio_shipping_1;
-//        radio_shipping_checked.setChecked(true);
         radio_shipping_block1 = shipping_dialog.findViewById(R.id.radio_shipping_block1);
         radio_shipping_block2 = shipping_dialog.findViewById(R.id.radio_shipping_block2);
         radio_shipping_block3 = shipping_dialog.findViewById(R.id.radio_shipping_block3);

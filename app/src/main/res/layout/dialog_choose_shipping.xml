@@ -243,7 +243,7 @@
                 android:id="@+id/radio_shipping_img3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/logo_grabexpress"
+                android:src="@drawable/logo_ahamove"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -259,7 +259,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="GrabExpress"
+                    android:text="Ahamove"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
