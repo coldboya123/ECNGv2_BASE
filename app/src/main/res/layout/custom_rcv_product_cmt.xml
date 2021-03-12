@@ -11,15 +11,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/radius_background_dark"/>
+        android:layout_height="50dp"/>
     <TextView
         android:id="@+id/product_cmt_cus_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/product_cmt_cus_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anh Huy"
         android:paddingHorizontal="10dp"
         android:paddingTop="5dp"
         android:textColor="@color/black"/>
@@ -34,8 +32,7 @@
         android:isIndicator="true"
         android:numStars="5"
         android:paddingTop="0dp"
-        style="@style/CustomRatingBar"
-        android:rating="5"/>
+        style="@style/CustomRatingBar"/>
     <TextView
         android:layout_marginTop="5dp"
         android:id="@+id/product_cmt_content"
@@ -44,8 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:shadowColor="@color/black"
-        android:text="Tuy hàng mã VN/A luôn trong tình trạng cháy hàng, các Store chỉ bán cho khách cọc với giá 32-33tr. Trên app Tiki báo hết hàng liên tục mình khá bực mình nhưng cứ 1 vài tiếng Tiki lại cập nhật lại tồn kho nên cũng mua được. Đặt 10h30..."/>
+        android:shadowColor="@color/black"/>
     <LinearLayout
         android:id="@+id/product_cmt_img"
         android:layout_width="0dp"
@@ -59,15 +55,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/laptop4"
             android:scaleType="centerCrop"/>
         <ImageView
             android:id="@+id/product_cmt_img2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
-            android:src="@drawable/laptop5"/>
+            android:scaleType="centerCrop"/>
     </LinearLayout>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/product_cmt_btnlike"

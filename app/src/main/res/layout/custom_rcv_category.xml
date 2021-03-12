@@ -17,8 +17,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:scaleType="centerInside"
-            android:id="@+id/cate_img"
-            android:src="@drawable/cate_batdongsan"/>
+            android:id="@+id/cate_img"/>
     </androidx.cardview.widget.CardView>
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
         android:id="@+id/cate_title"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:text="bat dong san"
         android:maxLines="1"
         android:textSize="13sp"
         android:gravity="center"/>

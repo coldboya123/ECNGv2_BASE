@@ -18,7 +18,6 @@
                 android:id="@+id/img_product"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                android:src="@drawable/laptop"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -30,7 +29,6 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/img_product"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="PRODUCT NAME PRODUCT NAME"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
@@ -51,7 +49,6 @@
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(999+)"
                 android:textColor="#FFC120"
                 app:layout_constraintTop_toTopOf="@+id/rating_product"
                 app:layout_constraintStart_toEndOf="@id/rating_product"
@@ -63,7 +60,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100.000.000d"
                 android:layout_marginStart="10dp"
                 android:textColor="#014909"/>
         </androidx.constraintlayout.widget.ConstraintLayout>

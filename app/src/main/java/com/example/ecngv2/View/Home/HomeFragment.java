@@ -107,7 +107,7 @@ public class HomeFragment extends Fragment {
 
         //Suggestion
         View view;
-        int numtab = 9;
+        int numtab = 6;
         for (int i=0; i<numtab; i++){
             view = LayoutInflater.from(context).inflate(R.layout.custom_icon_tablayout, null);
             int icon = context.getResources().getIdentifier("ic_suggestion_"+ i, "drawable",context.getPackageName());
