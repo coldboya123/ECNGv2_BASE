@@ -1,16 +1,9 @@
 package com.example.ecngv2.View.Product;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -23,11 +16,18 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.ecngv2.Adapter.RCV_Product_Adapter;
 import com.example.ecngv2.Adapter.SliderViewProductAdapter;
 import com.example.ecngv2.R;
-import com.example.ecngv2.View.Shop.ShopActivity;
 import com.example.ecngv2.View.Cart.CartActivity;
+import com.example.ecngv2.View.Login.LoginActivity;
+import com.example.ecngv2.View.Shop.ShopActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -189,10 +189,15 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.product_btn_cart:
-            case R.id.dialog_product_buynow:
                 startActivity(new Intent(ProductActivity.this, CartActivity.class));
                 break;
-
+            case R.id.dialog_product_buynow:
+                SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+                if (preferences.getString("username", "").isEmpty()) {
+                    startActivity(new Intent(ProductActivity.this, LoginActivity.class));
+                } else
+                    startActivity(new Intent(ProductActivity.this, CartActivity.class));
+                break;
             case R.id.dialog_product_addtocart:
                 dialog.hide();
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
