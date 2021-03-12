@@ -2,16 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/toolbar_noti_chat"
-        android:icon="@drawable/ic_chat"
-        android:title="Chat"
         android:contentDescription="Chat"
-        android:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_chat"
+        android:iconTint="@color/white"
+        android:title="Chat"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/toolbar_noti_more"
-        android:icon="@drawable/ic_more"
-        android:title="More"
         android:contentDescription="More"
-        android:iconTint="#FFFFFF"
+        android:icon="@drawable/ic_more"
+        android:iconTint="@color/white"
+        android:title="More"
         app:showAsAction="ifRoom" />
 </menu>

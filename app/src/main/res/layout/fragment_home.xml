@@ -94,7 +94,7 @@
                     android:id="@+id/space"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:background="#ffffff"
+                    android:background="@color/white"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/slide_banner">
 
@@ -137,7 +137,7 @@
                     app:layout_constraintTop_toBottomOf="@id/recycler_home"
                     app:tabGravity="fill"
                     app:tabMinWidth="72dp"
-                    app:tabMode="scrollable"></com.google.android.material.tabs.TabLayout>
+                    app:tabMode="scrollable" />
 
                 <FrameLayout
                     android:id="@+id/suggestion_content"
@@ -155,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="40dp"
-        android:background="#ffff"
+        android:background="@color/white"
         app:layout_anchor="@id/space"
         app:layout_anchorGravity="bottom" />
 

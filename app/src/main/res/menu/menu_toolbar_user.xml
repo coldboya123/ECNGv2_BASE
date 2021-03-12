@@ -4,10 +4,10 @@
     <!--        app:showAsAction="ifRoom"/>-->
     <item
         android:id="@+id/notification"
-        android:icon="@drawable/ic_setting"
-        android:title="Notification"
         android:contentDescription="Notification"
-        android:iconTint="#FFFFFF"
-        app:showAsAction="ifRoom"/>
+        android:icon="@drawable/ic_setting"
+        android:iconTint="@color/white"
+        android:title="Notification"
+        app:showAsAction="ifRoom" />
 
 </menu>

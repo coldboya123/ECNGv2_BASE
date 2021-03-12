@@ -6,38 +6,42 @@
     android:layout_height="match_parent"
     android:background="@color/dark_2"
     tools:context=".View.User.SettingAccount.Address.EditUserAddressActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_user_address_add"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_gravity="bottom"
             android:background="@drawable/appbar_background"
             app:layout_collapseMode="pin"
-            android:layout_gravity="bottom">
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
             <Button
                 android:id="@+id/user_address_add_btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thêm địa chỉ"
-                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_back_shop"
-                android:layout_marginEnd="10dp"
                 android:drawablePadding="10dp"
+                android:text="Thêm địa chỉ"
                 android:textAllCaps="false"
-                android:textSize="18sp"/>
+                android:textColor="@color/white"
+                android:textSize="18sp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <include
-        app:layout_constraintTop_toBottomOf="@id/appbar_user_address_add"
+        layout="@layout/user_address_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        layout="@layout/user_address_layout"/>
+        app:layout_constraintTop_toBottomOf="@id/appbar_user_address_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

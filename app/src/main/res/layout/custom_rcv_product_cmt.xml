@@ -1,101 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
     android:layout_marginTop="5dp"
+    android:background="@color/white"
     android:padding="10dp">
+
     <ImageView
         android:id="@+id/product_cmt_cus_img"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/product_cmt_cus_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/product_cmt_cus_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="10dp"
         android:paddingTop="5dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/product_cmt_cus_img"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <RatingBar
         android:id="@+id/product_cmt_rating"
-        app:layout_constraintTop_toBottomOf="@id/product_cmt_cus_name"
-        app:layout_constraintStart_toStartOf="@id/product_cmt_cus_name"
-        app:layout_constraintBottom_toBottomOf="@id/product_cmt_cus_img"
-        android:layout_marginHorizontal="10dp"
+        style="@style/CustomRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:isIndicator="true"
         android:numStars="5"
         android:paddingTop="0dp"
-        style="@style/CustomRatingBar"/>
+        app:layout_constraintBottom_toBottomOf="@id/product_cmt_cus_img"
+        app:layout_constraintStart_toStartOf="@id/product_cmt_cus_name"
+        app:layout_constraintTop_toBottomOf="@id/product_cmt_cus_name" />
+
     <TextView
-        android:layout_marginTop="5dp"
         android:id="@+id/product_cmt_content"
-        app:layout_constraintTop_toBottomOf="@id/product_cmt_cus_img"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:shadowColor="@color/black"/>
+        android:layout_marginTop="5dp"
+        android:shadowColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_cmt_cus_img" />
+
     <LinearLayout
         android:id="@+id/product_cmt_img"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_cmt_content">
+
         <ImageView
             android:id="@+id/product_cmt_img1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
+
         <ImageView
             android:id="@+id/product_cmt_img2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
     </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/product_cmt_btnlike"
-        app:layout_constraintTop_toBottomOf="@id/product_cmt_img"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
+        android:outlineProvider="none"
+        android:padding="10dp"
+        android:text="Thích (100)"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_color"
         app:icon="@drawable/ic_like"
         app:iconSize="20dp"
-        android:layout_marginTop="5dp"
-        android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thích (100)"
-        android:textColor="@color/primary_color"
         app:iconTint="@color/primary_color"
-        android:backgroundTint="@color/white"
-        android:outlineProvider="none"
-        android:textAllCaps="false"
-        app:strokeColor="@color/primary_color"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_cmt_img"
+        app:strokeColor="@color/primary_color" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/product_cmt_btncmt"
-        app:layout_constraintTop_toBottomOf="@id/product_cmt_img"
-        app:layout_constraintStart_toEndOf="@id/product_cmt_btnlike"
-        android:layout_marginTop="5dp"
-        android:padding="10dp"
-        android:layout_marginStart="10dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bình luân"
-        android:textColor="@color/dark_primary"
-        app:iconTint="@color/primary_color"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/white"
         android:outlineProvider="none"
+        android:padding="10dp"
+        android:text="Bình luân"
         android:textAllCaps="false"
-        app:strokeColor="@color/dark_1"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        android:textColor="@color/dark_primary"
+        app:iconTint="@color/primary_color"
+        app:layout_constraintStart_toEndOf="@id/product_cmt_btnlike"
+        app:layout_constraintTop_toBottomOf="@id/product_cmt_img"
+        app:strokeColor="@color/dark_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_radius_primary_color"
-        android:alpha="0.9"/>
+        android:alpha="0.9"
+        android:background="@drawable/background_radius_primary_color" />
+
     <ImageView
         android:layout_width="350dp"
         android:layout_height="350dp"
+        android:layout_gravity="center"
         android:background="@drawable/logo_app"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center"/>
+        android:scaleType="centerCrop" />
 </FrameLayout>

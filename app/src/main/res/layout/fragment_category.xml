@@ -4,43 +4,44 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_cate"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_gravity="bottom"
             android:background="@drawable/appbar_background"
             app:layout_collapseMode="pin"
-            android:layout_gravity="bottom"
-            app:menu="@menu/menu_toolbar">
+            app:menu="@menu/menu_toolbar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
             <SearchView
                 android:id="@+id/searchbar"
                 android:layout_width="match_parent"
-                android:layout_marginStart="20dp"
                 android:layout_height="30dp"
+                android:layout_marginStart="20dp"
                 android:background="@drawable/searchbar_background"
                 app:layout_anchor="@id/appbar"
-                app:layout_anchorGravity="bottom|center"/>
+                app:layout_anchorGravity="bottom|center" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_cate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2"/>
+        app:layout_constraintGuide_percent="0.2" />
+
     <q.rorbin.verticaltablayout.VerticalTabLayout
-        app:layout_constraintTop_toBottomOf="@+id/appbar_cate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline_cate"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/cate_tabs"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -48,40 +49,47 @@
         android:visibility="visible"
         app:indicator_color="#FFFFFF"
         app:indicator_gravity="fill"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_cate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_cate"
         app:tab_height="80dp"
         app:tab_margin="10dp"
-        app:tab_mode="scrollable"
-        />
+        app:tab_mode="scrollable" />
+
     <TextView
-        android:textColor="@color/black"
-        android:background="#EDEDED"
-        app:layout_constraintStart_toEndOf="@id/guideline_cate"
-        app:layout_constraintTop_toBottomOf="@id/appbar_cate"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/title_cate"
-        app:layout_constraintHorizontal_weight="1"
         android:layout_width="0dp"
-        android:textStyle="bold"
-        android:text="title"
+        android:layout_height="wrap_content"
+        android:background="#EDEDED"
         android:padding="5dp"
-        android:layout_height="wrap_content"/>
-    <androidx.core.widget.NestedScrollView
-        app:layout_constraintTop_toBottomOf="@+id/title_cate"
-        app:layout_constraintStart_toEndOf="@id/guideline_cate"
+        android:text="title"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#B2B2B2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/guideline_cate"
+        app:layout_constraintTop_toBottomOf="@id/appbar_cate" />
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:background="#B2B2B2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_cate"
+        app:layout_constraintTop_toBottomOf="@+id/title_cate">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_cate_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="true"/>
+                android:nestedScrollingEnabled="true" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

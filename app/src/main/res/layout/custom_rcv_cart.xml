@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cart_block"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
     android:background="@color/white"
     android:paddingHorizontal="10dp"
-    android:paddingVertical="5dp"
-    android:id="@+id/cart_block">
+    android:paddingVertical="5dp">
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/cart_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:buttonTint="@color/primary_color"
-        android:text="Cửa hàng:"
-        android:textColor="@color/black"
         android:scaleX="0.8"
         android:scaleY="0.8"
+        android:text="Cửa hàng:"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

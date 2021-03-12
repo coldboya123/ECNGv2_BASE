@@ -78,17 +78,17 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-<!--        <com.google.android.material.checkbox.MaterialCheckBox-->
-<!--            android:id="@+id/cart_checkall"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:buttonTint="@color/primary_color"-->
-<!--            android:scaleX="0.8"-->
-<!--            android:scaleY="0.8"-->
-<!--            android:text="Chọn tất cả"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/cart_total"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@id/cart_total" />-->
+        <!--        <com.google.android.material.checkbox.MaterialCheckBox-->
+        <!--            android:id="@+id/cart_checkall"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:buttonTint="@color/primary_color"-->
+        <!--            android:scaleX="0.8"-->
+        <!--            android:scaleY="0.8"-->
+        <!--            android:text="Chọn tất cả"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@id/cart_total"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/cart_total" />-->
 
         <TextView
             android:id="@+id/cart_txttotal"

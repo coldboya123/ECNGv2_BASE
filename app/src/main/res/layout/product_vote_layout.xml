@@ -1,243 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginTop="10dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@color/white"
+        android:orientation="vertical"
         android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Khách hàng nhận xét"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
-            <LinearLayout
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="5.0"
-                    android:textSize="35sp"
-                    android:layout_gravity="center_horizontal"/>
-                <RatingBar
-                    android:layout_marginVertical="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:paddingTop="0dp"
-                    style="@style/CustomRatingBar"
-                    android:layout_gravity="center_horizontal"
-                    android:rating="5"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="500 nhận xét"/>
-            </LinearLayout>
-            <View
-                android:layout_gravity="center"
-                android:background="@color/dark"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="5.0"
+                    android:textColor="@color/black"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    style="@style/CustomRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:paddingTop="0dp"
+                    android:rating="5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="500 nhận xét" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/dark" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="5"
-                android:layout_gravity="center">
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <RatingBar
-                        android:layout_marginHorizontal="10dp"
+                        style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        style="@style/CustomRatingBar"
-                        android:layout_gravity="center_vertical"
-                        android:rating="5"/>
+                        android:rating="5" />
+
                     <ProgressBar
-                        android:layout_weight="4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="4"
                         android:progress="70"
-                        android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
-                        android:progressDrawable="@drawable/progressbar_background"/>
+                        android:progressDrawable="@drawable/progressbar_background" />
+
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="350"
-                        android:gravity="center"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="350" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <RatingBar
-                        android:layout_marginHorizontal="10dp"
+                        style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        style="@style/CustomRatingBar"
-                        android:layout_gravity="center_vertical"
-                        android:rating="4"/>
+                        android:rating="4" />
+
                     <ProgressBar
-                        android:layout_weight="4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="4"
                         android:progress="20"
-                        android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
-                        android:progressDrawable="@drawable/progressbar_background"/>
+                        android:progressDrawable="@drawable/progressbar_background" />
+
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="100"
-                        android:gravity="center"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="100" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <RatingBar
-                        android:layout_marginHorizontal="10dp"
+                        style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        style="@style/CustomRatingBar"
-                        android:layout_gravity="center_vertical"
-                        android:rating="3"/>
+                        android:rating="3" />
+
                     <ProgressBar
-                        android:layout_weight="4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="4"
                         android:progress="10"
-                        android:layout_gravity="center"
                         android:progressBackgroundTint="@color/dark"
-                        android:progressDrawable="@drawable/progressbar_background"/>
+                        android:progressDrawable="@drawable/progressbar_background" />
+
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="50"
-                        android:gravity="center"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="50" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <RatingBar
-                        android:layout_marginHorizontal="10dp"
+                        style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        style="@style/CustomRatingBar"
-                        android:layout_gravity="center_vertical"
-                        android:rating="2"/>
+                        android:rating="2" />
+
                     <ProgressBar
-                        android:layout_weight="4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="0"
                         android:layout_gravity="center"
+                        android:layout_weight="4"
+                        android:progress="0"
                         android:progressBackgroundTint="@color/dark"
-                        android:progressDrawable="@drawable/progressbar_background"/>
+                        android:progressDrawable="@drawable/progressbar_background" />
+
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:gravity="center"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <RatingBar
-                        android:layout_marginHorizontal="10dp"
+                        style="@style/CustomRatingBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="10dp"
                         android:isIndicator="true"
                         android:numStars="5"
                         android:paddingTop="0dp"
-                        style="@style/CustomRatingBar"
-                        android:layout_gravity="center_vertical"
-                        android:rating="1"/>
+                        android:rating="1" />
+
                     <ProgressBar
-                        android:layout_weight="4"
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="0dp"
                         android:layout_height="10dp"
-                        android:progress="0"
                         android:layout_gravity="center"
+                        android:layout_weight="4"
+                        android:progress="0"
                         android:progressBackgroundTint="@color/dark"
-                        android:progressDrawable="@drawable/progressbar_background"/>
+                        android:progressDrawable="@drawable/progressbar_background" />
+
                     <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="0"
-                        android:gravity="center"/>
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_product_comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp" />
+
     <com.google.android.material.button.MaterialButton
-        app:icon="@drawable/ad_units"
-        android:layout_marginTop="5dp"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xem tất cả 200 nhận xét"
-        android:textColor="@color/primary_color"
-        android:textStyle="bold"
-        app:iconTint="@color/primary_color"
+        android:layout_marginTop="5dp"
         android:backgroundTint="@color/white"
         android:outlineProvider="none"
-        android:textAllCaps="false"/>
+        android:padding="10dp"
+        android:text="Xem tất cả 200 nhận xét"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_color"
+        android:textStyle="bold"
+        app:icon="@drawable/ad_units"
+        app:iconTint="@color/primary_color" />
 
 </LinearLayout>

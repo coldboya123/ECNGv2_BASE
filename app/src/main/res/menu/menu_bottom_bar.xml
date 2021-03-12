@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Trang chủ"
+    <item
         android:id="@+id/bottomnavigation_home"
-        android:icon="@drawable/ic_home"/>
-    <item android:title="Danh mục"
+        android:icon="@drawable/ic_home"
+        android:title="Trang chủ" />
+    <item
         android:id="@+id/bottomnavigation_category"
-        android:icon="@drawable/ic_category"/>
-    <item android:title="Thông báo"
+        android:icon="@drawable/ic_category"
+        android:title="Danh mục" />
+    <item
         android:id="@+id/bottomnavigation_notification"
-        android:icon="@drawable/ic_noti"/>
-    <item android:title="Cá nhân"
+        android:icon="@drawable/ic_noti"
+        android:title="Thông báo" />
+    <item
         android:id="@+id/bottomnavigation_user"
         android:icon="@drawable/ic_person"
-        />
-    <item android:title=""
+        android:title="Cá nhân" />
+    <item
         android:checkable="false"
-        android:enabled="false"/>
-<!--    <item android:title=""-->
-<!--        android:checkable="false"/>-->
+        android:enabled="false"
+        android:title="" />
 </menu>

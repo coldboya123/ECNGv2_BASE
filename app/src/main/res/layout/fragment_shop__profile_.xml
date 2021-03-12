@@ -1,169 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/dark_2"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="20dp"
+        android:layout_marginTop="5dp"
         android:background="@color/white"
-        android:layout_marginTop="5dp">
+        android:orientation="horizontal"
+        android:paddingVertical="20dp">
+
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border_circle_primary"
+                android:padding="20dp"
                 android:text="4.5"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="25dp"
-                android:padding="20dp"
-                android:layout_gravity="center"
-                android:background="@drawable/border_circle_primary"/>
+                android:textStyle="bold" />
         </FrameLayout>
+
         <View
             android:layout_width="3dp"
             android:layout_height="match_parent"
-            android:background="@color/dark"/>
+            android:background="@color/dark" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_weight="2"
-            android:layout_gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đánh giá sao"
                 android:textColor="@color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
+
             <RatingBar
-                android:layout_marginVertical="10dp"
-                android:paddingTop="0dp"
                 android:id="@+id/rating_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="4.5"
+                android:layout_marginVertical="10dp"
                 android:isIndicator="true"
-                android:theme="@style/RatingBarSmallTheme"/>
+                android:numStars="5"
+                android:paddingTop="0dp"
+                android:rating="4.5"
+                android:theme="@style/RatingBarSmallTheme" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/white"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
         android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:text="Thông Tin Cửa Hàng"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Thông Tin Cửa Hàng"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_namthanhlap"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_namthanhlap" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Năm tham gia sàn"
+                android:layout_marginStart="5dp"
                 android:layout_weight="4"
-                android:layout_marginStart="5dp"/>
+                android:text="Năm tham gia sàn" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="2020"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:layout_weight="4"/>
+                android:text="2020" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_tongsp"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_tongsp" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Tổng sản phẩm"
+                android:layout_marginStart="5dp"
                 android:layout_weight="4"
-                android:layout_marginStart="5dp"/>
+                android:text="Tổng sản phẩm" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="380"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:layout_weight="4"/>
+                android:text="380" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_thanhvienvip"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_thanhvienvip" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Thành viên vip"
+                android:layout_marginStart="5dp"
                 android:layout_weight="4"
-                android:layout_marginStart="5dp"/>
+                android:text="Thành viên vip" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="40"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:layout_weight="4"/>
+                android:text="40" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_thanhvien"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_thanhvien" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Khách hàng"
+                android:layout_marginStart="5dp"
                 android:layout_weight="4"
-                android:layout_marginStart="5dp"/>
+                android:text="Khách hàng" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="680"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:layout_weight="4"/>
+                android:text="680" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

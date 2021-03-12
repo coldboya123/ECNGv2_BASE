@@ -6,13 +6,13 @@
 
     <ImageButton
         android:id="@+id/login_btn_back"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:background="@null"
         android:src="@drawable/ic_back_primary"
-        android:layout_margin="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/login_banner"
@@ -86,11 +86,11 @@
             android:layout_gravity="center"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="10dp"
-            android:textSize="16sp"
             android:background="@drawable/background_radius_primary_color"
             android:text="Đăng nhập"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@id/login_tf_pwd" />
 

@@ -1,15 +1,15 @@
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/refresh_noti"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/dark_2">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_noti"
             android:layout_width="match_parent"
@@ -27,15 +27,17 @@
                 app:layout_collapseMode="pin"
                 app:menu="@menu/menu_toolbar_noti"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Thông Báo"
-                    android:textStyle="bold"
                     android:textColor="@color/white"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/noti_tab"
             android:layout_width="match_parent"
@@ -43,17 +45,18 @@
             android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@id/appbar_noti"
             app:tabIndicatorColor="@color/primary_color"
+            app:tabPadding="0dp"
             app:tabRippleColor="@color/primary_color"
             app:tabSelectedTextColor="@color/primary_color"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="@color/primary_color"
-            app:tabPadding="0dp"/>
+            app:tabTextColor="@color/primary_color" />
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/noti_viewpager"
-            app:layout_constraintTop_toBottomOf="@id/noti_tab"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noti_tab" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView

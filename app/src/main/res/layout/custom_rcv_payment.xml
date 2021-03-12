@@ -11,7 +11,6 @@
         android:id="@+id/payment_shop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_shop"
         android:drawablePadding="5dp"
         android:textColor="@color/primary_color"
         android:textStyle="bold"
@@ -49,8 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            app:layout_constraintTop_toBottomOf="@id/payment_shipping"
-            android:visibility="gone">
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/payment_shipping">
 
             <View
                 android:layout_width="match_parent"
@@ -88,31 +87,33 @@
 
     <TextView
         android:id="@+id/payment_txtvoucher"
-        app:layout_constraintTop_toBottomOf="@id/payment_shipping_block"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_voucher"
+        android:drawablePadding="5dp"
         android:paddingVertical="15dp"
         android:text="Mã ưu đãi:"
         android:textColor="@color/black"
-        android:drawablePadding="5dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_shipping_block" />
+
     <EditText
         android:id="@+id/payment_voucher"
         android:layout_width="0dp"
         android:layout_height="30dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/edittext_background"
+        android:maxLines="1"
         android:padding="0dp"
         android:paddingStart="10dp"
-        android:layout_marginHorizontal="10dp"
         android:textAllCaps="true"
-        android:maxLines="1"
         android:textColor="@color/primary_color"
         android:textCursorDrawable="@null"
-        app:layout_constraintStart_toEndOf="@id/payment_txtvoucher"
-        app:layout_constraintTop_toTopOf="@id/payment_txtvoucher"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtvoucher"
-        app:layout_constraintEnd_toStartOf="@id/payment_voucher_apply"/>
+        app:layout_constraintEnd_toStartOf="@id/payment_voucher_apply"
+        app:layout_constraintStart_toEndOf="@id/payment_txtvoucher"
+        app:layout_constraintTop_toTopOf="@id/payment_txtvoucher" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/payment_voucher_apply"
         android:layout_width="wrap_content"
@@ -121,9 +122,9 @@
         android:text="Áp dụng"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@id/payment_txtvoucher"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtvoucher"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/payment_txtvoucher"
         app:strokeColor="@color/primary_color" />
 
     <View
@@ -131,6 +132,7 @@
         android:layout_height="1dp"
         android:background="@color/dark_2"
         app:layout_constraintTop_toTopOf="@id/payment_note" />
+
     <TextView
         android:id="@+id/payment_txtnote"
         android:layout_width="wrap_content"
@@ -140,6 +142,7 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_txtvoucher" />
+
     <EditText
         android:id="@+id/payment_note"
         android:layout_width="0dp"
@@ -175,10 +178,10 @@
         android:id="@+id/payment_subtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:textColor="@color/primary_color"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtsubtotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/payment_txtsubtotal" />

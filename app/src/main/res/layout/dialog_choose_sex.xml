@@ -1,134 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="10dp">
+
     <ImageButton
         android:id="@+id/dialog_sex_btn_close"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/white"
         android:src="@drawable/ic_x_small"
-        android:background="@color/white"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/dialog_changesex_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
         android:text="Giới tính"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:gravity="center"
         android:textSize="16sp"
-        android:layout_marginTop="5dp"/>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dialog_changesex_block_male"
-        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_title">
+
         <TextView
             android:id="@+id/dialog_changesex_male"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Nam"
             android:textColor="@color/primary_color"
-            android:gravity="center"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/dialog_changesex_ckeckmale"
-            app:layout_constraintTop_toTopOf="@id/dialog_changesex_male"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/radius"
+            android:backgroundTint="@color/primary_color"
+            android:gravity="center"
+            android:src="@drawable/ic_tick"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/dialog_changesex_male"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:background="@drawable/radius"
-            android:src="@drawable/ic_tick"
-            android:backgroundTint="@color/primary_color"/>
+            app:layout_constraintTop_toTopOf="@id/dialog_changesex_male" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dialog_changesex_block_female"
-        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_male"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_male">
+
         <TextView
             android:id="@+id/dialog_changesex_female"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Nữ"
             android:textColor="@color/black"
-            android:gravity="center"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/dialog_changesex_ckeckfemale"
-            app:layout_constraintTop_toTopOf="@id/dialog_changesex_female"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/radius"
+            android:backgroundTint="@color/primary_color"
+            android:gravity="center"
+            android:src="@drawable/ic_tick"
+            android:textColor="@color/black"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/dialog_changesex_female"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:background="@drawable/radius"
-            android:src="@drawable/ic_tick"
-            android:backgroundTint="@color/primary_color"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toTopOf="@id/dialog_changesex_female" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dialog_changesex_block_other"
-        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_female"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_female">
+
         <TextView
             android:id="@+id/dialog_changesex_other"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Khác"
             android:textColor="@color/black"
-            android:gravity="center"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/dialog_changesex_ckeckother"
-            app:layout_constraintTop_toTopOf="@id/dialog_changesex_other"
-            app:layout_constraintBottom_toBottomOf="@id/dialog_changesex_other"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:gravity="center"
-            android:textColor="@color/black"
             android:background="@drawable/radius"
-            android:src="@drawable/ic_tick"
             android:backgroundTint="@color/primary_color"
-            android:visibility="gone"/>
+            android:gravity="center"
+            android:src="@drawable/ic_tick"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/dialog_changesex_other"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dialog_changesex_other" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <View
-        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_male"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginHorizontal="15dp"
         android:background="@color/dark_2"
-        android:layout_marginHorizontal="15dp"/>
+        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_male" />
+
     <View
-        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_female"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginHorizontal="15dp"
         android:background="@color/dark_2"
-        android:layout_marginHorizontal="15dp"/>
+        app:layout_constraintTop_toBottomOf="@id/dialog_changesex_block_female" />
 </androidx.constraintlayout.widget.ConstraintLayout>
