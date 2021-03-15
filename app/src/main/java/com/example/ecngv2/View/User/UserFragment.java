@@ -19,6 +19,7 @@ import com.example.ecngv2.Presenter.User.UserPresenter;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.Login.LoginActivity;
 import com.example.ecngv2.View.MainActivity.MainActivity;
+import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
 import com.example.ecngv2.View.User.SettingAccount.SettingAccountActivity;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -30,7 +31,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     ConstraintLayout block_logined, block_logouted, btn_settingacc;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
-    TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao;
+    TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
     boolean checkLogin = false;
 
     public UserFragment() {
@@ -53,7 +54,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_register.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
         btn_settingacc.setOnClickListener(this);
-
+        ordermanager.setOnClickListener(this);
         return v;
     }
 
@@ -68,6 +69,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_settingacc = v.findViewById(R.id.user_block_setting);
         btn_logout = v.findViewById(R.id.user_btn_logout);
 
+        ordermanager = v.findViewById(R.id.user_ordermanager);
         badge_choxacnhan = v.findViewById(R.id.user_badge_choxacnhan);
         badge_cholayhang = v.findViewById(R.id.user_badge_cholayhang);
         badge_danggiao = v.findViewById(R.id.user_badge_danggiao);
@@ -87,6 +89,9 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 presenter.LogOut();
                 startActivity(new Intent(getContext(), MainActivity.class));
                 getActivity().finish();
+                break;
+            case R.id.user_ordermanager:
+                startActivity(new Intent(getContext(), OrderManagerActivity.class));
                 break;
             case R.id.user_block_setting:
                 if (checkLogin){

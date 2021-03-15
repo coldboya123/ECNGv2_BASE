@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.User.SettingAccount.Address.AddUserAddressActivity"></activity>
+        <activity android:name=".View.OrderManager.OrderManagerActivity"></activity>
+        <activity android:name=".View.User.SettingAccount.Address.AddUserAddressActivity" />
         <activity android:name=".View.User.SettingAccount.Address.EditUserAddressActivity" />
         <activity android:name=".View.User.SettingAccount.Address.UserAddressActivity" />
         <activity android:name=".View.User.SettingAccount.Profile.ChangePasswordActivity" />

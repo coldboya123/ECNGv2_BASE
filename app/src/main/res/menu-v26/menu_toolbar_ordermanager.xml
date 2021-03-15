@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_ordermanager_search"
+        android:contentDescription="Search"
+        android:icon="@drawable/ic_search"
+        android:iconTint="@color/white"
+        android:title="More"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/toolbar_ordermanager_chat"
+        android:contentDescription="Chat"
+        android:icon="@drawable/ic_chat"
+        android:iconTint="@color/white"
+        android:title="Chat"
+        app:showAsAction="ifRoom" />
+</menu>
