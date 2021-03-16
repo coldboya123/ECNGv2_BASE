@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +29,13 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
 
     SwipeRefreshLayout refreshLayout;
     ShapeableImageView avatar;
+    ImageView choxacnhan, cholayhang, danggiao, dagiao, dahuy;
     ConstraintLayout block_logined, block_logouted, btn_settingacc;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
     TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
     boolean checkLogin = false;
+    Intent intent; 
 
     public UserFragment() {
         // Required empty public constructor
@@ -55,6 +58,11 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_logout.setOnClickListener(this);
         btn_settingacc.setOnClickListener(this);
         ordermanager.setOnClickListener(this);
+        choxacnhan.setOnClickListener(this);
+        cholayhang.setOnClickListener(this);
+        danggiao.setOnClickListener(this);
+        dagiao.setOnClickListener(this);
+        dahuy.setOnClickListener(this);
         return v;
     }
 
@@ -74,6 +82,12 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         badge_cholayhang = v.findViewById(R.id.user_badge_cholayhang);
         badge_danggiao = v.findViewById(R.id.user_badge_danggiao);
         badge_dagiao = v.findViewById(R.id.user_badge_dagiao);
+
+        choxacnhan = v.findViewById(R.id.user_confirm);
+        cholayhang = v.findViewById(R.id.user_pickup);
+        danggiao = v.findViewById(R.id.user_delivering);
+        dagiao = v.findViewById(R.id.user_delivered);
+        dahuy = v.findViewById(R.id.user_cancel);
     }
 
     @Override
@@ -93,6 +107,30 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
             case R.id.user_ordermanager:
                 startActivity(new Intent(getContext(), OrderManagerActivity.class));
                 break;
+            case R.id.user_confirm:
+                intent = new Intent(getContext(), OrderManagerActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.user_pickup:
+                intent = new Intent(getContext(), OrderManagerActivity.class);
+                intent.putExtra("position", 1);
+                startActivity(intent);
+                break;
+            case R.id.user_delivering:
+                intent = new Intent(getContext(), OrderManagerActivity.class);
+                intent.putExtra("position", 2);
+                startActivity(intent);
+                break;
+            case R.id.user_delivered:
+                intent = new Intent(getContext(), OrderManagerActivity.class);
+                intent.putExtra("position", 3);
+                startActivity(intent);
+                break;
+            case R.id.user_cancel:
+                intent = new Intent(getContext(), OrderManagerActivity.class);
+                intent.putExtra("position", 4);
+                startActivity(intent);
+                break;
             case R.id.user_block_setting:
                 if (checkLogin){
                     startActivity(new Intent(getContext(), SettingAccountActivity.class));
@@ -111,7 +149,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         block_logined.setVisibility(View.VISIBLE);
         btn_logout.setVisibility(View.VISIBLE);
         badge_choxacnhan.setVisibility(View.VISIBLE);
-        badge_cholayhang.setVisibility(View.VISIBLE);
+//        badge_cholayhang.setVisibility(View.VISIBLE);
         badge_danggiao.setVisibility(View.VISIBLE);
         badge_dagiao.setVisibility(View.VISIBLE);
     }

@@ -1,73 +1,63 @@
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/refresh_ordermanager"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/dark_2">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_ordermanager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_ordermanager"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_collapseMode="pin"
+            app:menu="@menu/menu_toolbar_ordermanager"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/appbar_background">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="bottom"
-                android:background="@drawable/appbar_background"
-                app:layout_collapseMode="pin"
-                app:menu="@menu/menu_toolbar_ordermanager"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-                <ImageButton
-                    android:id="@+id/ordermanager_btn_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:src="@drawable/ic_back_shop"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Đơn hàng"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:paddingStart="10dp"/>
-            </androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.AppBarLayout>
+            <ImageButton
+                android:id="@+id/ordermanager_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/ic_back_shop" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/ordermanager_tab"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/appbar_ordermanager"
-            app:tabIndicatorColor="@color/primary_color"
-            app:tabPadding="0dp"
-            app:tabRippleColor="@color/primary_color"
-            app:tabSelectedTextColor="@color/primary_color"
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-            app:tabTextColor="@color/black"
-            app:tabMode="scrollable"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="Đơn hàng"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/ordermanager_viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ordermanager_tab" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/ordermanager_tab"
+        app:layout_constraintTop_toBottomOf="@id/appbar_ordermanager"
+        app:tabIndicatorColor="@color/primary_color"
+        app:tabMode="scrollable"
+        app:tabPadding="0dp"
+        app:tabRippleColor="@color/primary_color"
+        app:tabSelectedTextColor="@color/primary_color"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ordermanager_viewpager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_tab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

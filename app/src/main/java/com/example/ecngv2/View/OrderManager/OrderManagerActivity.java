@@ -1,6 +1,7 @@
 package com.example.ecngv2.View.OrderManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +19,11 @@ import com.google.android.material.tabs.TabLayout;
 
 public class OrderManagerActivity extends AppCompatActivity implements View.OnClickListener {
 
-    SwipeRefreshLayout refreshLayout;
     ImageButton btn_back;
     ViewPager viewPager;
     TabLayout tabLayout;
+    Intent intent;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +39,16 @@ public class OrderManagerActivity extends AppCompatActivity implements View.OnCl
 
         init();
 
-        refreshLayout.setOnRefreshListener(() -> refreshLayout.setRefreshing(false));
         viewPager.setAdapter(new ViewPagerOrderManagerAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        position = intent.getIntExtra("position", 0);
+        viewPager.setCurrentItem(position, false);
         btn_back.setOnClickListener(this);
 
     }
 
     private void init(){
-        refreshLayout = findViewById(R.id.refresh_ordermanager);
+        intent = getIntent();
         btn_back = findViewById(R.id.ordermanager_btn_back);
         viewPager = findViewById(R.id.ordermanager_viewpager);
         tabLayout = findViewById(R.id.ordermanager_tab);
