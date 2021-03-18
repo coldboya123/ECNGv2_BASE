@@ -37,6 +37,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     List<ProductCart> list;
     List<ProductCartItem> cartItems;
     RCV_Cart_Adapter adapter;
+    Intent intent;
 //    MaterialCheckBox check;
 
     @Override
@@ -100,7 +101,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
             case R.id.cart_btn_payment:
-                startActivity(new Intent(CartActivity.this, PaymentActivity.class));
+                intent = new Intent(CartActivity.this, PaymentActivity.class);
+                startActivity(intent);
                 break;
         }
     }

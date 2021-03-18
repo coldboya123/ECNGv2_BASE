@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.ecngv2.View.OrderManager.OrderCholayhangFragment;
-import com.example.ecngv2.View.OrderManager.OrderChoxacnhanFragment;
-import com.example.ecngv2.View.OrderManager.OrderDagiaoFragment;
-import com.example.ecngv2.View.OrderManager.OrderDahuyFragment;
-import com.example.ecngv2.View.OrderManager.OrderDanggiaoFragment;
-import com.example.ecngv2.View.OrderManager.OrderTrahangFragment;
+import com.example.ecngv2.View.OrderManager.OrderPickup.OrderPickupFragment;
+import com.example.ecngv2.View.OrderManager.OrderConfirm.OrderConfirmFragment;
+import com.example.ecngv2.View.OrderManager.OrderDelivered.OrderDeliveredFragment;
+import com.example.ecngv2.View.OrderManager.OrderCancel.OrderCancelFragment;
+import com.example.ecngv2.View.OrderManager.OrderDelivering.OrderDeliveringFragment;
+import com.example.ecngv2.View.OrderManager.OrderReturn.OrderReturnFragment;
 
 public class ViewPagerOrderManagerAdapter extends FragmentPagerAdapter {
     public ViewPagerOrderManagerAdapter(@NonNull FragmentManager fm) {
@@ -23,17 +23,17 @@ public class ViewPagerOrderManagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new OrderChoxacnhanFragment();
+                return new OrderConfirmFragment();
             case 1:
-                return new OrderCholayhangFragment();
+                return new OrderPickupFragment();
             case 2:
-                return new OrderDanggiaoFragment();
+                return new OrderDeliveringFragment();
             case 3:
-                return new OrderDagiaoFragment();
+                return new OrderDeliveredFragment();
             case 4:
-                return new OrderDahuyFragment();
+                return new OrderCancelFragment();
             case 5:
-                return new OrderTrahangFragment();
+                return new OrderReturnFragment();
         }
         return null;
     }

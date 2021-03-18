@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.OrderManager;
+package com.example.ecngv2.View.OrderManager.OrderReturn;
 
 import android.os.Bundle;
 
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import com.example.ecngv2.R;
 
-public class OrderTrahangFragment extends Fragment {
+public class OrderReturnFragment extends Fragment {
 
-    public OrderTrahangFragment() {
+    public OrderReturnFragment() {
         // Required empty public constructor
     }
 

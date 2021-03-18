@@ -7,21 +7,21 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_ordermanager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:layout_collapseMode="pin"
-            app:menu="@menu/menu_toolbar_ordermanager"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="bottom"
-            android:background="@drawable/appbar_background">
+            android:background="@drawable/appbar_background"
+            app:layout_collapseMode="pin"
+            app:menu="@menu/menu_toolbar_ordermanager"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <ImageButton
                 android:id="@+id/ordermanager_btn_back"
@@ -43,6 +43,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/ordermanager_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/appbar_ordermanager"
         app:tabIndicatorColor="@color/primary_color"
         app:tabMode="scrollable"
@@ -50,14 +53,12 @@
         app:tabRippleColor="@color/primary_color"
         app:tabSelectedTextColor="@color/primary_color"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-        app:tabTextColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white" />
+        app:tabTextColor="@color/black" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/ordermanager_viewpager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ordermanager_tab"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_tab" />
 </androidx.constraintlayout.widget.ConstraintLayout>

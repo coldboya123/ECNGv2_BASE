@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.OrderManager;
+package com.example.ecngv2.View.OrderManager.OrderConfirm;
 
 import android.os.Bundle;
 
@@ -19,13 +19,13 @@ import com.example.ecngv2.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderChoxacnhanFragment extends Fragment {
+public class OrderConfirmFragment extends Fragment {
     RecyclerView rcv;
     List<OrderManager> orderManagers;
     List<OrderItem> orderItems;
     List<ProductCartItem> products;
 
-    public OrderChoxacnhanFragment() {
+    public OrderConfirmFragment() {
         // Required empty public constructor
     }
 
@@ -36,7 +36,7 @@ public class OrderChoxacnhanFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_ordermanager_content, container, false);
         init(v);
         rcv.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        rcv.setAdapter(new RCV_OrderManager_Adapter(getContext(), orderManagers, true));
+        rcv.setAdapter(new RCV_OrderManager_Adapter(getActivity(),getContext(), orderManagers, true));
         return v;
     }
     private void init(View v){

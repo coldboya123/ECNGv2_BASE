@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.OrderManager;
+package com.example.ecngv2.View.OrderManager.OrderPickup;
 
 import android.os.Bundle;
 
@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.example.ecngv2.R;
 
-public class OrderCholayhangFragment extends Fragment {
+public class OrderPickupFragment extends Fragment {
 
 
-    public OrderCholayhangFragment() {
+    public OrderPickupFragment() {
         // Required empty public constructor
     }
     

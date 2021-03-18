@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ordermanager_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
     android:background="@color/white"
-    android:padding="10dp"
-    android:layout_marginTop="5dp">
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/ordermanager_txtorderid"
@@ -25,27 +26,60 @@
         app:layout_constraintStart_toEndOf="@id/ordermanager_txtorderid"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ordermanager_btn_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/background_radius_primary_color"
+        android:paddingHorizontal="20dp"
+        android:text="Xem chi tiết"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ordermanager_ordertime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ordermanager_txtorderid" />
+
     <TextView
         android:id="@+id/ordermanager_ordertime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="11sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ordermanager_orderid"/>
-    <TextView
-        android:id="@+id/ordermanager_total"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ordermanager_orderid"
-        app:layout_constraintBottom_toBottomOf="@id/ordermanager_ordertime"
-        android:textColor="@color/primary_color"
-        android:textSize="17sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@+id/ordermanager_orderid" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_ordermanager_item"
-        app:layout_constraintTop_toBottomOf="@id/ordermanager_ordertime"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_ordertime" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_2"
+        app:layout_constraintTop_toTopOf="@id/ordermanager_txttotal" />
+
+    <TextView
+        android:id="@+id/ordermanager_txttotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingTop="10dp"
+        android:text="Tổng tiền"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rcv_ordermanager_item" />
+
+    <TextView
+        android:id="@+id/ordermanager_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_color"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ordermanager_txttotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ordermanager_txttotal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

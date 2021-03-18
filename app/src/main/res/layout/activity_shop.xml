@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
     tools:context=".View.Shop.ShopActivity">
 
@@ -28,9 +28,7 @@
                 android:id="@+id/shop_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_gravity="bottom"
                 android:layout_marginTop="25dp"
-                android:fitsSystemWindows="true"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toTopOf="parent"
                 app:menu="@menu/menu_toolbar">
@@ -59,7 +57,8 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/avatar_shop"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/shop_toolbar" />
+                app:layout_constraintTop_toBottomOf="@id/shop_toolbar"
+                android:fitsSystemWindows="false"/>
 
             <TextView
                 android:id="@+id/shop_name"
@@ -116,7 +115,7 @@
                 android:id="@+id/shop_tab"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="9dp"
                 android:background="@null"
                 app:layout_constraintTop_toBottomOf="@id/shop_avatar"
                 app:tabIndicatorColor="@color/primary_color"

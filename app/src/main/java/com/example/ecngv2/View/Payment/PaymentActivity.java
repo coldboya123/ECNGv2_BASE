@@ -46,6 +46,9 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     RCV_Payment_Adapter adapter;
     ConstraintLayout payment_method_1, payment_method_2;
     RadioButton radio_btn_method_1, radio_btn_method_2, radio_btn_method_checked;
+    AppCompatButton btn_payment;
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +73,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         btn_change_address.setOnClickListener(this);
         payment_method_1.setOnClickListener(this);
         payment_method_2.setOnClickListener(this);
+        btn_payment.setOnClickListener(this);
     }
 
     private int getTotal(List<ProductPayment> list){
@@ -124,6 +128,8 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         );
         radio_btn_method_1.setButtonTintList(colorStateList);
         radio_btn_method_2.setButtonTintList(colorStateList);
+
+        btn_payment = findViewById(R.id.payment_btn_payment);
     }
 
     @Override
@@ -133,7 +139,8 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.payment_txtchangeadd:
-                startActivity(new Intent(PaymentActivity.this, UserAddressActivity.class));
+                intent = new Intent(PaymentActivity.this, UserAddressActivity.class);
+                startActivity(intent);
                 break;
             case R.id.payment_method_1:
                 radio_btn_method_checked.setChecked(false);
@@ -144,6 +151,10 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                 radio_btn_method_checked.setChecked(false);
                 radio_btn_method_2.setChecked(true);
                 radio_btn_method_checked = radio_btn_method_2;
+                break;
+            case R.id.payment_btn_payment:
+                intent = new Intent(PaymentActivity.this, PaymentSuccessActivity.class);
+                startActivity(intent);
                 break;
         }
     }

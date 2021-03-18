@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.OrderManager;
+package com.example.ecngv2.View.OrderManager.OrderCancel;
 
 import android.os.Bundle;
 
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import com.example.ecngv2.R;
 
-public class OrderDahuyFragment extends Fragment {
+public class OrderCancelFragment extends Fragment {
 
-    public OrderDahuyFragment() {
+    public OrderCancelFragment() {
         // Required empty public constructor
     }
 

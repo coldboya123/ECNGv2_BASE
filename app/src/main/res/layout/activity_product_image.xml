@@ -7,7 +7,8 @@
     android:background="@color/black_primary"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".View.Product.ProductImage">
+    tools:context=".View.Product.ProductImage"
+    android:fitsSystemWindows="true">
 
     <ImageButton
         android:id="@+id/product_image_back"
