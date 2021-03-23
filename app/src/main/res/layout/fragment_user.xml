@@ -373,7 +373,7 @@
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/user_block_member"
+                    android:id="@+id/user_block_voucher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -382,13 +382,13 @@
                     app:layout_constraintTop_toBottomOf="@id/user_block_order_detail">
 
                     <TextView
-                        android:id="@+id/user_member"
+                        android:id="@+id/user_voucher"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_member"
+                        android:drawableStart="@drawable/ic_voucher"
                         android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:text="Thành viên"
+                        android:text="Mã giảm giá"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -397,9 +397,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_next_small"
-                        app:layout_constraintBottom_toBottomOf="@id/user_member"
+                        app:layout_constraintBottom_toBottomOf="@id/user_voucher"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/user_member" />
+                        app:layout_constraintTop_toTopOf="@id/user_voucher" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -408,7 +408,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:padding="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/user_block_member">
+                    app:layout_constraintTop_toBottomOf="@id/user_block_voucher">
 
                     <TextView
                         android:id="@+id/user_fav"
@@ -570,7 +570,7 @@
                     android:layout_height="1dp"
                     android:layout_marginHorizontal="15dp"
                     android:background="@color/dark_2"
-                    app:layout_constraintTop_toBottomOf="@id/user_block_member" />
+                    app:layout_constraintTop_toBottomOf="@id/user_block_voucher" />
 
                 <View
                     android:layout_width="match_parent"

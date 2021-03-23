@@ -97,7 +97,6 @@ public class HomeFragment extends Fragment {
 
         RCV_Category_Adapter rcv_category_adapter = new RCV_Category_Adapter(getContext(), categoryList);
         recycler_category.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        recycler_category.setNestedScrollingEnabled(false);
         recycler_category.setAdapter(rcv_category_adapter);
 
         //Set Adapter for RecyclerView Home

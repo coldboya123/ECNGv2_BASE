@@ -58,9 +58,9 @@ public class RCV_Shop_Product_Adapter extends RecyclerView.Adapter<RecyclerView.
             list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
             list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
             list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            RCV_HLProduct_Adapter rcv_hlProduct_adapter = new RCV_HLProduct_Adapter(context, list_products);
+            RCV_HotProduct_Adapter rcv_hotProduct_adapter = new RCV_HotProduct_Adapter(context, list_products);
             ((RCV_Shop_Product_Adapter.NewProductHolder) holder).recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
-            ((RCV_Shop_Product_Adapter.NewProductHolder) holder).recyclerView.setAdapter(rcv_hlProduct_adapter);
+            ((RCV_Shop_Product_Adapter.NewProductHolder) holder).recyclerView.setAdapter(rcv_hotProduct_adapter);
         } else if (holder instanceof RCV_Shop_Product_Adapter.ProductHolder){
             List<Product> productList = new ArrayList<>();
             loadData(productList);

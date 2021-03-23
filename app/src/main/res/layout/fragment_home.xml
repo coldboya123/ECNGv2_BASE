@@ -154,6 +154,8 @@
         android:layout_marginTop="40dp"
         android:background="@color/white"
         app:layout_anchor="@id/space"
-        app:layout_anchorGravity="bottom" />
+        app:layout_anchorGravity="bottom"
+        android:nestedScrollingEnabled="false"
+        android:fitsSystemWindows="true"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

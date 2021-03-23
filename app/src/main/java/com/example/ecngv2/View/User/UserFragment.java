@@ -23,6 +23,7 @@ import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
 import com.example.ecngv2.View.User.SettingAccount.SettingAccountActivity;
+import com.example.ecngv2.View.Voucher.VoucherActivity;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class UserFragment extends Fragment implements View.OnClickListener, IUserView {
@@ -30,7 +31,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     SwipeRefreshLayout refreshLayout;
     ShapeableImageView avatar;
     ImageView choxacnhan, cholayhang, danggiao, dagiao, dahuy;
-    ConstraintLayout block_logined, block_logouted, btn_settingacc;
+    ConstraintLayout block_logined, block_logouted, btn_settingacc, btn_voucher;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
     TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
@@ -57,6 +58,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_register.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
         btn_settingacc.setOnClickListener(this);
+        btn_voucher.setOnClickListener(this);
         ordermanager.setOnClickListener(this);
         choxacnhan.setOnClickListener(this);
         cholayhang.setOnClickListener(this);
@@ -76,6 +78,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_login = v.findViewById(R.id.user_btn_login);
         btn_settingacc = v.findViewById(R.id.user_block_setting);
         btn_logout = v.findViewById(R.id.user_btn_logout);
+        btn_voucher = v.findViewById(R.id.user_block_voucher);
 
         ordermanager = v.findViewById(R.id.user_ordermanager);
         badge_choxacnhan = v.findViewById(R.id.user_badge_choxacnhan);
@@ -130,6 +133,13 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 intent = new Intent(getContext(), OrderManagerActivity.class);
                 intent.putExtra("position", 4);
                 startActivity(intent);
+                break;
+            case R.id.user_block_voucher:
+                if (checkLogin){
+                    startActivity(new Intent(getContext(), VoucherActivity.class));
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_block_setting:
                 if (checkLogin){

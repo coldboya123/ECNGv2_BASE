@@ -4,8 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,25 +22,29 @@ import java.util.List;
 public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-
+    List<Product> list_products;
     public RCV_Home_Adapter(Context context) {
         this.context = context;
     }
 
-    final int VENDOR = 0;
-    final int HLPRODUCT = 1;
+//    final int VENDOR = 0;
+    final int HLPRODUCT = 0;
+    final int CATE_PRODUCT = 1;
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         switch (viewType){
-            case VENDOR:
-                v = LayoutInflater.from(context).inflate(R.layout.rcv_vendor, parent, false);
-                return new Vendor_Holder(v);
+//            case VENDOR:
+//                v = LayoutInflater.from(context).inflate(R.layout.rcv_vendor, parent, false);
+//                return new Vendor_Holder(v);
             case HLPRODUCT:
-                v = LayoutInflater.from(context).inflate(R.layout.rcv_hightlight_product, parent, false);
-                return new HLProduct_Holder(v);
+                v = LayoutInflater.from(context).inflate(R.layout.rcv_hot_product, parent, false);
+                return new HotProduct_Holder(v);
+            case CATE_PRODUCT:
+                v = LayoutInflater.from(context).inflate(R.layout.rcv_home_cate_product, parent, false);
+                return new CateProduct_Holder(v);
         }
         return null;
     }
@@ -46,9 +54,9 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         switch (position){
             case 0:
-                return VENDOR;
-            case 1:
                 return HLPRODUCT;
+            case 1:
+                return CATE_PRODUCT;
         }
         return -1;
 
@@ -61,52 +69,53 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder instanceof Vendor_Holder){
-            List<Integer> list_vendors = new ArrayList<>();
-            list_vendors.add(R.drawable.ken);
-            list_vendors.add(R.drawable.bud);
-            list_vendors.add(R.drawable.ken);
-            list_vendors.add(R.drawable.bud);
-            list_vendors.add(R.drawable.ken);
-            list_vendors.add(R.drawable.bud);
-            list_vendors.add(R.drawable.ken);
-            list_vendors.add(R.drawable.bud);
-            RCV_vendor_adapter rcv_vendor_adapter = new RCV_vendor_adapter(context, list_vendors);
-            ((Vendor_Holder) holder).recyclerViewvendor.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
-            ((Vendor_Holder) holder).recyclerViewvendor.setAdapter(rcv_vendor_adapter);
-        } else if (holder instanceof HLProduct_Holder){
-            List<Product> list_products = new ArrayList<>();
-            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
-            list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
-            list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-            RCV_HLProduct_Adapter rcv_hlProduct_adapter = new RCV_HLProduct_Adapter(context, list_products);
-            ((HLProduct_Holder) holder).recyclerView_HLProduct.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
-            ((HLProduct_Holder) holder).recyclerView_HLProduct.setAdapter(rcv_hlProduct_adapter);
+        LoadData();
+        if (holder instanceof HotProduct_Holder){
+            RCV_HotProduct_Adapter rcv_hotProduct_adapter = new RCV_HotProduct_Adapter(context, list_products);
+            ((HotProduct_Holder) holder).recyclerView_HotProduct.setLayoutManager(new GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false));
+            ((HotProduct_Holder) holder).recyclerView_HotProduct.setAdapter(rcv_hotProduct_adapter);
+        }else if (holder instanceof CateProduct_Holder){
+            ((CateProduct_Holder) holder).recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+            ((CateProduct_Holder) holder).recyclerView.setAdapter(new RCV_HomeCateProduct_Adapter(context, list_products));
         }
     }
 
+    private void LoadData(){
+        list_products = new ArrayList<>();
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
 
+    }
 
-    public class Vendor_Holder extends RecyclerView.ViewHolder {
-        RecyclerView recyclerViewvendor;
-        public Vendor_Holder(@NonNull View itemView) {
+//    public class Vendor_Holder extends RecyclerView.ViewHolder {
+//        RecyclerView recyclerViewvendor;
+//        public Vendor_Holder(@NonNull View itemView) {
+//            super(itemView);
+//            recyclerViewvendor = itemView.findViewById(R.id.recycler_vendor);
+//        }
+//    }
+    public class HotProduct_Holder extends RecyclerView.ViewHolder {
+        RecyclerView recyclerView_HotProduct;
+        public HotProduct_Holder(@NonNull View itemView) {
             super(itemView);
-            recyclerViewvendor = itemView.findViewById(R.id.recycler_vendor);
+            recyclerView_HotProduct = itemView.findViewById(R.id.rcv_hot_product);
         }
     }
-    public class HLProduct_Holder extends RecyclerView.ViewHolder {
-        RecyclerView recyclerView_HLProduct;
-        public HLProduct_Holder(@NonNull View itemView) {
+
+    public class CateProduct_Holder extends RecyclerView.ViewHolder {
+        RecyclerView recyclerView;
+        public CateProduct_Holder(@NonNull View itemView) {
             super(itemView);
-            recyclerView_HLProduct = itemView.findViewById(R.id.recycler_hightlight_product);
+            recyclerView = itemView.findViewById(R.id.rcv_product);
         }
     }
 
