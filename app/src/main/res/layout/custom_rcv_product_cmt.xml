@@ -21,6 +21,7 @@
         android:paddingHorizontal="10dp"
         android:paddingTop="5dp"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintStart_toEndOf="@id/product_cmt_cus_img"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:shadowColor="@color/black"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_cmt_cus_img" />
@@ -83,6 +85,7 @@
         android:text="Thích (100)"
         android:textAllCaps="false"
         android:textColor="@color/primary_color"
+        android:textSize="@dimen/textsize_3"
         app:icon="@drawable/ic_like"
         app:iconSize="20dp"
         app:iconTint="@color/primary_color"
@@ -103,6 +106,7 @@
         android:text="Bình luân"
         android:textAllCaps="false"
         android:textColor="@color/dark_primary"
+        android:textSize="@dimen/textsize_3"
         app:iconTint="@color/primary_color"
         app:layout_constraintStart_toEndOf="@id/product_cmt_btnlike"
         app:layout_constraintTop_toBottomOf="@id/product_cmt_img"

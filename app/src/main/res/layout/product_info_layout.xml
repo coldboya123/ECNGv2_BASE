@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Thông tin sản phẩm"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_4"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Danh mục" />
+                android:text="Danh mục"
+                android:textSize="@dimen/textsize_3" />
 
             <TextView
                 android:layout_width="0dp"
@@ -46,7 +48,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Điện thoại > Điện thoại Smartphone"
-                android:textColor="@color/primary_color" />
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/textsize_3" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Nhà cung cấp" />
+                android:text="Nhà cung cấp"
+                android:textSize="@dimen/textsize_3" />
 
             <TextView
                 android:layout_width="0dp"
@@ -69,7 +73,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="apple_long_store"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,7 +89,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Hình thức bảo hành" />
+                android:text="Hình thức bảo hành"
+                android:textSize="@dimen/textsize_3" />
 
             <TextView
                 android:layout_width="0dp"
@@ -92,7 +98,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Bảo hành điện tử"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
         </LinearLayout>
 
         <LinearLayout
@@ -107,7 +114,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Thương hiệu" />
+                android:text="Thương hiệu"
+                android:textSize="@dimen/textsize_3" />
 
             <TextView
                 android:layout_width="0dp"
@@ -115,7 +123,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="Iphone"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,7 +146,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Danh mục" />
+                    android:text="Danh mục"
+                    android:textSize="@dimen/textsize_3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -145,7 +155,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="Điện thoại > Điện thoại Smartphone"
-                    android:textColor="@color/primary_color" />
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3" />
             </LinearLayout>
 
             <LinearLayout
@@ -160,7 +171,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Nhà cung cấp" />
+                    android:text="Nhà cung cấp"
+                    android:textSize="@dimen/textsize_3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -168,7 +180,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="apple_long_store"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3" />
             </LinearLayout>
 
             <LinearLayout
@@ -183,7 +196,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Hình thức bảo hành" />
+                    android:text="Hình thức bảo hành"
+                    android:textSize="@dimen/textsize_3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -191,7 +205,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="Bảo hành điện tử"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3" />
             </LinearLayout>
 
             <LinearLayout
@@ -206,7 +221,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:text="Thương hiệu" />
+                    android:text="Thương hiệu"
+                    android:textSize="@dimen/textsize_3" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -214,7 +230,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="Iphone"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3" />
             </LinearLayout>
         </LinearLayout>
 
@@ -226,6 +243,7 @@
             android:layout_marginTop="10dp"
             android:text="Xem tất cả >"
             android:textColor="@color/primary_color"
+            android:textSize="@dimen/textsize_3"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

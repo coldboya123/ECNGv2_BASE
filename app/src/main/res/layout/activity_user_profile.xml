@@ -35,7 +35,7 @@
                 android:text="Hồ sơ cá nhân"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="@dimen/textsize_7" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -67,6 +67,7 @@
             android:text="Thay đổi"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/user_profile_avatar" />
@@ -88,6 +89,7 @@
             android:gravity="center"
             android:text="Tên đăng nhập"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,6 +98,7 @@
             android:layout_height="wrap_content"
             android:text="milkyway"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintBottom_toBottomOf="@id/user_profile_username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/user_profile_username" />
@@ -116,6 +119,7 @@
             android:gravity="center"
             android:text="Giới tính"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,6 +129,7 @@
             android:layout_height="wrap_content"
             android:text="Nam"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintBottom_toBottomOf="@id/user_profile_sex"
             app:layout_constraintEnd_toStartOf="@id/user_profile_btn_sex"
             app:layout_constraintTop_toTopOf="@id/user_profile_sex" />
@@ -154,6 +159,7 @@
             android:gravity="center"
             android:text="Ngày sinh"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -163,6 +169,7 @@
             android:layout_height="wrap_content"
             android:text="06/12/1996"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintBottom_toBottomOf="@id/user_profile_birth"
             app:layout_constraintEnd_toStartOf="@id/user_profile_btn_birth"
             app:layout_constraintTop_toTopOf="@id/user_profile_birth" />
@@ -192,6 +199,7 @@
             android:gravity="center"
             android:text="Số điện thoại"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -201,6 +209,7 @@
             android:layout_height="wrap_content"
             android:text="0327347087"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintBottom_toBottomOf="@id/user_profile_phone"
             app:layout_constraintEnd_toStartOf="@id/user_profile_btn_phone"
             app:layout_constraintTop_toTopOf="@id/user_profile_phone" />
@@ -230,6 +239,7 @@
             android:gravity="center"
             android:text="Email"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -239,6 +249,7 @@
             android:layout_height="wrap_content"
             android:text="duchuy.ecng@gmail.com"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintBottom_toBottomOf="@id/user_profile_email"
             app:layout_constraintEnd_toStartOf="@id/user_profile_btn_email"
             app:layout_constraintTop_toTopOf="@id/user_profile_email" />
@@ -269,6 +280,7 @@
             android:gravity="center"
             android:text="Thay đổi mật khẩu"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

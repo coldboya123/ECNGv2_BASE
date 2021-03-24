@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:text="Mô tả sản phẩm"
                 android:textColor="@color/black"
+                android:textSize="@dimen/textsize_4"
                 android:textStyle="bold" />
 
             <TextView
@@ -29,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -42,7 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -55,7 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Màn hình lớn, giải trí không giới hạn Điện thoại iphone 12 pro max trang bị một màn hình sd  trang bị một màn hình tràn viền rộng 10.0 in với tỷ lệ vàng 19:5:9 giúp tối ưu không gian mang đến trải nghiêm tốt nhất cho khách hàng ...."
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
         </LinearLayout>
 
         <TextView
@@ -66,6 +70,7 @@
             android:layout_marginTop="10dp"
             android:text="Xem tất cả >"
             android:textColor="@color/primary_color"
+            android:textSize="@dimen/textsize_3"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

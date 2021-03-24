@@ -13,12 +13,14 @@
         android:text="Các sản phẩm khác của Shop"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textSize="@dimen/textsize_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/product_seeall"
         android:layout_width="wrap_content"
+        android:textSize="@dimen/textsize_3"
         android:layout_height="wrap_content"
         android:text="Xem tất cả "
         android:textColor="@color/primary_color"

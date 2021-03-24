@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Khách hàng nhận xét"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -38,7 +39,7 @@
                     android:layout_gravity="center_horizontal"
                     android:text="5.0"
                     android:textColor="@color/black"
-                    android:textSize="35sp"
+                    android:textSize="@dimen/textsize_30"
                     android:textStyle="bold" />
 
                 <RatingBar
@@ -56,7 +57,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="500 nhận xét" />
+                    android:text="500 nhận xét"
+                    android:textSize="@dimen/textsize_3" />
             </LinearLayout>
 
             <View
@@ -104,7 +106,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="350" />
+                        android:text="350"
+                        android:textSize="@dimen/textsize_3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -139,7 +142,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="100" />
+                        android:text="100"
+                        android:textSize="@dimen/textsize_3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -174,7 +178,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="50" />
+                        android:text="50"
+                        android:textSize="@dimen/textsize_3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -209,7 +214,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="0" />
+                        android:text="0"
+                        android:textSize="@dimen/textsize_3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -244,7 +250,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="0" />
+                        android:text="0"
+                        android:textSize="@dimen/textsize_3" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -264,6 +271,7 @@
         android:outlineProvider="none"
         android:padding="10dp"
         android:text="Xem tất cả 200 nhận xét"
+        android:textSize="@dimen/textsize_3"
         android:textAllCaps="false"
         android:textColor="@color/primary_color"
         android:textStyle="bold"

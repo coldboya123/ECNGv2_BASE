@@ -35,7 +35,7 @@
                 android:text="Thiết lập tài khoản"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="@dimen/textsize_7" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -54,6 +54,7 @@
             android:gravity="center"
             android:text="Hồ sơ cá nhân"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,6 +82,7 @@
             android:gravity="center"
             android:text="Địa chỉ"
             android:textColor="@color/black"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,6 +109,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Ngôn ngữ"
+            android:textSize="@dimen/textsize_4"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

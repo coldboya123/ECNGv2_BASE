@@ -14,6 +14,7 @@
         android:drawablePadding="5dp"
         android:textColor="@color/primary_color"
         android:textStyle="bold"
+        android:textSize="@dimen/textsize_4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -40,6 +41,7 @@
             android:drawableEnd="@drawable/ic_next_small"
             android:gravity="center|start"
             android:text="Đơn vị vận chuyển"
+            android:textSize="@dimen/textsize_3"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,6 +95,7 @@
         android:drawablePadding="5dp"
         android:paddingVertical="15dp"
         android:text="Mã ưu đãi:"
+        android:textSize="@dimen/textsize_3"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_shipping_block" />
@@ -122,6 +125,7 @@
         android:text="Áp dụng"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtvoucher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/payment_txtvoucher"
@@ -140,6 +144,7 @@
         android:paddingVertical="10dp"
         android:text="Ghi chú:"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_txtvoucher" />
 
@@ -152,7 +157,7 @@
         android:hint="Ghi chú đơn hàng..."
         android:maxLines="1"
         android:padding="0dp"
-        android:textSize="14sp"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtnote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/payment_txtnote"
@@ -170,6 +175,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:text="Tạm tính: "
+        android:textSize="@dimen/textsize_3"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_txtnote" />
@@ -180,7 +186,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:textColor="@color/primary_color"
-        android:textSize="17sp"
+        android:textSize="@dimen/textsize_5"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/payment_txtsubtotal"
         app:layout_constraintEnd_toEndOf="parent"

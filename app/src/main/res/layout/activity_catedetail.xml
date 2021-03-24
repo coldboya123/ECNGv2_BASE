@@ -32,7 +32,8 @@
                 android:drawableLeft="@drawable/ic_back_shop"
                 android:drawablePadding="5dp"
                 android:text="CÔNG NGHỆ"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_5" />
 
             <SearchView
                 android:id="@+id/searchbar"
@@ -113,6 +114,7 @@
                     android:paddingVertical="5dp"
                     android:text="Phổ biến"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintEnd_toStartOf="@id/catedetail_sort_fav"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -128,6 +130,7 @@
                     android:paddingVertical="5dp"
                     android:text="Yêu thích"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintBottom_toBottomOf="@id/catedetail_sort_common"
                     app:layout_constraintEnd_toStartOf="@id/catedetail_sort_new"
                     app:layout_constraintStart_toEndOf="@id/catedetail_sort_common"
@@ -144,6 +147,7 @@
                     android:paddingVertical="5dp"
                     android:text="Mới nhất"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintBottom_toBottomOf="@id/catedetail_sort_common"
                     app:layout_constraintEnd_toStartOf="@id/catedetail_sort_price"
                     app:layout_constraintStart_toEndOf="@id/catedetail_sort_fav"
@@ -161,6 +165,7 @@
                     android:paddingVertical="5dp"
                     android:text="Giá"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintBottom_toBottomOf="@id/catedetail_sort_common"
                     app:layout_constraintEnd_toEndOf="@id/catedetail_sort_rating"
                     app:layout_constraintStart_toEndOf="@id/catedetail_sort_new"
@@ -176,6 +181,7 @@
                     android:popupBackground="@drawable/border_primary_color"
                     android:scrollbars="none"
                     android:spinnerMode="dropdown"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintBottom_toBottomOf="@id/catedetail_sort_common"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/catedetail_sort_price"

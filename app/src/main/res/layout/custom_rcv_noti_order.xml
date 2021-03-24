@@ -22,12 +22,14 @@
         android:layout_marginStart="10dp"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintBottom_toTopOf="@id/noti_order_status"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/noti_order_img"
         app:layout_constraintTop_toTopOf="@id/noti_order_img" />
 
     <TextView
+        android:textSize="@dimen/textsize_2"
         android:id="@+id/noti_order_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Xem chi tiết"
+        android:textSize="@dimen/textsize_2"
         android:textColor="@color/primary_color"
         app:layout_constraintBottom_toBottomOf="@id/noti_order_img"
         app:layout_constraintEnd_toEndOf="parent" />

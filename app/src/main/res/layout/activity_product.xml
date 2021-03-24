@@ -103,7 +103,7 @@
                     android:maxLines="2"
                     android:text="PRODUCT NAME"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/textsize_6"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -129,7 +129,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="10dp"
-                        android:text="(Xem 13 đánh giá)" />
+                        android:text="(Xem 13 đánh giá)"
+                        android:textSize="@dimen/textsize_3"/>
                 </LinearLayout>
 
                 <TextView
@@ -137,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="30.000.000 đ"
                     android:textColor="@color/primary_color"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/textsize_6"
                     android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -154,6 +155,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
                         android:text="Chọn loại hàng "
+                        android:textSize="@dimen/textsize_3"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -162,6 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(5 màu)"
+                        android:textSize="@dimen/textsize_3"
                         app:layout_constraintStart_toEndOf="@id/txt_choosetype"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,6 +173,7 @@
                         android:layout_height="wrap_content"
                         android:paddingStart="10dp"
                         android:paddingTop="5dp"
+                        android:textSize="@dimen/textsize_3"
                         android:text="Đen nhám/16GB/125GB"
                         android:textColor="@color/black"
                         app:layout_constraintStart_toStartOf="parent"
@@ -211,7 +215,8 @@
                     android:layout_margin="10dp"
                     android:text="apple_long_store"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/textsize_5"
                     app:layout_constraintStart_toEndOf="@id/product_img_vendor"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -219,6 +224,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Online 10 giờ trước"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toStartOf="@id/product_vendor_name"
                     app:layout_constraintTop_toBottomOf="@id/product_vendor_name" />
 
@@ -231,6 +237,7 @@
                     android:paddingHorizontal="20dp"
                     android:paddingVertical="10dp"
                     android:text="Xem Shop"
+                    android:textSize="@dimen/textsize_3"
                     android:textColor="@color/primary_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -253,11 +260,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="50"
+                            android:textSize="@dimen/textsize_4"
                             android:textColor="@color/primary_color" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="@dimen/textsize_4"
                             android:text="Sản phẩm" />
                     </LinearLayout>
 
@@ -277,11 +286,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="5.0"
+                            android:textSize="@dimen/textsize_4"
                             android:textColor="@color/primary_color" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="@dimen/textsize_4"
                             android:text="Đánh giá" />
                     </LinearLayout>
 
@@ -301,12 +312,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="100%"
-                            android:textColor="@color/primary_color" />
+                            android:textColor="@color/primary_color"
+                            android:textSize="@dimen/textsize_4"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Phản hồi chat" />
+                            android:text="Phản hồi chat"
+                            android:textSize="@dimen/textsize_4"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -348,7 +361,7 @@
             android:text="Thêm vào giỏ hàng"
             android:textAllCaps="false"
             android:textColor="@color/primary_color"
-            android:textSize="16sp"
+            android:textSize="@dimen/textsize_4"
             app:strokeColor="@color/primary_color" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -361,6 +374,6 @@
             android:text="Mua ngay"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="@dimen/textsize_4" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

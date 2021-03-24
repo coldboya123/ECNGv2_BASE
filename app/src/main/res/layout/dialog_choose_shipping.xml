@@ -26,6 +26,7 @@
                 android:text="Đồng ý"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_color"
+                android:textSize="@dimen/textsize_4"
                 app:layout_constraintBottom_toBottomOf="@id/dialog_shipping_txt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/dialog_shipping_txt" />
@@ -39,7 +40,7 @@
                 android:paddingStart="10dp"
                 android:text="Chọn đơn vị vận chuyển"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/textsize_4"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -100,6 +101,7 @@
                     android:layout_marginStart="10dp"
                     android:text="Giao hàng nhanh"
                     android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -111,6 +113,7 @@
                     android:layout_marginStart="20dp"
                     android:text="32.000 đ"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/radius_shipping_name1"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -121,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/textsize_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/radius_shipping_name1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -183,6 +186,7 @@
                     android:layout_marginStart="10dp"
                     android:text="Giao hàng tiết kiệm"
                     android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -194,6 +198,7 @@
                     android:layout_marginStart="20dp"
                     android:text="38.000 đ"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/radius_shipping_name2"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -204,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/textsize_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/radius_shipping_name2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -266,6 +271,7 @@
                     android:layout_marginStart="10dp"
                     android:text="Ahamove"
                     android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -277,6 +283,7 @@
                     android:layout_marginStart="20dp"
                     android:text="52.000 đ"
                     android:textColor="@color/primary_color"
+                    android:textSize="@dimen/textsize_3"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/radius_shipping_name3"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -287,7 +294,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="Dự kiến giao hàng vào 01/03 đến 05/03"
-                    android:textSize="13sp"
+                    android:textSize="@dimen/textsize_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/radius_shipping_name3" />
             </androidx.constraintlayout.widget.ConstraintLayout>

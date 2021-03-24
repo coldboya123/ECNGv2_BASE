@@ -24,7 +24,7 @@
         android:gravity="center"
         android:text="Giới tính"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/textsize_6"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Nam"
+            android:textSize="@dimen/textsize_4"
             android:textColor="@color/primary_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -78,6 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Nữ"
+            android:textSize="@dimen/textsize_4"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -112,6 +114,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Khác"
+            android:textSize="@dimen/textsize_4"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

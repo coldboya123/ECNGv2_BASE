@@ -61,14 +61,15 @@
                 android:layout_height="wrap_content"
                 android:text="100.000.000d"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="@dimen/textsize_3"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_5_s_n_ph_m"
                 android:textColor="@color/white"
-                android:textSize="12sp" />
+                android:textSize="@dimen/textsize_2" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

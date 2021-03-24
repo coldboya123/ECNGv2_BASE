@@ -32,7 +32,7 @@
             android:lines="2"
             android:text="ƯU ĐÃI THÀNH VIÊN"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/voucher_line"
@@ -48,6 +48,7 @@
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
             android:text="apple_long_butterfly"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toEndOf="@id/voucher_line"
             app:layout_constraintTop_toTopOf="@id/voucher_title" />
 
@@ -58,7 +59,7 @@
             android:layout_marginVertical="5dp"
             android:text="Giảm 40% đơn giá"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/voucher_shop"
             app:layout_constraintTop_toBottomOf="@id/voucher_shop" />
@@ -67,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cho thành viên đồng của shop"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintStart_toStartOf="@id/voucher_shop"
             app:layout_constraintTop_toBottomOf="@id/voucher_percent" />
 
@@ -75,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HSD: 15/03/2020"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintBottom_toBottomOf="@id/voucher_title"
             app:layout_constraintStart_toStartOf="@id/voucher_shop" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,6 +105,7 @@
             android:lines="2"
             android:text="ƯU ĐÃI THÀNH VIÊN"
             android:textColor="@color/white"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/voucher_line1"
@@ -119,6 +121,7 @@
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
             android:text="apple_long_butterfly"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toEndOf="@id/voucher_line1"
             app:layout_constraintTop_toTopOf="@id/voucher_title1" />
 
@@ -129,7 +132,7 @@
             android:layout_marginVertical="5dp"
             android:text="Giảm 40% đơn giá"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/voucher_shop1"
             app:layout_constraintTop_toBottomOf="@id/voucher_shop1" />
@@ -138,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cho thành viên đồng của shop"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintStart_toStartOf="@id/voucher_shop1"
             app:layout_constraintTop_toBottomOf="@id/voucher_percent1" />
 
@@ -146,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HSD: 15/03/2020"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintBottom_toBottomOf="@id/voucher_title1"
             app:layout_constraintStart_toStartOf="@id/voucher_shop1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -174,6 +177,7 @@
             android:lines="2"
             android:text="ƯU ĐÃI THÀNH VIÊN"
             android:textColor="@color/white"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/voucher_line2"
@@ -189,6 +193,7 @@
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
             android:text="apple_long_butterfly"
+            android:textSize="@dimen/textsize_4"
             app:layout_constraintStart_toEndOf="@id/voucher_line2"
             app:layout_constraintTop_toTopOf="@id/voucher_title2" />
 
@@ -199,7 +204,7 @@
             android:layout_marginVertical="5dp"
             android:text="Giảm 40% đơn giá"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/textsize_4"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/voucher_shop2"
             app:layout_constraintTop_toBottomOf="@id/voucher_shop2" />
@@ -208,7 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cho thành viên đồng của shop"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintStart_toStartOf="@id/voucher_shop2"
             app:layout_constraintTop_toBottomOf="@id/voucher_percent2" />
 
@@ -216,7 +221,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HSD: 15/03/2020"
-            android:textSize="13sp"
+            android:textSize="@dimen/textsize_3"
             app:layout_constraintBottom_toBottomOf="@id/voucher_title2"
             app:layout_constraintStart_toStartOf="@id/voucher_shop2" />
     </androidx.constraintlayout.widget.ConstraintLayout>

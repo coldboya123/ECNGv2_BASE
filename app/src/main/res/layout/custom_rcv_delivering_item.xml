@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:padding="5dp">
+
     <View
         android:id="@+id/ordermanager_line"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@color/dark_2"/>
+        android:background="@color/dark_2"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/ordermanager_txtshop"
-        app:layout_constraintTop_toBottomOf="@id/ordermanager_line"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cửa hàng: "
         android:layout_marginTop="5dp"
-        android:textColor="@color/black"/>
+        android:text="Cửa hàng: "
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_line" />
+
     <TextView
         android:id="@+id/ordermanager_shop"
-        app:layout_constraintTop_toTopOf="@id/ordermanager_txtshop"
-        app:layout_constraintStart_toEndOf="@id/ordermanager_txtshop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/textsize_3"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ordermanager_txtshop"
+        app:layout_constraintTop_toTopOf="@id/ordermanager_txtshop" />
+
     <TextView
         android:id="@+id/ordermanager_shipping"
-        app:layout_constraintTop_toBottomOf="@id/ordermanager_shop"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_shipping"
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
-        android:textSize="13sp"
-        android:textColor="@color/primary_color"/>
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/textsize_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_shop" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_ordermanager_product"
-        app:layout_constraintTop_toBottomOf="@id/ordermanager_shipping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:padding="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_shipping" />
 </androidx.constraintlayout.widget.ConstraintLayout>

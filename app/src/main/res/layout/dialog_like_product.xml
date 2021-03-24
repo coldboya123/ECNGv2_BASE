@@ -15,5 +15,6 @@
         android:paddingVertical="10dp"
         android:text="Đã thêm vào danh sách yêu thích!"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="@dimen/textsize_4"/>
 </LinearLayout>

@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="Sản Phẩm Hot Hôm Nay"
+        android:textSize="@dimen/textsize_4"
         android:textColor="@color/primary_color"
         android:textStyle="bold"/>
 

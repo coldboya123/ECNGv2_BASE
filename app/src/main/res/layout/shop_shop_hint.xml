@@ -13,6 +13,7 @@
         android:padding="10dp"
         android:text="Gợi Ý Cho Bạn"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_4"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,17 +44,17 @@
                 android:maxLines="2"
                 android:paddingHorizontal="1dp"
                 android:text="Chung cư cao cấp Quận 1 có lorem lorem ..."
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="5dp"
                 android:paddingVertical="5dp"
                 android:text="2.000.000.000 đ"
                 android:textColor="@color/primary_color"
-                android:textSize="16sp"
+                android:textSize="@dimen/textsize_4"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -91,6 +92,7 @@
                 android:paddingHorizontal="5dp"
                 android:text="Chung cư cao cấp Quận 1 có lorem lorem ..."
                 android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar2"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -116,6 +118,7 @@
                 android:paddingStart="5dp"
                 android:text="2.000.000.000 đ"
                 android:textColor="@color/primary_color"
+                android:textSize="@dimen/textsize_3"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/shop_shop_hint_avatar2"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar2"
@@ -157,6 +160,7 @@
                 android:paddingHorizontal="5dp"
                 android:text="Chung cư cao cấp Quận 1 có lorem lorem ..."
                 android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar3"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -182,6 +186,7 @@
                 android:paddingStart="5dp"
                 android:text="2.000.000.000 đ"
                 android:textColor="@color/primary_color"
+                android:textSize="@dimen/textsize_3"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/shop_shop_hint_avatar3"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar3"
@@ -223,6 +228,7 @@
                 android:paddingHorizontal="5dp"
                 android:text="Chung cư cao cấp Quận 1 có lorem lorem ..."
                 android:textColor="@color/black"
+                android:textSize="@dimen/textsize_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar4"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -248,6 +254,7 @@
                 android:paddingStart="5dp"
                 android:text="2.000.000.000 đ"
                 android:textColor="@color/primary_color"
+                android:textSize="@dimen/textsize_3"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/shop_shop_hint_avatar4"
                 app:layout_constraintStart_toEndOf="@id/shop_shop_hint_avatar4"

@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Đơn hàng "
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_4"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/ordermanager_txtorderid"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +32,7 @@
         android:id="@+id/ordermanager_btn_detail"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:textSize="@dimen/textsize_3"
         android:background="@drawable/background_radius_primary_color"
         android:paddingHorizontal="20dp"
         android:text="Xem chi tiết"
@@ -43,7 +46,7 @@
         android:id="@+id/ordermanager_ordertime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="11sp"
+        android:textSize="@dimen/textsize_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ordermanager_orderid" />
 
@@ -68,7 +71,7 @@
         android:paddingTop="10dp"
         android:text="Tổng tiền"
         android:textColor="@color/black"
-        android:textSize="17sp"
+        android:textSize="@dimen/textsize_5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rcv_ordermanager_item" />
 
@@ -77,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/primary_color"
-        android:textSize="17sp"
+        android:textSize="@dimen/textsize_5"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/ordermanager_txttotal"
         app:layout_constraintEnd_toEndOf="parent"

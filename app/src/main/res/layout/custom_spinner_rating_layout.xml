@@ -21,5 +21,6 @@
         android:layout_height="wrap_content"
         android:drawableEnd="@drawable/ic_up_primary"
         android:singleLine="true"
+        android:textSize="@dimen/textsize_3"
         android:textColor="@color/primary_color" />
 </LinearLayout>

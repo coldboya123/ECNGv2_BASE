@@ -28,6 +28,6 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:maxLines="1"
-        android:textSize="13sp"
+        android:textSize="@dimen/textsize_2"
         android:textStyle="bold" />
 </LinearLayout>

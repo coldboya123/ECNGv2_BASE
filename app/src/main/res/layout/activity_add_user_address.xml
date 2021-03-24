@@ -32,10 +32,11 @@
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_back_shop"
                 android:drawablePadding="10dp"
+                android:gravity="center_vertical"
                 android:text="Thêm địa chỉ"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="@dimen/textsize_7" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -29,7 +29,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -54,7 +54,7 @@
             android:inputType="phone"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
             android:inputType="none"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -105,7 +105,7 @@
             android:inputType="none"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +133,7 @@
             android:inputType="none"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -160,7 +160,7 @@
             android:inputType="text"
             android:maxLines="1"
             android:padding="0dp"
-            android:textSize="13sp" />
+            android:textSize="@dimen/textsize_3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.checkbox.MaterialCheckBox
@@ -171,7 +171,7 @@
         android:buttonTint="@color/primary_color"
         android:maxLines="1"
         android:text="Đặt làm địa chỉ mặc định"
-        android:textSize="14sp"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintTop_toBottomOf="@id/user_address_edit_address" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -182,6 +182,7 @@
         android:layout_marginVertical="10dp"
         android:background="@drawable/background_radius_primary_color"
         android:text="Lưu địa chỉ"
+        android:textSize="@dimen/textsize_4"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/user_address_edit_checkbox" />

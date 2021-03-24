@@ -19,6 +19,7 @@
             android:layout_gravity="center"
             android:padding="10dp"
             android:text="Sắp sếp: "
+            android:textSize="@dimen/textsize_4"
             android:textColor="@color/black"
             android:textStyle="bold" />
 

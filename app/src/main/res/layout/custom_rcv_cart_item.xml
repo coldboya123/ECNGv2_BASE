@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:text="  −  "
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="@dimen/textsize_4" />
 
         <View
             android:layout_width="1dp"
@@ -108,6 +108,7 @@
             android:background="@android:color/transparent"
             android:paddingHorizontal="10dp"
             android:text="1"
+            android:textSize="@dimen/textsize_3"
             android:textColor="@color/primary_color"
             android:textColorHint="@color/primary_color"
             android:textStyle="bold" />
@@ -123,6 +124,6 @@
             android:layout_height="wrap_content"
             android:text="  +  "
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="@dimen/textsize_4" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

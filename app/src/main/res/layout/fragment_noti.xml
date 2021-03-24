@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:text="Thông Báo"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/textsize_7"
                     android:textStyle="bold"
                     android:gravity="center"/>
             </androidx.appcompat.widget.Toolbar>

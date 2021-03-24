@@ -13,11 +13,12 @@
         android:padding="10dp"
         android:text="Nhà Bán Hàng Nổi Bật"
         android:textColor="@color/black"
+        android:textSize="@dimen/textsize_4"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_vendor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:nestedScrollingEnabled="false"/>
+        android:nestedScrollingEnabled="false" />
 </LinearLayout>

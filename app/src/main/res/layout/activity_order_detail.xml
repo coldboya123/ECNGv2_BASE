@@ -36,18 +36,21 @@
                 android:paddingStart="10dp"
                 android:text="Chi tiết đơn hàng"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/textsize_7"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/appbar_orderdetail"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar_orderdetail">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/orderdetail_blockinfo"
                 android:layout_width="match_parent"
@@ -62,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="Mã đơn hàng:"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/textsize_4"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -74,7 +77,7 @@
                     android:layout_marginStart="10dp"
                     android:text="123456"
                     android:textColor="@color/black"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/textsize_4"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@id/orderdetail_txtid"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -86,6 +89,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:text="Đặt vào lúc "
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/orderdetail_id" />
 
@@ -94,6 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10:10 10/10/2021"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toEndOf="@id/orderdetail_txttime"
                     app:layout_constraintTop_toTopOf="@id/orderdetail_txttime" />
 
@@ -114,7 +119,7 @@
                     android:paddingTop="10dp"
                     android:text="Địa chỉ nhận hàng"
                     android:textColor="@color/black"
-                    android:textSize="16dp"
+                    android:textSize="@dimen/textsize_4"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/orderdetail_time" />
@@ -126,6 +131,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:text="Nguyen Duc Huy"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/orderdetail_txtaddress" />
 
@@ -136,6 +142,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:text="0327347087"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/orderdetail_name" />
 
@@ -146,16 +153,18 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
                     android:text="99a Cộng Hòa, phường 4, quận Tân Bình, TPHCM"
+                    android:textSize="@dimen/textsize_3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/orderdetail_phone" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_orderdetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/orderdetail_blockinfo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

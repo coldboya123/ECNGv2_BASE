@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="160dp"
+    android:layout_width="140dp"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/img_product"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="5dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -33,6 +33,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:paddingHorizontal="10dp"
+                android:textSize="@dimen/textsize_3"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="5dp"
-                android:textSize="13sp"
+                android:textSize="@dimen/textsize_1"
                 android:textColor="@color/primary_color"
                 app:layout_constraintTop_toBottomOf="@id/name_product"
                 app:layout_constraintBottom_toBottomOf="parent"

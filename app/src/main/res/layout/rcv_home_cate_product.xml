@@ -14,11 +14,12 @@
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:paddingVertical="5dp"
         android:text="Công nghệ"
         android:textColor="@color/primary_color"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/textsize_4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Xem thêm >"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintBottom_toBottomOf="@id/txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/txt" />

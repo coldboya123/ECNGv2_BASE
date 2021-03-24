@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cá nhân"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="@dimen/textsize_8"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -129,6 +129,7 @@
                             android:text="Đăng nhập"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
+                            android:textSize="@dimen/textsize_4"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,6 +143,7 @@
                             android:text="Đăng ký"
                             android:textAllCaps="false"
                             android:textColor="@color/primary_color"
+                            android:textSize="@dimen/textsize_4"
                             app:layout_constraintStart_toEndOf="@id/user_btn_login"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -165,6 +167,7 @@
                         android:gravity="center_vertical"
                         android:text="Quản lý đơn hàng"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -176,7 +179,7 @@
                         android:gravity="center_vertical"
                         android:text="Xem chi tiết"
                         android:textColor="@color/primary_color"
-                        android:textSize="13sp"
+                        android:textSize="@dimen/textsize_3"
                         app:layout_constraintBottom_toBottomOf="@id/user_btn_order_manager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/user_btn_order_manager" />
@@ -195,6 +198,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="2dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -226,7 +230,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Chờ xác nhận"
-                            android:textSize="11sp"
+                            android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/user_confirm" />
@@ -235,6 +239,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -265,7 +270,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Chờ lấy hàng"
-                            android:textSize="11sp"
+                            android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/user_pickup" />
@@ -305,7 +310,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Đang giao"
-                            android:textSize="11sp"
+                            android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/user_delivering" />
@@ -345,7 +350,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Đã giao"
-                            android:textSize="11sp"
+                            android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/user_delivered" />
@@ -368,7 +373,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Đã hủy"
-                            android:textSize="11sp" />
+                            android:textSize="@dimen/textsize_2" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -390,6 +395,7 @@
                         android:gravity="center"
                         android:text="Mã giảm giá"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -419,6 +425,7 @@
                         android:gravity="center"
                         android:text="Yêu thích"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -448,6 +455,7 @@
                         android:gravity="center"
                         android:text="Đã xem gần đây"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -477,6 +485,7 @@
                         android:gravity="center"
                         android:text="Ví ECNG"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -506,6 +515,7 @@
                         android:gravity="center"
                         android:text="Hỗ trợ"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -535,6 +545,7 @@
                         android:gravity="center"
                         android:text="Thiết lập tài khoản"
                         android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
