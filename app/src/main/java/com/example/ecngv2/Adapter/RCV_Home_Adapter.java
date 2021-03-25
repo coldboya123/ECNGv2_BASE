@@ -27,18 +27,18 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         this.context = context;
     }
 
-//    final int VENDOR = 0;
-    final int HLPRODUCT = 0;
-    final int CATE_PRODUCT = 1;
+    final int XML = 0;
+    final int HLPRODUCT = 1;
+    final int CATE_PRODUCT = 2;
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         switch (viewType){
-//            case VENDOR:
-//                v = LayoutInflater.from(context).inflate(R.layout.rcv_vendor, parent, false);
-//                return new Vendor_Holder(v);
+            case XML:
+                v = LayoutInflater.from(context).inflate(R.layout.home_xemmualien, parent, false);
+                return new XML_Holder(v);
             case HLPRODUCT:
                 v = LayoutInflater.from(context).inflate(R.layout.rcv_hot_product, parent, false);
                 return new HotProduct_Holder(v);
@@ -54,8 +54,10 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         switch (position){
             case 0:
-                return HLPRODUCT;
+                return XML;
             case 1:
+                return HLPRODUCT;
+            case 2:
                 return CATE_PRODUCT;
         }
         return -1;
@@ -64,13 +66,15 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         LoadData();
-        if (holder instanceof HotProduct_Holder){
+        if (holder instanceof XML_Holder){
+
+        }else if (holder instanceof HotProduct_Holder){
             RCV_HotProduct_Adapter rcv_hotProduct_adapter = new RCV_HotProduct_Adapter(context, list_products);
             ((HotProduct_Holder) holder).recyclerView_HotProduct.setLayoutManager(new GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false));
             ((HotProduct_Holder) holder).recyclerView_HotProduct.setAdapter(rcv_hotProduct_adapter);
@@ -96,13 +100,11 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     }
 
-//    public class Vendor_Holder extends RecyclerView.ViewHolder {
-//        RecyclerView recyclerViewvendor;
-//        public Vendor_Holder(@NonNull View itemView) {
-//            super(itemView);
-//            recyclerViewvendor = itemView.findViewById(R.id.recycler_vendor);
-//        }
-//    }
+    public class XML_Holder extends RecyclerView.ViewHolder {
+        public XML_Holder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
     public class HotProduct_Holder extends RecyclerView.ViewHolder {
         RecyclerView recyclerView_HotProduct;
         public HotProduct_Holder(@NonNull View itemView) {

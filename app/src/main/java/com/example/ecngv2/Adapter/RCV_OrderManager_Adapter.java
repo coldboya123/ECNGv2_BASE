@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ecngv2.Model.Object.OrderManager;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.OrderManager.OrderDetail.OrderDetailActivity;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
     Context context;
     List<OrderManager> list;
     boolean hide_shipping;
+    BottomSheetDialog dialog;
 
     public RCV_OrderManager_Adapter(Activity activity, Context context, List<OrderManager> list, boolean hide_shipping) {
         this.activity = activity;
@@ -58,6 +60,12 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
             context.startActivity(new Intent(context, OrderDetailActivity.class));
 //            activity.overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
         });
+        dialog = new BottomSheetDialog(context);
+        dialog.setContentView(R.layout.dialog_choose_type);
+        holder.btn_rating.setOnClickListener(view -> {
+            dialog = new BottomSheetDialog(context);
+
+        });
     }
 
     @Override
@@ -68,7 +76,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id, time, total;
         RecyclerView rcv;
-        AppCompatButton btn_detail;
+        AppCompatButton btn_detail, btn_rating;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.ordermanager_orderid);
@@ -76,6 +84,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
             total = itemView.findViewById(R.id.ordermanager_total);
             rcv = itemView.findViewById(R.id.rcv_ordermanager_item);
             btn_detail = itemView.findViewById(R.id.ordermanager_btn_detail);
+            btn_rating = itemView.findViewById(R.id.ordermanager_ratenow);
         }
     }
 }
