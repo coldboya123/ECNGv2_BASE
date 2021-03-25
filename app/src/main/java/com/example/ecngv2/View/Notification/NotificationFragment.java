@@ -38,7 +38,7 @@ public class NotificationFragment extends Fragment {
 
         init(v);
 
-        int[] icons = {R.drawable.ic_home_primary, R.drawable.ic_order_noti, R.drawable.ic_new_product, R.drawable.ic_secure};
+        int[] icons = {R.drawable.ic_logo, R.drawable.ic_order_noti, R.drawable.ic_new_product, R.drawable.ic_secure};
         viewPager.setAdapter(new ViewPagerNotiAdapter(getChildFragmentManager()));
         viewPager.setOffscreenPageLimit(4);
         tabLayout.setupWithViewPager(viewPager);

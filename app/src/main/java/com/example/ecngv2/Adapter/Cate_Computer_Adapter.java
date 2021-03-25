@@ -45,18 +45,18 @@ public class Cate_Computer_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        RCV_Category_Adapter adapter;
+        RCV_Home_Category_Adapter adapter;
         if (position == 0){
             ((ItemHolder) holder).title.setText(listItem.get(0).getTitle());
             ((ItemHolder) holder).all.setVisibility(View.INVISIBLE);
-            adapter = new RCV_Category_Adapter(context, listItem.get(0).getList());
+            adapter = new RCV_Home_Category_Adapter(context, listItem.get(0).getList());
             ((ItemHolder) holder).rcv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
             ((ItemHolder) holder).rcv.setAdapter(adapter);
         }else {
             for (int i=1; i<listItem.size(); i++){
                 if (position == i){
                     ((ItemHolder) holder).title.setText(listItem.get(i).getTitle());
-                    adapter = new RCV_Category_Adapter(context, listItem.get(i).getList());
+                    adapter = new RCV_Home_Category_Adapter(context, listItem.get(i).getList());
                     ((ItemHolder) holder).rcv.setLayoutManager(new GridLayoutManager(context, 3));
                     ((ItemHolder) holder).rcv.setAdapter(adapter);
                 }

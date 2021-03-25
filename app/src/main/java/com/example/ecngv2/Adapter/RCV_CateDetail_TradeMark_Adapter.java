@@ -37,12 +37,11 @@ public class RCV_CateDetail_TradeMark_Adapter extends RecyclerView.Adapter<RCV_C
         holder.img.setOnClickListener(view -> {
             if (check_selected){
                 holder.img.setBackground(context.getDrawable(R.drawable.border_primary_color));
-                check_selected = !check_selected;
             }
             else {
                 holder.img.setBackgroundResource(0);
-                check_selected = !check_selected;
             }
+            check_selected = !check_selected;
         });
     }
 

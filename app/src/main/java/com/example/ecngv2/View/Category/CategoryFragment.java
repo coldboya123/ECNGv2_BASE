@@ -3,218 +3,101 @@ package com.example.ecngv2.View.Category;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.ecngv2.Adapter.Cate_Computer_Adapter;
-import com.example.ecngv2.Model.Object.Cate_tabItem;
+import com.example.ecngv2.Adapter.RCV_CategoryTab_Adapter;
+import com.example.ecngv2.Adapter.RCV_Category_Adapter;
 import com.example.ecngv2.Model.Object.Category;
-import com.example.ecngv2.Model.Object.ItemCateTab;
+import com.example.ecngv2.Model.Object.CategoryList;
 import com.example.ecngv2.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import q.rorbin.verticaltablayout.VerticalTabLayout;
-import q.rorbin.verticaltablayout.adapter.TabAdapter;
-import q.rorbin.verticaltablayout.widget.ITabView;
-import q.rorbin.verticaltablayout.widget.TabView;
-
 public class CategoryFragment extends Fragment {
-    Fragment fragmentAll, fragmentBike, fragmentTech, acivefragment;
 
+    List<Category> categoryList;
+    List<CategoryList> lists;
+    RecyclerView rcv_cate, rcv_item;
 
     public CategoryFragment() {
         // Required empty public constructor
     }
-    RecyclerView rcv_catetab;
-    TextView title;
-    VerticalTabLayout tabLayout;
-    List<ItemCateTab> listItem;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_category, container, false);
+        init(v);
+        loadData();
+        rcv_cate.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        rcv_cate.setAdapter(new RCV_CategoryTab_Adapter(getContext(), categoryList));
 
-        title = v.findViewById(R.id.title_cate);
-        rcv_catetab = v.findViewById(R.id.rcv_cate_content);
-
-        tabLayout = v.findViewById(R.id.cate_tabs);
-        tabLayout.setIndicatorColor(getActivity().getColor(R.color.white));
-        tabLayout.setTabAdapter(new MyTabAdapter());
-        tabLayout.setTabSelected(0);
-        rcv_catetab.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-        title.setText("Máy tính & Laptop");
-        listItem = new ArrayList<>();
-        loadData0(listItem);
-        Cate_Computer_Adapter computer_adapter = new Cate_Computer_Adapter(getContext(), listItem);
-        rcv_catetab.setAdapter(computer_adapter);
-        tabLayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabView tab, int position) {
-                Cate_Computer_Adapter computer_adapter;
-                if (position == 0){
-                    title.setText("Máy tính & Laptop");
-                    listItem = new ArrayList<>();
-                    loadData0(listItem);
-                    computer_adapter = new Cate_Computer_Adapter(getContext(), listItem);
-                    computer_adapter.notifyDataSetChanged();
-                    rcv_catetab.setAdapter(computer_adapter);
-                }else if (position == 1){
-                    title.setText("Thời trang nam");
-                    listItem = new ArrayList<>();
-                    loadData1(listItem);
-                    computer_adapter = new Cate_Computer_Adapter(getContext(), listItem);
-                    computer_adapter.notifyDataSetChanged();
-                    rcv_catetab.setAdapter(computer_adapter);
-                }else if (position == 2){
-                    title.setText("Thời trang nữ");
-                }else if (position == 3){
-                    title.setText("Rượu");
-                }else if (position == 4){
-                    title.setText("Căn hộ");
-                }
-            }
-
-            @Override
-            public void onTabReselected(TabView tab, int position) {
-
-            }
-        });
+        rcv_item.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        rcv_item.setAdapter(new RCV_Category_Adapter(getContext(), lists));
         return v;
     }
 
-    private void loadData0(List<ItemCateTab> listItem){
-        List<Category> listcate;
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.logo_mac));
-        listcate.add(new Category("Dell", R.drawable.logo_dell));
-        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
-        listcate.add(new Category("Asus", R.drawable.logo_asus));
-        listcate.add(new Category("Acer", R.drawable.logo_acer));
-        listcate.add(new Category("LG", R.drawable.logo_lg));
-        listcate.add(new Category("Lenovo", R.drawable.logo_lenovo));
-        listItem.add(new ItemCateTab("Danh mục phổ biến", listcate));
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.logo_mac));
-        listcate.add(new Category("Dell", R.drawable.logo_dell));
-        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
-        listcate.add(new Category("Asus", R.drawable.logo_asus));
-        listcate.add(new Category("Acer", R.drawable.logo_acer));
-        listcate.add(new Category("LG", R.drawable.logo_lg));
-        listcate.add(new Category("Lenovo", R.drawable.logo_lenovo));
-        listItem.add(new ItemCateTab("Laptop", listcate));
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Macbook", R.drawable.logo_mac));
-        listcate.add(new Category("Dell", R.drawable.logo_dell));
-        listcate.add(new Category("Samsung", R.drawable.logo_samsung));
-        listcate.add(new Category("Asus", R.drawable.logo_asus));
-        listcate.add(new Category("Acer", R.drawable.logo_acer));
-        listcate.add(new Category("LG", R.drawable.logo_lg));
-        listItem.add(new ItemCateTab("Máy tính", listcate));
-    }
-    private void loadData1(List<ItemCateTab> listItem){
-        List<Category> listcate;
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
-        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
-        listcate.add(new Category("Zara", R.drawable.logo_zara));
-        listcate.add(new Category("Guess", R.drawable.logo_guess));
-        listcate.add(new Category("H&M", R.drawable.logo_h_m));
-        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
-        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
-        listItem.add(new ItemCateTab("Danh mục phổ biến", listcate));
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
-        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
-        listcate.add(new Category("Zara", R.drawable.logo_zara));
-        listcate.add(new Category("Guess", R.drawable.logo_guess));
-        listcate.add(new Category("H&M", R.drawable.logo_h_m));
-        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
-        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
-        listItem.add(new ItemCateTab("Vest", listcate));
-        listcate = new ArrayList<>();
-        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
-        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
-        listcate.add(new Category("Zara", R.drawable.logo_zara));
-        listcate.add(new Category("Guess", R.drawable.logo_guess));
-        listcate.add(new Category("H&M", R.drawable.logo_h_m));
-        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
-        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
-        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
-        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
-        listcate.add(new Category("Zara", R.drawable.logo_zara));
-        listcate.add(new Category("Guess", R.drawable.logo_guess));
-        listcate.add(new Category("H&M", R.drawable.logo_h_m));
-        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
-        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
-        listcate.add(new Category("Ralph Lauren", R.drawable.logo_ralph_lauren));
-        listcate.add(new Category("Brooks Brothers", R.drawable.logo_brooks_brothers));
-        listcate.add(new Category("Zara", R.drawable.logo_zara));
-        listcate.add(new Category("Guess", R.drawable.logo_guess));
-        listcate.add(new Category("H&M", R.drawable.logo_h_m));
-        listcate.add(new Category("Calvin Klein", R.drawable.logo_calvin_klein));
-        listcate.add(new Category("J.Crew", R.drawable.logo_j_crew));
-        listItem.add(new ItemCateTab("Shoe", listcate));
+    private void init(View v){
+        rcv_cate = v.findViewById(R.id.rcv_category);
+        rcv_item = v.findViewById(R.id.rcv_cate_item);
     }
 
+    private void loadData(){
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("Bất Động Sản", R.drawable.cate_batdongsan, true));
+        categoryList.add(new Category("Công Nghệ", R.drawable.cate_congnghe, false));
+        categoryList.add(new Category("Đồng Hồ", R.drawable.cate_dongho, false));
+        categoryList.add(new Category("Gia Dụng", R.drawable.cate_giadung, false));
+        categoryList.add(new Category("Làm Đẹp", R.drawable.cate_lamdep, false));
+        categoryList.add(new Category("Mỹ Phẩm", R.drawable.cate_mypham, false));
+        categoryList.add(new Category("Thời Trang", R.drawable.cate_thoitrang, false));
+        categoryList.add(new Category("Thực Phẩm", R.drawable.cate_thucpham, false));
+        categoryList.add(new Category("Thú Cưng", R.drawable.cate_thucung, false));
+        categoryList.add(new Category("Trang Sức", R.drawable.cate_trangsuc, true));
 
-    private class MyTabAdapter implements TabAdapter {
+        lists = new ArrayList<>();
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryList.add(new Category("LG", R.drawable.logo_lg));
+        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Điện Thoại", categoryList, true));
 
-        List<Cate_tabItem> list;
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryList.add(new Category("LG", R.drawable.logo_lg));
+        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Máy Tính Bản", categoryList, true));
 
-        public MyTabAdapter() {
-            list = new ArrayList<>();
-            list.add(new Cate_tabItem("Máy tính & Laptop", R.drawable.devices, R.drawable.devices_actived));
-            list.add(new Cate_tabItem("Thời trang nam",  R.drawable.suit_1, R.drawable.suit_2));
-            list.add(new Cate_tabItem("Thời trang nữ",  R.drawable.dress_1, R.drawable.dress_2));
-            list.add(new Cate_tabItem("Rượu",  R.drawable.wine_1, R.drawable.wine_2));
-            list.add(new Cate_tabItem("Căn hộ",  R.drawable.skyline_1, R.drawable.skyline_2));
-        }
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryList.add(new Category("LG", R.drawable.logo_lg));
+        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Laptop", categoryList, true));
 
-        @Override
-        public int getCount() {
-            return list.size();
-        }
-
-        @Override
-        public ITabView.TabBadge getBadge(int position) {
-            return null;
-        }
-
-
-        @Override
-        public TabView.TabIcon getIcon(int position) {
-            Cate_tabItem cate = list.get(position);
-            return new TabView.TabIcon.Builder()
-                    .setIcon(cate.getImg_selected(), cate.getImg_normal())
-                    .setIconGravity(Gravity.TOP)
-                    .setIconMargin(0)
-                    .setIconSize(100, 100)
-                    .build();
-        }
-
-        @Override
-        public TabView.TabTitle getTitle(int position) {
-            Cate_tabItem cate = list.get(position);
-            return new TabView.TabTitle.Builder()
-                    .setContent(cate.getTitle())
-                    .setTextColor(getActivity().getColor(R.color.primary_color),getActivity().getColor(R.color.black))
-                    .build();
-        }
-
-        @Override
-        public int getBackground(int position) {
-            return -1;
-        }
-
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryList.add(new Category("LG", R.drawable.logo_lg));
+        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Phụ Kiện", categoryList, true));
     }
-
 }

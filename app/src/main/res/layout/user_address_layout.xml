@@ -84,11 +84,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_address_edit_distric"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
         android:backgroundTint="@color/primary_color"
         android:gravity="center"
         android:hint="Quận/Huyện"
@@ -111,19 +110,17 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_address_edit_ward"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginHorizontal="20dp"
         android:backgroundTint="@color/primary_color"
         android:gravity="center"
         android:hint="Phường/Xã"
         app:boxStrokeColor="@color/primary_color"
         app:hintTextColor="@color/primary_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/user_address_edit_distric"
-        app:layout_constraintTop_toBottomOf="@id/user_address_edit_city">
+        app:layout_constraintTop_toBottomOf="@id/user_address_edit_distric">
 
         <AutoCompleteTextView
             android:id="@+id/user_address_edit_txtward"
@@ -151,7 +148,7 @@
         app:helperText="Số nhà, tên đường"
         app:helperTextEnabled="true"
         app:hintTextColor="@color/primary_color"
-        app:layout_constraintTop_toBottomOf="@id/user_address_edit_distric">
+        app:layout_constraintTop_toBottomOf="@id/user_address_edit_ward">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_address_edit_txtaddress"

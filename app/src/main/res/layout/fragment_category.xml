@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/dark_2">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_cate"
@@ -34,63 +35,35 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_cate"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_category"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
-
-    <q.rorbin.verticaltablayout.VerticalTabLayout
-        android:id="@+id/cate_tabs"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#EDEDED"
-        android:visibility="visible"
-        app:indicator_color="#FFFFFF"
-        app:indicator_gravity="fill"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline_cate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar_cate"
-        app:tab_height="80dp"
-        app:tab_margin="10dp"
-        app:tab_mode="scrollable" />
-
-    <TextView
-        android:id="@+id/title_cate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#EDEDED"
-        android:padding="5dp"
-        android:text="title"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@id/guideline_cate"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/appbar_cate" />
 
+
     <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#B2B2B2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/guideline_cate"
-        app:layout_constraintTop_toBottomOf="@+id/title_cate">
+        app:layout_constraintTop_toBottomOf="@id/rcv_category"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_cate_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/rcv_cate_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="true" />
-        </LinearLayout>
+                android:layout_marginTop="5dp"
+                android:nestedScrollingEnabled="false"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
+    <View
+        app:layout_constraintBottom_toBottomOf="@id/rcv_category"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

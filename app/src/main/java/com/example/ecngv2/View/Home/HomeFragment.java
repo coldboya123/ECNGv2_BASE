@@ -1,7 +1,6 @@
 package com.example.ecngv2.View.Home;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,13 +14,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import androidx.viewpager.widget.ViewPager;
 
-import com.example.ecngv2.Adapter.RCV_Category_Adapter;
+import com.example.ecngv2.Adapter.RCV_Home_Category_Adapter;
 import com.example.ecngv2.Adapter.RCV_Home_Adapter;
 import com.example.ecngv2.Adapter.SliderViewHomeAdapter;
-import com.example.ecngv2.Adapter.SliderViewPagerAdapter;
-import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Fragment.AllSuggestionFragment;
 import com.example.ecngv2.View.Fragment.BikeSuggestionFragment;
 import com.example.ecngv2.View.Fragment.TechSuggestionFragment;
@@ -95,9 +91,9 @@ public class HomeFragment extends Fragment {
         categoryList.add(new Category("Thú Cưng", R.drawable.cate_thucung));
         categoryList.add(new Category("Trang Sức", R.drawable.cate_trangsuc));
 
-        RCV_Category_Adapter rcv_category_adapter = new RCV_Category_Adapter(getContext(), categoryList);
+        RCV_Home_Category_Adapter rcv_Home_category_adapter = new RCV_Home_Category_Adapter(getContext(), categoryList);
         recycler_category.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
-        recycler_category.setAdapter(rcv_category_adapter);
+        recycler_category.setAdapter(rcv_Home_category_adapter);
 
         //Set Adapter for RecyclerView Home
         RCV_Home_Adapter rcv_home_adapter = new RCV_Home_Adapter(getContext());
