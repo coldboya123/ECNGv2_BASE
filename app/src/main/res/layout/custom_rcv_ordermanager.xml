@@ -31,13 +31,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ordermanager_btn_detail"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:textSize="@dimen/textsize_3"
+        android:layout_height="35dp"
         android:background="@drawable/background_radius_primary_color"
         android:paddingHorizontal="20dp"
         android:text="Xem chi tiết"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="@dimen/textsize_3"
         app:layout_constraintBottom_toBottomOf="@id/ordermanager_ordertime"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ordermanager_txtorderid" />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:paddingTop="10dp"
+        android:paddingVertical="10dp"
         android:text="Tổng tiền"
         android:textColor="@color/black"
         android:textSize="@dimen/textsize_5"
@@ -85,4 +85,25 @@
         app:layout_constraintBottom_toBottomOf="@id/ordermanager_txttotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ordermanager_txttotal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ordermanager_ratenow"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_radius_primary_color"
+        android:paddingHorizontal="20dp"
+        android:text="Đánh giá ngay"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_total" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/dark_2"
+        app:layout_constraintTop_toBottomOf="@id/ordermanager_total" />
 </androidx.constraintlayout.widget.ConstraintLayout>
