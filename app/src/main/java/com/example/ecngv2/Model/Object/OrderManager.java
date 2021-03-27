@@ -6,6 +6,23 @@ public class OrderManager {
     String id, time;
     int total;
     List<OrderItem> list;
+    boolean ratting;
+
+    public void setRatting(boolean ratting) {
+        this.ratting = ratting;
+    }
+
+    public boolean isRatting() {
+        return ratting;
+    }
+
+    public OrderManager(String id, String time, int total, List<OrderItem> list, boolean ratting) {
+        this.id = id;
+        this.time = time;
+        this.total = total;
+        this.list = list;
+        this.ratting = ratting;
+    }
 
     public void setId(String id) {
         this.id = id;
