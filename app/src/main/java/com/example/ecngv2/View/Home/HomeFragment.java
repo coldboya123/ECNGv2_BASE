@@ -6,7 +6,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -42,6 +46,7 @@ public class HomeFragment extends Fragment {
     List<Integer> list;
     List<Integer> banners;
     List<Category> categoryList;
+    SearchView searchView;
     ImageView banner;
     List<Product> productList;
     RecyclerView recycler_category, recycler_home, rcv_newproduct;
@@ -74,6 +79,15 @@ public class HomeFragment extends Fragment {
                 }
                 return false;
             }
+        });
+
+        LinearLayout linearLayout1 = (LinearLayout) searchView.getChildAt(0);
+        LinearLayout linearLayout2 = (LinearLayout) linearLayout1.getChildAt(2);
+        LinearLayout linearLayout3 = (LinearLayout) linearLayout2.getChildAt(1);
+        AutoCompleteTextView autoComplete = (AutoCompleteTextView) linearLayout3.getChildAt(0);
+        autoComplete.setTextSize(15);
+        searchView.setOnClickListener(v1 -> {
+            searchView.setIconified(false);
         });
 
         banner.setClipToOutline(true);
@@ -113,6 +127,8 @@ public class HomeFragment extends Fragment {
 
     private void init(View v) {
         refreshLayout = v.findViewById(R.id.refresh_home);
+
+        searchView = v.findViewById(R.id.searchbar);
 
         recycler_home = v.findViewById(R.id.recycler_home);
         sliderView = v.findViewById(R.id.slide_banner);

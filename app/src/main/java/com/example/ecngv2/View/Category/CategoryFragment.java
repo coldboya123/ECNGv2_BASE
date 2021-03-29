@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
+import android.widget.LinearLayout;
+import android.widget.SearchView;
 
 import com.example.ecngv2.Adapter.RCV_CategoryTab_Adapter;
 import com.example.ecngv2.Adapter.RCV_Category_Adapter;
@@ -25,6 +28,7 @@ public class CategoryFragment extends Fragment {
     List<Category> categoryList, categoryItemList;
     List<CategoryList> lists;
     RecyclerView rcv_cate, rcv_item;
+    SearchView searchView;
 
     public CategoryFragment() {
         // Required empty public constructor
@@ -37,6 +41,16 @@ public class CategoryFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_category, container, false);
         init(v);
         loadData();
+
+        LinearLayout linearLayout1 = (LinearLayout) searchView.getChildAt(0);
+        LinearLayout linearLayout2 = (LinearLayout) linearLayout1.getChildAt(2);
+        LinearLayout linearLayout3 = (LinearLayout) linearLayout2.getChildAt(1);
+        AutoCompleteTextView autoComplete = (AutoCompleteTextView) linearLayout3.getChildAt(0);
+        autoComplete.setTextSize(15);
+        searchView.setOnClickListener(v1 -> {
+            searchView.setIconified(false);
+        });
+
         rcv_cate.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         rcv_cate.setAdapter(new RCV_CategoryTab_Adapter(getContext(), categoryList));
 
@@ -48,6 +62,7 @@ public class CategoryFragment extends Fragment {
     private void init(View v){
         rcv_cate = v.findViewById(R.id.rcv_category);
         rcv_item = v.findViewById(R.id.rcv_cate_item);
+        searchView = v.findViewById(R.id.searchbar);
     }
 
     private void loadData(){

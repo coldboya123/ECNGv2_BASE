@@ -44,8 +44,10 @@
                     android:id="@+id/searchbar"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:clickable="true"
                     android:layout_marginStart="20dp"
-                    android:background="@drawable/searchbar_background" />
+                    android:background="@drawable/searchbar_background"
+                    android:focusable="true" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -149,6 +151,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
+                            android:nestedScrollingEnabled="false"
                             app:layout_constraintTop_toBottomOf="@id/txt_newproduct" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -194,17 +197,18 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_anchor="@id/space"
-        android:layout_marginTop="40dp"
         android:layout_gravity="bottom"
-        app:layout_anchorGravity="bottom" >
+        android:layout_marginTop="40dp"
+        app:layout_anchor="@id/space"
+        app:layout_anchorGravity="bottom">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_category"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:background="@color/white"
             android:fitsSystemWindows="true"
-            android:nestedScrollingEnabled="false"/>
+            android:nestedScrollingEnabled="false" />
     </androidx.cardview.widget.CardView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
