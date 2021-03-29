@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     List<Product> productList;
     RecyclerView recycler_category, recycler_home, rcv_newproduct;
     TabLayout tabLayout;
-    Fragment fragmentAll, fragmentBike, fragmentTech, acivefragment;
+//    Fragment fragmentAll, fragmentBike, fragmentTech, acivefragment;
     androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
@@ -110,53 +110,53 @@ public class HomeFragment extends Fragment {
         recycler_home.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         recycler_home.setAdapter(rcv_home_adapter);
 
-        //Suggestion
-        View view;
-        int numtab = 6;
-        for (int i = 0; i < numtab; i++) {
-            view = LayoutInflater.from(context).inflate(R.layout.custom_icon_tablayout, null);
-            int icon = context.getResources().getIdentifier("ic_suggestion_" + i, "drawable", context.getPackageName());
-            int title = context.getResources().getIdentifier("title_suggestion_" + i, "string", context.getPackageName());
-            ImageView img = view.findViewById(R.id.icon_suggestiontab);
-            img.setImageResource(icon);
-            TextView suggestion_title = view.findViewById(R.id.title_suggestiontab);
-            suggestion_title.setText(title);
-            TabLayout.Tab tabItem = tabLayout.newTab();
-            tabItem.setCustomView(view);
-            tabLayout.addTab(tabItem);
-        }
-        fm.beginTransaction().add(R.id.suggestion_content, fragmentTech, "tech").hide(fragmentTech).commit();
-        fm.beginTransaction().add(R.id.suggestion_content, fragmentBike, "bike").hide(fragmentBike).commit();
-        fm.beginTransaction().add(R.id.suggestion_content, fragmentAll, "all").commit();
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()) {
-                    case 0:
-                        fm.beginTransaction().hide(acivefragment).show(fragmentAll).commit();
-                        acivefragment = fragmentAll;
-                        return;
-                    case 1:
-                        fm.beginTransaction().hide(acivefragment).show(fragmentBike).commit();
-                        acivefragment = fragmentBike;
-                        return;
-                    case 2:
-                        fm.beginTransaction().hide(acivefragment).show(fragmentTech).commit();
-                        acivefragment = fragmentTech;
-                        return;
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+//        //Suggestion
+//        View view;
+//        int numtab = 6;
+//        for (int i = 0; i < numtab; i++) {
+//            view = LayoutInflater.from(context).inflate(R.layout.custom_icon_tablayout, null);
+//            int icon = context.getResources().getIdentifier("ic_suggestion_" + i, "drawable", context.getPackageName());
+//            int title = context.getResources().getIdentifier("title_suggestion_" + i, "string", context.getPackageName());
+//            ImageView img = view.findViewById(R.id.icon_suggestiontab);
+//            img.setImageResource(icon);
+//            TextView suggestion_title = view.findViewById(R.id.title_suggestiontab);
+//            suggestion_title.setText(title);
+//            TabLayout.Tab tabItem = tabLayout.newTab();
+//            tabItem.setCustomView(view);
+//            tabLayout.addTab(tabItem);
+//        }
+//        fm.beginTransaction().add(R.id.suggestion_content, fragmentTech, "tech").hide(fragmentTech).commit();
+//        fm.beginTransaction().add(R.id.suggestion_content, fragmentBike, "bike").hide(fragmentBike).commit();
+//        fm.beginTransaction().add(R.id.suggestion_content, fragmentAll, "all").commit();
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                switch (tab.getPosition()) {
+//                    case 0:
+//                        fm.beginTransaction().hide(acivefragment).show(fragmentAll).commit();
+//                        acivefragment = fragmentAll;
+//                        return;
+//                    case 1:
+//                        fm.beginTransaction().hide(acivefragment).show(fragmentBike).commit();
+//                        acivefragment = fragmentBike;
+//                        return;
+//                    case 2:
+//                        fm.beginTransaction().hide(acivefragment).show(fragmentTech).commit();
+//                        acivefragment = fragmentTech;
+//                        return;
+//                }
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
         return v;
     }
@@ -167,15 +167,14 @@ public class HomeFragment extends Fragment {
         recycler_home = v.findViewById(R.id.recycler_home);
 //        viewPager = v.findViewById(R.id.slide_banner);
         sliderView = v.findViewById(R.id.slide_banner);
-        tabLayout = v.findViewById(R.id.tab_suggestion);
         toolbar = v.findViewById(R.id.toolbar);
         list = new ArrayList<>();
         recycler_category = v.findViewById(R.id.recycler_category);
         categoryList = new ArrayList<>();
-        fragmentAll = new AllSuggestionFragment();
-        fragmentBike = new BikeSuggestionFragment();
-        fragmentTech = new TechSuggestionFragment();
-        acivefragment = fragmentAll;
+//        fragmentAll = new AllSuggestionFragment();
+//        fragmentBike = new BikeSuggestionFragment();
+//        fragmentTech = new TechSuggestionFragment();
+//        acivefragment = fragmentAll;
 
         banners = new ArrayList<>();
         banners.add(R.drawable.slider_1);

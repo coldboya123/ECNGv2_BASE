@@ -22,7 +22,7 @@ import java.util.List;
 public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    List<Product> list_products;
+    List<Product> list_products, hint_products;
     public RCV_Home_Adapter(Context context) {
         this.context = context;
     }
@@ -30,6 +30,7 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     final int XML = 0;
     final int HLPRODUCT = 1;
     final int CATE_PRODUCT = 2;
+    final int HINT = 3;
 
     @NonNull
     @Override
@@ -45,6 +46,9 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             case CATE_PRODUCT:
                 v = LayoutInflater.from(context).inflate(R.layout.rcv_home_cate_product, parent, false);
                 return new CateProduct_Holder(v);
+            case HINT:
+                v = LayoutInflater.from(context).inflate(R.layout.home_product_hint, parent, false);
+                return new HintProduct_Holder(v);
         }
         return null;
     }
@@ -59,6 +63,8 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 return HLPRODUCT;
             case 2:
                 return CATE_PRODUCT;
+            case 3:
+                return HINT;
         }
         return -1;
 
@@ -66,7 +72,7 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -81,6 +87,9 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }else if (holder instanceof CateProduct_Holder){
             ((CateProduct_Holder) holder).recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
             ((CateProduct_Holder) holder).recyclerView.setAdapter(new RCV_HomeCateProduct_Adapter(context, list_products));
+        } else if (holder instanceof HintProduct_Holder){
+            ((HintProduct_Holder) holder).rcv.setLayoutManager(new GridLayoutManager(context, 2, RecyclerView.VERTICAL, false));
+            ((HintProduct_Holder) holder).rcv.setAdapter(new RCV_HomeHintProduct_Adapter(context, hint_products));
         }
     }
 
@@ -98,6 +107,46 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
         list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
 
+        hint_products = new ArrayList<>();
+        hint_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG ZT125 ECNG ZT125 ECNG", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG.ZT125 ECNG ZT125 ECNG", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 20000000, (float) 5));
+        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
+        hint_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 5));
     }
 
     public class XML_Holder extends RecyclerView.ViewHolder {
@@ -118,6 +167,14 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         public CateProduct_Holder(@NonNull View itemView) {
             super(itemView);
             recyclerView = itemView.findViewById(R.id.rcv_product);
+        }
+    }
+
+    public class HintProduct_Holder extends RecyclerView.ViewHolder{
+        RecyclerView rcv;
+        public HintProduct_Holder(@NonNull View itemView) {
+            super(itemView);
+            rcv = itemView.findViewById(R.id.rcv);
         }
     }
 

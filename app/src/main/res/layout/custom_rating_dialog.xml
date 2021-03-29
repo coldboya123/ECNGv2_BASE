@@ -117,7 +117,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sendrating"
         app:layout_constraintTop_toBottomOf="@id/block_cmt"
-        android:background="@drawable/background_radius_primary_color"
+        android:background="@drawable/background_radius_primary_color5"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"

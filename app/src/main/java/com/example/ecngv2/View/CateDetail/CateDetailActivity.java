@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.example.ecngv2.Adapter.RCV_CateDetail_Cate_Adapter;
 import com.example.ecngv2.Adapter.RCV_CateDetail_TradeMark_Adapter;
-import com.example.ecngv2.Adapter.RCV_Sugg_All_Adapter;
+import com.example.ecngv2.Adapter.RCV_HomeHintProduct_Adapter;
 import com.example.ecngv2.Adapter.SliderViewHomeAdapter;
 import com.example.ecngv2.Adapter.Spinner_Rating_Adapter;
 import com.example.ecngv2.Model.Object.Category;
@@ -84,7 +84,7 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
         List<Product> productList = new ArrayList<>();
         loadData(productList);
         rcv_product.setLayoutManager(new GridLayoutManager(this, 2));
-        rcv_product.setAdapter(new RCV_Sugg_All_Adapter(this, productList));
+        rcv_product.setAdapter(new RCV_HomeHintProduct_Adapter(this, productList));
     }
 
     private void init(){

@@ -113,8 +113,8 @@ public class RCV_Product_Adapter extends RecyclerView.Adapter<RecyclerView.ViewH
             List<Product> productList = new ArrayList<>();
             loadData(productList);
             ((MoreHolder) holder).rcv.setLayoutManager(new GridLayoutManager(context, 2));
-            RCV_Sugg_All_Adapter rcv_sugg_all_adapter = new RCV_Sugg_All_Adapter(context, productList);
-            ((MoreHolder) holder).rcv.setAdapter(rcv_sugg_all_adapter);
+            RCV_HomeHintProduct_Adapter rcv_homeHintProduct_adapter = new RCV_HomeHintProduct_Adapter(context, productList);
+            ((MoreHolder) holder).rcv.setAdapter(rcv_homeHintProduct_adapter);
         }
     }
 

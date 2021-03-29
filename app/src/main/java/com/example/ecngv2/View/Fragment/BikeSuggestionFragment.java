@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.ecngv2.Adapter.RCV_Sugg_All_Adapter;
+import com.example.ecngv2.Adapter.RCV_HomeHintProduct_Adapter;
 import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
 
@@ -35,7 +35,7 @@ public class BikeSuggestionFragment extends Fragment {
         recyclerView = v.findViewById(R.id.rcv_suggestion_all);
         List<Product> list_products = new ArrayList<>();
         loadData(list_products);
-        RCV_Sugg_All_Adapter adapter = new RCV_Sugg_All_Adapter(getContext(), list_products);
+        RCV_HomeHintProduct_Adapter adapter = new RCV_HomeHintProduct_Adapter(getContext(), list_products);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
         return v;

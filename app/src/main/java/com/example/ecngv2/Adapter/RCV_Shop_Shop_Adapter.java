@@ -92,8 +92,8 @@ public class RCV_Shop_Shop_Adapter extends RecyclerView.Adapter<RecyclerView.Vie
             List<Product> productList = new ArrayList<>();
             loadData(productList);
             ((ProductHolder) holder).recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
-            RCV_Sugg_All_Adapter rcv_sugg_all_adapter = new RCV_Sugg_All_Adapter(context, productList);
-            ((ProductHolder) holder).recyclerView.setAdapter(rcv_sugg_all_adapter);
+            RCV_HomeHintProduct_Adapter rcv_homeHintProduct_adapter = new RCV_HomeHintProduct_Adapter(context, productList);
+            ((ProductHolder) holder).recyclerView.setAdapter(rcv_homeHintProduct_adapter);
             String[] list = new String[]{"--Chọn lọc--", "Giá tăng dần", "Giá giảm dần", "Yêu thích"};
             ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, list);
             ((ProductHolder) holder).spinner.setAdapter(adapter);

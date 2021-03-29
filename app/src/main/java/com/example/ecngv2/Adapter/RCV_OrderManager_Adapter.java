@@ -115,39 +115,39 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rating_1start:
-                start_1.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_2.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_3.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_4.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_5.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
+                start_1.setImageResource(R.drawable.ratingbar_staron);
+                start_2.setImageResource(R.drawable.ratingbar_staroff);
+                start_3.setImageResource(R.drawable.ratingbar_staroff);
+                start_4.setImageResource(R.drawable.ratingbar_staroff);
+                start_5.setImageResource(R.drawable.ratingbar_staroff);
                 break;
             case R.id.rating_2start:
-                start_1.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_2.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_3.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_4.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_5.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
+                start_1.setImageResource(R.drawable.ratingbar_staron);
+                start_2.setImageResource(R.drawable.ratingbar_staron);
+                start_3.setImageResource(R.drawable.ratingbar_staroff);
+                start_4.setImageResource(R.drawable.ratingbar_staroff);
+                start_5.setImageResource(R.drawable.ratingbar_staroff);
                 break;
             case R.id.rating_3start:
-                start_1.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_2.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_3.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_4.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
-                start_5.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
+                start_1.setImageResource(R.drawable.ratingbar_staron);
+                start_2.setImageResource(R.drawable.ratingbar_staron);
+                start_3.setImageResource(R.drawable.ratingbar_staron);
+                start_4.setImageResource(R.drawable.ratingbar_staroff);
+                start_5.setImageResource(R.drawable.ratingbar_staroff);
                 break;
             case R.id.rating_4start:
-                start_1.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_2.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_3.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_4.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_5.setBackground(context.getDrawable(R.drawable.ratingbar_staroff));
+                start_1.setImageResource(R.drawable.ratingbar_staron);
+                start_2.setImageResource(R.drawable.ratingbar_staron);
+                start_3.setImageResource(R.drawable.ratingbar_staron);
+                start_4.setImageResource(R.drawable.ratingbar_staron);
+                start_5.setImageResource(R.drawable.ratingbar_staroff);
                 break;
             case R.id.rating_5start:
-                start_1.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_2.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_3.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_4.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
-                start_5.setBackground(context.getDrawable(R.drawable.ratingbar_staron));
+                start_1.setImageResource(R.drawable.ratingbar_staron);
+                start_2.setImageResource(R.drawable.ratingbar_staron);
+                start_3.setImageResource(R.drawable.ratingbar_staron);
+                start_4.setImageResource(R.drawable.ratingbar_staron);
+                start_5.setImageResource(R.drawable.ratingbar_staron);
                 break;
         }
     }

@@ -19,11 +19,11 @@ import com.example.ecngv2.R;
 
 import java.util.List;
 
-public class RCV_Sugg_All_Adapter extends RecyclerView.Adapter<RCV_Sugg_All_Adapter.ViewHolder> {
+public class RCV_HomeHintProduct_Adapter extends RecyclerView.Adapter<RCV_HomeHintProduct_Adapter.ViewHolder> {
     Context context;
     List<Product> list;
 
-    public RCV_Sugg_All_Adapter(Context context, List<Product> list) {
+    public RCV_HomeHintProduct_Adapter(Context context, List<Product> list) {
         this.context = context;
         this.list = list;
     }
