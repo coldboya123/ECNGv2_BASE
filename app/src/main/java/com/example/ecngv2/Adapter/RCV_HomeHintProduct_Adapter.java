@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.Product;
+import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.Product.ProductActivity;
 import com.example.ecngv2.R;
 
@@ -44,6 +46,7 @@ public class RCV_HomeHintProduct_Adapter extends RecyclerView.Adapter<RCV_HomeHi
         holder.numrating.setText("("+product.getNumrating()+")");
         holder.ratingBar.setRating(product.getRating());
         holder.cardView.setOnClickListener(view -> context.startActivity(new Intent(context, ProductActivity.class)));
+        holder.block.getLayoutParams().width = MainActivity.DEVICE_WIDTH_PX/2 -10;
     }
 
     @Override
@@ -56,6 +59,7 @@ public class RCV_HomeHintProduct_Adapter extends RecyclerView.Adapter<RCV_HomeHi
         TextView name, numrating, price;
         RatingBar ratingBar;
         CardView cardView;
+        LinearLayout block;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.img_product);
@@ -64,6 +68,7 @@ public class RCV_HomeHintProduct_Adapter extends RecyclerView.Adapter<RCV_HomeHi
             price = itemView.findViewById(R.id.price_product);
             ratingBar = itemView.findViewById(R.id.rating_product);
             cardView = itemView.findViewById(R.id.product_background);
+            block = itemView.findViewById(R.id.block_main);
         }
     }
 }

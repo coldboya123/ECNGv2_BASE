@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--    android:hardwareAccelerated="false"-->
     <application
         android:allowBackup="true"
         android:icon="@drawable/fa"
@@ -21,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.Voucher.VoucherActivity"></activity>
+        <activity android:name=".View.Voucher.VoucherActivity" />
         <activity android:name=".View.OrderManager.ShippingDetailActivity" />
         <activity android:name=".View.OrderManager.OrderDetail.OrderDetailActivity" />
         <activity android:name=".View.Payment.PaymentSuccessActivity" />

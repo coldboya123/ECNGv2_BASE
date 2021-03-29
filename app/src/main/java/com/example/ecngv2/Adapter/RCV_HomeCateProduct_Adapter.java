@@ -1,10 +1,12 @@
 package com.example.ecngv2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.Product.ProductActivity;
 
 import java.util.List;
 
@@ -39,6 +42,7 @@ public class RCV_HomeCateProduct_Adapter extends RecyclerView.Adapter<RCV_HomeCa
         holder.img.setImageResource(product.getImg());
         holder.name.setText(product.getName());
         holder.price.setText(String.format("%,d", product.getPrice())+" đ");
+        holder.block.setOnClickListener(v -> context.startActivity(new Intent(context, ProductActivity.class)));
     }
 
     @Override
@@ -50,12 +54,14 @@ public class RCV_HomeCateProduct_Adapter extends RecyclerView.Adapter<RCV_HomeCa
         ImageView img;
         TextView name, price;
         CardView item;
+        LinearLayout block;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             img = itemView.findViewById(R.id.img_product);
             name = itemView.findViewById(R.id.name_product);
             price = itemView.findViewById(R.id.price_product);
             item = itemView.findViewById(R.id.product_background);
+            block = itemView.findViewById(R.id.block_main);
         }
     }
 }

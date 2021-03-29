@@ -107,53 +107,6 @@ public class HomeFragment extends Fragment {
         recycler_home.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         recycler_home.setAdapter(rcv_home_adapter);
 
-//        //Suggestion
-//        View view;
-//        int numtab = 6;
-//        for (int i = 0; i < numtab; i++) {
-//            view = LayoutInflater.from(context).inflate(R.layout.custom_icon_tablayout, null);
-//            int icon = context.getResources().getIdentifier("ic_suggestion_" + i, "drawable", context.getPackageName());
-//            int title = context.getResources().getIdentifier("title_suggestion_" + i, "string", context.getPackageName());
-//            ImageView img = view.findViewById(R.id.icon_suggestiontab);
-//            img.setImageResource(icon);
-//            TextView suggestion_title = view.findViewById(R.id.title_suggestiontab);
-//            suggestion_title.setText(title);
-//            TabLayout.Tab tabItem = tabLayout.newTab();
-//            tabItem.setCustomView(view);
-//            tabLayout.addTab(tabItem);
-//        }
-//        fm.beginTransaction().add(R.id.suggestion_content, fragmentTech, "tech").hide(fragmentTech).commit();
-//        fm.beginTransaction().add(R.id.suggestion_content, fragmentBike, "bike").hide(fragmentBike).commit();
-//        fm.beginTransaction().add(R.id.suggestion_content, fragmentAll, "all").commit();
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                switch (tab.getPosition()) {
-//                    case 0:
-//                        fm.beginTransaction().hide(acivefragment).show(fragmentAll).commit();
-//                        acivefragment = fragmentAll;
-//                        return;
-//                    case 1:
-//                        fm.beginTransaction().hide(acivefragment).show(fragmentBike).commit();
-//                        acivefragment = fragmentBike;
-//                        return;
-//                    case 2:
-//                        fm.beginTransaction().hide(acivefragment).show(fragmentTech).commit();
-//                        acivefragment = fragmentTech;
-//                        return;
-//                }
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
 
         return v;
     }
@@ -162,29 +115,25 @@ public class HomeFragment extends Fragment {
         refreshLayout = v.findViewById(R.id.refresh_home);
 
         recycler_home = v.findViewById(R.id.recycler_home);
-//        viewPager = v.findViewById(R.id.slide_banner);
         sliderView = v.findViewById(R.id.slide_banner);
         toolbar = v.findViewById(R.id.toolbar);
         list = new ArrayList<>();
         recycler_category = v.findViewById(R.id.recycler_category);
         categoryList = new ArrayList<>();
-//        fragmentAll = new AllSuggestionFragment();
-//        fragmentBike = new BikeSuggestionFragment();
-//        fragmentTech = new TechSuggestionFragment();
-//        acivefragment = fragmentAll;
 
         banners = new ArrayList<>();
-        banners.add(R.drawable.slider_1);
-        banners.add(R.drawable.slider_2);
-        banners.add(R.drawable.slider_3);
-        banners.add(R.drawable.slider_4);
-        banners.add(R.drawable.slider_5);
+        banners.add(R.drawable.banner_home_1);
+        banners.add(R.drawable.banner_home_2);
+        banners.add(R.drawable.banner_home_3);
+        banners.add(R.drawable.banner_home_4);
+        banners.add(R.drawable.banner_home_5);
+        banners.add(R.drawable.banner_home_6);
 
         rcv_newproduct = v.findViewById(R.id.rcv_newproduct);
         productList = new ArrayList<>();
         productList.add(new Product(R.drawable.dongho, 10000000));
         productList.add(new Product(R.drawable.matkinh, 10000000));
-        productList.add(new Product(R.drawable.chungcu, 10000000));
+        productList.add(new Product(R.drawable.laptop1, 10000000));
         productList.add(new Product(R.drawable.laptop3, 10000000));
         productList.add(new Product(R.drawable.laptop7, 10000000));
         productList.add(new Product(R.drawable.laptop6, 10000000));

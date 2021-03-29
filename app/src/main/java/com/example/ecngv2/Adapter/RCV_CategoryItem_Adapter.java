@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.Category;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.MainActivity.MainActivity;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class RCV_CategoryItem_Adapter extends RecyclerView.Adapter<RCV_CategoryI
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Category category = list.get(position);
         holder.img.setImageResource(category.getSrc());
+        holder.img.getLayoutParams().width = (int)(MainActivity.DEVICE_WIDTH_PX/3.2);
     }
 
     @Override

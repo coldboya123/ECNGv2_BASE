@@ -1,6 +1,7 @@
 package com.example.ecngv2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.Product.ProductActivity;
 
 import java.util.List;
 
@@ -38,6 +40,7 @@ public class RCV_HomeNewProduct_Adapter extends RecyclerView.Adapter<RCV_HomeNew
         Product product = list.get(position);
         holder.img.setImageResource(product.getImg());
         holder.price.setText(String.format("%,d", product.getPrice())+" đ");
+        holder.buynow.setOnClickListener(v -> context.startActivity(new Intent(context, ProductActivity.class)));
     }
 
     @Override

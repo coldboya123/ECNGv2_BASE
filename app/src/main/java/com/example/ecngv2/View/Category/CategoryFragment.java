@@ -22,7 +22,7 @@ import java.util.List;
 
 public class CategoryFragment extends Fragment {
 
-    List<Category> categoryList;
+    List<Category> categoryList, categoryItemList;
     List<CategoryList> lists;
     RecyclerView rcv_cate, rcv_item;
 
@@ -64,40 +64,40 @@ public class CategoryFragment extends Fragment {
         categoryList.add(new Category("Trang Sức", R.drawable.cate_trangsuc, true));
 
         lists = new ArrayList<>();
-        categoryList = new ArrayList<>();
-        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
-        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
-        categoryList.add(new Category("LG", R.drawable.logo_lg));
-        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
-        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
-        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
-        lists.add(new CategoryList("Điện Thoại", categoryList, true));
+        categoryItemList = new ArrayList<>();
+        categoryItemList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryItemList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryItemList.add(new Category("LG", R.drawable.logo_lg));
+        categoryItemList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryItemList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryItemList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Điện Thoại", categoryItemList, true));
 
-        categoryList = new ArrayList<>();
-        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
-        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
-        categoryList.add(new Category("LG", R.drawable.logo_lg));
-        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
-        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
-        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
-        lists.add(new CategoryList("Máy Tính Bản", categoryList, true));
+        categoryItemList = new ArrayList<>();
+        categoryItemList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryItemList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryItemList.add(new Category("LG", R.drawable.logo_lg));
+        categoryItemList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryItemList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryItemList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Máy Tính Bản", categoryItemList, true));
 
-        categoryList = new ArrayList<>();
-        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
-        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
-        categoryList.add(new Category("LG", R.drawable.logo_lg));
-        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
-        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
-        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
-        lists.add(new CategoryList("Laptop", categoryList, true));
+        categoryItemList = new ArrayList<>();
+        categoryItemList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryItemList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryItemList.add(new Category("LG", R.drawable.logo_lg));
+        categoryItemList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryItemList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryItemList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Laptop", categoryItemList, true));
 
-        categoryList = new ArrayList<>();
-        categoryList.add(new Category("Iphone", R.drawable.logo_mac));
-        categoryList.add(new Category("Samsung", R.drawable.logo_samsung));
-        categoryList.add(new Category("LG", R.drawable.logo_lg));
-        categoryList.add(new Category("Vertu", R.drawable.logo_vertu));
-        categoryList.add(new Category("Vsmart", R.drawable.logo_vsmart));
-        categoryList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
-        lists.add(new CategoryList("Phụ Kiện", categoryList, true));
+        categoryItemList = new ArrayList<>();
+        categoryItemList.add(new Category("Iphone", R.drawable.logo_mac));
+        categoryItemList.add(new Category("Samsung", R.drawable.logo_samsung));
+        categoryItemList.add(new Category("LG", R.drawable.logo_lg));
+        categoryItemList.add(new Category("Vertu", R.drawable.logo_vertu));
+        categoryItemList.add(new Category("Vsmart", R.drawable.logo_vsmart));
+        categoryItemList.add(new Category("Xiaomi", R.drawable.logo_xiaomi));
+        lists.add(new CategoryList("Phụ Kiện", categoryItemList, true));
     }
 }
