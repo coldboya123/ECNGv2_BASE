@@ -22,7 +22,6 @@ import com.example.ecngv2.Model.Object.ProductCart;
 import com.example.ecngv2.Model.Object.ProductCartItem;
 import com.example.ecngv2.View.Payment.PaymentActivity;
 import com.example.ecngv2.R;
-import com.google.android.material.checkbox.MaterialCheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,7 +110,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     public void UpdateTotalPrice(int total) {
         txtTotal.setText(String.format("%,d", total) + " đ");
         if (total > 0) {
-            btn_paymnet.setBackground(getDrawable(R.drawable.background_radius_primary_color));
+            btn_paymnet.setBackground(getDrawable(R.drawable.background_radius_primary_color5));
             btn_paymnet.setEnabled(true);
         } else {
             btn_paymnet.setBackgroundColor(getColor(R.color.dark_1));

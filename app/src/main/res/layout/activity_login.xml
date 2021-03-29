@@ -88,7 +88,7 @@
             android:layout_gravity="center"
             android:layout_marginHorizontal="35dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/background_radius_primary_color"
+            android:background="@drawable/background_radius_primary_color5"
             android:text="Đăng nhập"
             android:textAllCaps="false"
             android:textColor="@color/white"

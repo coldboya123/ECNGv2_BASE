@@ -15,14 +15,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.ecngv2.Adapter.RCV_Home_Category_Adapter;
+import com.example.ecngv2.Adapter.RCV_HomeNewProduct_Adapter;
 import com.example.ecngv2.Adapter.RCV_Home_Adapter;
+import com.example.ecngv2.Adapter.RCV_Home_Category_Adapter;
 import com.example.ecngv2.Adapter.SliderViewHomeAdapter;
+import com.example.ecngv2.Model.Object.Category;
+import com.example.ecngv2.Model.Object.Product;
+import com.example.ecngv2.R;
 import com.example.ecngv2.View.Fragment.AllSuggestionFragment;
 import com.example.ecngv2.View.Fragment.BikeSuggestionFragment;
 import com.example.ecngv2.View.Fragment.TechSuggestionFragment;
-import com.example.ecngv2.Model.Object.Category;
-import com.example.ecngv2.R;
 import com.google.android.material.tabs.TabLayout;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -43,10 +45,13 @@ public class HomeFragment extends Fragment {
     List<Integer> list;
     List<Integer> banners;
     List<Category> categoryList;
-    RecyclerView recycler_category, recycler_home;
+    ImageView banner;
+    List<Product> productList;
+    RecyclerView recycler_category, recycler_home, rcv_newproduct;
     TabLayout tabLayout;
     Fragment fragmentAll, fragmentBike, fragmentTech, acivefragment;
     androidx.appcompat.widget.Toolbar toolbar;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,7 +68,7 @@ public class HomeFragment extends Fragment {
         toolbar.setOnMenuItemClickListener(new androidx.appcompat.widget.Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
 //                    case R.id.shopping_cart:
 //                        context.startActivity(new Intent(getContext(), CartActivity.class));
 //                        return true;
@@ -73,6 +78,11 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
+
+        banner.setClipToOutline(true);
+
+        rcv_newproduct.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        rcv_newproduct.setAdapter(new RCV_HomeNewProduct_Adapter(getContext(), productList));
 
         sliderView.setSliderAdapter(new SliderViewHomeAdapter(getContext(), banners));
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
@@ -103,10 +113,10 @@ public class HomeFragment extends Fragment {
         //Suggestion
         View view;
         int numtab = 6;
-        for (int i=0; i<numtab; i++){
+        for (int i = 0; i < numtab; i++) {
             view = LayoutInflater.from(context).inflate(R.layout.custom_icon_tablayout, null);
-            int icon = context.getResources().getIdentifier("ic_suggestion_"+ i, "drawable",context.getPackageName());
-            int title = context.getResources().getIdentifier("title_suggestion_"+ i, "string",context.getPackageName());
+            int icon = context.getResources().getIdentifier("ic_suggestion_" + i, "drawable", context.getPackageName());
+            int title = context.getResources().getIdentifier("title_suggestion_" + i, "string", context.getPackageName());
             ImageView img = view.findViewById(R.id.icon_suggestiontab);
             img.setImageResource(icon);
             TextView suggestion_title = view.findViewById(R.id.title_suggestiontab);
@@ -121,7 +131,7 @@ public class HomeFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()){
+                switch (tab.getPosition()) {
                     case 0:
                         fm.beginTransaction().hide(acivefragment).show(fragmentAll).commit();
                         acivefragment = fragmentAll;
@@ -151,7 +161,7 @@ public class HomeFragment extends Fragment {
         return v;
     }
 
-    private void init(View v){
+    private void init(View v) {
         refreshLayout = v.findViewById(R.id.refresh_home);
 
         recycler_home = v.findViewById(R.id.recycler_home);
@@ -174,5 +184,15 @@ public class HomeFragment extends Fragment {
         banners.add(R.drawable.slider_4);
         banners.add(R.drawable.slider_5);
 
+        rcv_newproduct = v.findViewById(R.id.rcv_newproduct);
+        productList = new ArrayList<>();
+        productList.add(new Product(R.drawable.dongho, 10000000));
+        productList.add(new Product(R.drawable.matkinh, 10000000));
+        productList.add(new Product(R.drawable.chungcu, 10000000));
+        productList.add(new Product(R.drawable.laptop3, 10000000));
+        productList.add(new Product(R.drawable.laptop7, 10000000));
+        productList.add(new Product(R.drawable.laptop6, 10000000));
+
+        banner = v.findViewById(R.id.banner);
     }
 }

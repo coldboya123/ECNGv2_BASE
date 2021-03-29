@@ -283,7 +283,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_margin="10dp"
-            android:background="@drawable/background_radius_primary_color"
+            android:background="@drawable/background_radius_primary_color5"
             android:text="Đặt Hàng"
             android:textAllCaps="false"
             android:textColor="@color/white"

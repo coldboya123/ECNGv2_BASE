@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="5dp"
     android:layout_marginTop="5dp"
-    android:background="@drawable/radius_background_white">
+    android:background="@drawable/background_radius_white">
 
     <TextView
         android:id="@+id/cate_item_title"

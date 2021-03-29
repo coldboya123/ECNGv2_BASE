@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp">
+    <ImageView
+        android:id="@+id/img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+    <TextView
+        android:id="@+id/price"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_3"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@id/buynow"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buynow"
+        android:background="@drawable/background_radius_primary_color10"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textSize="@dimen/textsize_2"
+        android:textColor="@color/white"
+        android:text="Mua ngay"
+        android:textAllCaps="false"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

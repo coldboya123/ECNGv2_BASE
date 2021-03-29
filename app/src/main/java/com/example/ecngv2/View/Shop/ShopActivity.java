@@ -1,12 +1,9 @@
 package com.example.ecngv2.View.Shop;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -77,7 +74,7 @@ public class ShopActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.shop_btn_follow:
                 check_follow = !check_follow;
                 if (check_follow){
-                    btn_follow.setBackground(getDrawable(R.drawable.background_radius_primary_color));
+                    btn_follow.setBackground(getDrawable(R.drawable.background_radius_primary_color5));
                     btn_follow.setTextColor(getColor(R.color.white));
                     btn_follow.setText("Đã theo dõi");
                 } else {

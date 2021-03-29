@@ -177,7 +177,7 @@
         android:layout_height="35dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
-        android:background="@drawable/background_radius_primary_color"
+        android:background="@drawable/background_radius_primary_color5"
         android:text="Lưu địa chỉ"
         android:textSize="@dimen/textsize_4"
         android:textAllCaps="false"

@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginStart="20dp"
-                    android:background="@drawable/searchbar_background"/>
+                    android:background="@drawable/searchbar_background" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -65,35 +65,113 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.smarteist.autoimageslider.SliderView
-                    android:id="@+id/slide_banner"
+                <LinearLayout
+                    android:id="@+id/block_top"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_margin="5dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleEnabled="true"
-                    app:sliderIndicatorAnimationDuration="600"
-                    app:sliderIndicatorGravity="start|bottom"
-                    app:sliderIndicatorMarginBottom="5dp"
-                    app:sliderIndicatorMarginLeft="5dp"
-                    app:sliderIndicatorOrientation="horizontal"
-                    app:sliderIndicatorPadding="3dp"
-                    app:sliderIndicatorRadius="2dp"
-                    app:sliderIndicatorSelectedColor="@color/primary_color"
-                    app:sliderIndicatorUnselectedColor="@color/dark"
-                    app:sliderScrollTimeInSec="3"
-                    app:sliderStartAutoCycle="true" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/appbar_background"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:elevation="10dp"
+                        android:id="@+id/slide_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginHorizontal="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="start|bottom"
+                        app:sliderIndicatorMarginBottom="5dp"
+                        app:sliderIndicatorMarginLeft="5dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="@color/primary_color"
+                        app:sliderIndicatorUnselectedColor="@color/dark"
+                        app:sliderScrollTimeInSec="3"
+                        app:sliderStartAutoCycle="true" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/block_newproduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/background_radius_white"
+                        app:layout_constraintTop_toBottomOf="@id/slide_banner">
+
+                        <TextView
+                            android:id="@+id/txt_newproduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingTop="10dp"
+                            android:text="Sản phẩm"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize_4"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp"
+                            android:text=" mới hôm nay"
+                            android:textColor="@color/primary_color"
+                            android:textSize="@dimen/textsize_4"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/txt_newproduct"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_next"
+                            android:gravity="center_vertical"
+                            android:text="Xem thêm"
+                            android:textSize="@dimen/textsize_3"
+                            app:layout_constraintBottom_toBottomOf="@id/txt_newproduct"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_newproduct"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/txt_newproduct" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:background="@drawable/radius5"
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/banner_home" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/space"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
                     android:background="@color/white"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/slide_banner">
+                    app:layout_constraintTop_toBottomOf="@id/block_top">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,29 +179,20 @@
                         android:padding="10dp"
                         android:text="Danh Mục Nổi Bật"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/textsize_4"/>
+                        android:textSize="@dimen/textsize_4"
+                        android:textStyle="bold" />
 
                     <Space
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:text="Xem Thêm"
-                        android:textColor="@color/primary_color1"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/textsize_3"/>
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_home"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginTop="70dp"
+                    android:layout_marginTop="80dp"
                     android:nestedScrollingEnabled="false"
                     app:layout_constraintTop_toBottomOf="@id/space" />
 
@@ -151,13 +220,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="40dp"
         android:background="@color/white"
-        app:layout_anchor="@id/space"
-        app:layout_anchorGravity="bottom"
+        android:fitsSystemWindows="true"
         android:nestedScrollingEnabled="false"
-        android:fitsSystemWindows="true"/>
+        app:layout_anchor="@id/space"
+        app:layout_anchorGravity="bottom" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

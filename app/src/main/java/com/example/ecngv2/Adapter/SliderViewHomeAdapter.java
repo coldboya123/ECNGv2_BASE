@@ -48,11 +48,10 @@ public class SliderViewHomeAdapter extends com.smarteist.autoimageslider.SliderV
         int sliderItem = mSliderItems.get(position);
 
         viewHolder.imageViewBackground.setImageResource(sliderItem);
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        viewHolder.imageViewBackground.setBackground(context.getDrawable(R.drawable.radius5));
+        viewHolder.imageViewBackground.setClipToOutline(true);
+        viewHolder.itemView.setOnClickListener(v -> {
 //                Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
-            }
         });
     }
 

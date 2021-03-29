@@ -1,9 +1,14 @@
 package com.example.ecngv2.Model.Object;
 
 public class Product {
-    int img, numrating;
-    String name, price;
+    int img, numrating, price;
+    String name;
     Float rating;
+
+    public Product(int img, int price) {
+        this.img = img;
+        this.price = price;
+    }
 
     public void setImg(int img) {
         this.img = img;
@@ -17,7 +22,7 @@ public class Product {
         this.name = name;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -37,7 +42,7 @@ public class Product {
         return name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -45,7 +50,7 @@ public class Product {
         return rating;
     }
 
-    public Product(int img, int numrating, String name, String price, Float rating) {
+    public Product(int img, int numrating, String name, int price, Float rating) {
         this.img = img;
         this.numrating = numrating;
         this.name = name;

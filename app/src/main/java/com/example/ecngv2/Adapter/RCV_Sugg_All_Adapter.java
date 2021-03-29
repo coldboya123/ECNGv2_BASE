@@ -40,7 +40,7 @@ public class RCV_Sugg_All_Adapter extends RecyclerView.Adapter<RCV_Sugg_All_Adap
         Product product = list.get(position);
         holder.img.setImageResource(product.getImg());
         holder.name.setText(product.getName());
-        holder.price.setText(product.getPrice());
+        holder.price.setText(String.format("%,d", product.getPrice())+" đ");
         holder.numrating.setText("("+product.getNumrating()+")");
         holder.ratingBar.setRating(product.getRating());
         holder.cardView.setOnClickListener(view -> context.startActivity(new Intent(context, ProductActivity.class)));

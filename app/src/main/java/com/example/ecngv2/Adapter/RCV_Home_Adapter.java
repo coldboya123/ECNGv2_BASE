@@ -86,17 +86,17 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     private void LoadData(){
         list_products = new ArrayList<>();
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "999.000.000d", (float) 5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", "20.000.000d", (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre Laptop DELL inpre Laptop DELL inpre...", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.laptop1, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 999000000, (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 5));
+        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpre aptop DELL inpre Laptop DELL inpre......", 20000000, (float) 4.5));
 
     }
 
