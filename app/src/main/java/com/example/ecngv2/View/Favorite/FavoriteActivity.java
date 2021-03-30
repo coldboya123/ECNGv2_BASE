@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import com.example.ecngv2.Adapter.ViewPagerFavoriteAdapter;
 import com.example.ecngv2.R;
@@ -17,6 +18,7 @@ public class FavoriteActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    ImageButton btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +36,12 @@ public class FavoriteActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ViewPagerFavoriteAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        btn_back.setOnClickListener(v -> finish());
     }
 
     private void init() {
         tabLayout = findViewById(R.id.tab);
         viewPager = findViewById(R.id.viewpager);
+        btn_back = findViewById(R.id.btn_back);
     }
 }

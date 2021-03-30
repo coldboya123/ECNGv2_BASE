@@ -5,6 +5,12 @@ public class Product {
     String name;
     Float rating;
 
+    public Product(int img, String name, int price) {
+        this.img = img;
+        this.price = price;
+        this.name = name;
+    }
+
     public Product(int img, int price) {
         this.img = img;
         this.price = price;
