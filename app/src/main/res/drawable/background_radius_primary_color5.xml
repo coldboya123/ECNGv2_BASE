@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape android:shape="rectangle"
     xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <solid-->
+<!--        android:color="#00AF12"/>-->
+<!--    <corners-->
+<!--        android:radius="5dp"/>-->
+<!--    <gradient-->
+<!--        android:startColor="#014909"-->
+<!--        android:endColor="#01B613"-->
+<!--        android:angle="360"/>-->
     <solid
         android:color="#00AF12"/>
     <corners
         android:radius="5dp"/>
     <gradient
-        android:startColor="#014909"
-        android:endColor="#01B613"
+        android:startColor="@color/primary_color"
+        android:endColor="@color/primary_color"
         android:angle="360"/>
 </shape>

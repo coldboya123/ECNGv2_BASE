@@ -8,11 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="black_primary">#1B1A1A</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="primary_color2">#0f7519</color>
-    <color name="primary_color1">#00790C</color>
-    <color name="primary_color">#00AA10</color>
-    <color name="primary_color3">#9FEDA7</color>
-    <color name="primary_color_light">#E6FDE9</color>
+    <color name="primary_color2">#E8B857</color>
+    <color name="primary_color1">#E4AE3D</color>
+    <color name="primary_color">#e1a208</color>
+    <color name="primary_color3">#EFC97B</color>
+    <color name="primary_color_light">#FAE3B3</color>
+    <color name="primary_transparent">#90e1a208</color>
     <color name="dark_primary">#888888</color>
     <color name="dark">#B7B7B7</color>
     <color name="dark_2">#EFEFEF</color>
@@ -23,3 +24,7 @@
     <color name="colorWarning">#FF5722</color>
     <color name="yellow">#FFC120</color>
 </resources>
+<!--    #00AA10-->
+<!--<color name="primary_color2">#0f7519</color>-->
+<!--<color name="primary_color1">#00790C</color>-->
+<!--<color name="dark_2">#EFEFEF</color>-->

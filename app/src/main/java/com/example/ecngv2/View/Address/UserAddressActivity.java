@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.User.SettingAccount.Address;
+package com.example.ecngv2.View.Address;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;

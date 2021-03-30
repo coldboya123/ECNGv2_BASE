@@ -68,7 +68,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
         });
         if (order.isRatting()) {
             holder.btn_rating.setVisibility(View.GONE);
-            holder.line_rating.setVisibility(View.GONE);
+
         }
         holder.btn_rating.setOnClickListener(view -> {
             dialog = new BottomSheetDialog(context);
@@ -115,39 +115,39 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rating_1start:
-                start_1.setImageResource(R.drawable.ratingbar_staron);
-                start_2.setImageResource(R.drawable.ratingbar_staroff);
-                start_3.setImageResource(R.drawable.ratingbar_staroff);
-                start_4.setImageResource(R.drawable.ratingbar_staroff);
-                start_5.setImageResource(R.drawable.ratingbar_staroff);
+                start_1.setImageResource(R.drawable.ratingbar_staron_large);
+                start_2.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_3.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_4.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_5.setImageResource(R.drawable.ratingbar_staroff_large);
                 break;
             case R.id.rating_2start:
-                start_1.setImageResource(R.drawable.ratingbar_staron);
-                start_2.setImageResource(R.drawable.ratingbar_staron);
-                start_3.setImageResource(R.drawable.ratingbar_staroff);
-                start_4.setImageResource(R.drawable.ratingbar_staroff);
-                start_5.setImageResource(R.drawable.ratingbar_staroff);
+                start_1.setImageResource(R.drawable.ratingbar_staron_large);
+                start_2.setImageResource(R.drawable.ratingbar_staron_large);
+                start_3.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_4.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_5.setImageResource(R.drawable.ratingbar_staroff_large);
                 break;
             case R.id.rating_3start:
-                start_1.setImageResource(R.drawable.ratingbar_staron);
-                start_2.setImageResource(R.drawable.ratingbar_staron);
-                start_3.setImageResource(R.drawable.ratingbar_staron);
-                start_4.setImageResource(R.drawable.ratingbar_staroff);
-                start_5.setImageResource(R.drawable.ratingbar_staroff);
+                start_1.setImageResource(R.drawable.ratingbar_staron_large);
+                start_2.setImageResource(R.drawable.ratingbar_staron_large);
+                start_3.setImageResource(R.drawable.ratingbar_staron_large);
+                start_4.setImageResource(R.drawable.ratingbar_staroff_large);
+                start_5.setImageResource(R.drawable.ratingbar_staroff_large);
                 break;
             case R.id.rating_4start:
-                start_1.setImageResource(R.drawable.ratingbar_staron);
-                start_2.setImageResource(R.drawable.ratingbar_staron);
-                start_3.setImageResource(R.drawable.ratingbar_staron);
-                start_4.setImageResource(R.drawable.ratingbar_staron);
-                start_5.setImageResource(R.drawable.ratingbar_staroff);
+                start_1.setImageResource(R.drawable.ratingbar_staron_large);
+                start_2.setImageResource(R.drawable.ratingbar_staron_large);
+                start_3.setImageResource(R.drawable.ratingbar_staron_large);
+                start_4.setImageResource(R.drawable.ratingbar_staron_large);
+                start_5.setImageResource(R.drawable.ratingbar_staroff_large);
                 break;
             case R.id.rating_5start:
-                start_1.setImageResource(R.drawable.ratingbar_staron);
-                start_2.setImageResource(R.drawable.ratingbar_staron);
-                start_3.setImageResource(R.drawable.ratingbar_staron);
-                start_4.setImageResource(R.drawable.ratingbar_staron);
-                start_5.setImageResource(R.drawable.ratingbar_staron);
+                start_1.setImageResource(R.drawable.ratingbar_staron_large);
+                start_2.setImageResource(R.drawable.ratingbar_staron_large);
+                start_3.setImageResource(R.drawable.ratingbar_staron_large);
+                start_4.setImageResource(R.drawable.ratingbar_staron_large);
+                start_5.setImageResource(R.drawable.ratingbar_staron_large);
                 break;
         }
     }
@@ -155,7 +155,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id, time, total;
         RecyclerView rcv;
-        AppCompatButton btn_detail, btn_rating;
+        AppCompatButton btn_detail, btn_rating, btn_rebuy;
         View line_rating;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -166,6 +166,7 @@ public class RCV_OrderManager_Adapter extends RecyclerView.Adapter<RCV_OrderMana
             btn_detail = itemView.findViewById(R.id.ordermanager_btn_detail);
             btn_rating = itemView.findViewById(R.id.ordermanager_ratenow);
             line_rating = itemView.findViewById(R.id.line_rating);
+            btn_rebuy = itemView.findViewById(R.id.ordermanager_rebuy);
         }
     }
 }

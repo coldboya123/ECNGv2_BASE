@@ -14,22 +14,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ecngv2.Adapter.Handle.HandleRCVPaymentAdapter;
 import com.example.ecngv2.Adapter.RCV_Payment_Adapter;
-import com.example.ecngv2.Model.Object.ProductCart;
 import com.example.ecngv2.Model.Object.ProductCartItem;
 import com.example.ecngv2.Model.Object.ProductPayment;
 import com.example.ecngv2.R;
-import com.example.ecngv2.View.User.SettingAccount.Address.UserAddressActivity;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.example.ecngv2.View.Address.UserAddressActivity;
 
 import java.util.ArrayList;
 import java.util.List;

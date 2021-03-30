@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_2"
-    tools:context=".View.User.SettingAccount.Address.EditUserAddressActivity">
+    tools:context=".View.Address.EditUserAddressActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_user_address_edit"

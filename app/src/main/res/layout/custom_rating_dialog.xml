@@ -33,7 +33,7 @@
             android:layout_marginHorizontal="10dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/ratingbar_staroff" />
+            android:src="@drawable/ratingbar_staroff_large" />
 
         <ImageButton
             android:id="@+id/rating_2start"
@@ -42,7 +42,7 @@
             android:layout_marginHorizontal="10dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/ratingbar_staroff" />
+            android:src="@drawable/ratingbar_staroff_large" />
 
         <ImageButton
             android:id="@+id/rating_3start"
@@ -51,7 +51,7 @@
             android:layout_marginHorizontal="10dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/ratingbar_staroff" />
+            android:src="@drawable/ratingbar_staroff_large" />
 
         <ImageButton
             android:id="@+id/rating_4start"
@@ -60,7 +60,7 @@
             android:layout_marginHorizontal="10dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/ratingbar_staroff" />
+            android:src="@drawable/ratingbar_staroff_large" />
 
         <ImageButton
             android:id="@+id/rating_5start"
@@ -69,7 +69,7 @@
             android:layout_marginHorizontal="10dp"
             android:background="@null"
             android:scaleType="fitXY"
-            android:src="@drawable/ratingbar_staroff" />
+            android:src="@drawable/ratingbar_staroff_large" />
     </LinearLayout>
 
     <TextView

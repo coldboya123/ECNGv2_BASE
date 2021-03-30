@@ -54,10 +54,14 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/user_block_user"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:padding="15dp"
+                    android:paddingVertical="15dp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.imageview.ShapeableImageView
@@ -72,10 +76,11 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/user_block_logined"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@id/user_avatar"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/user_avatar"
                         app:layout_constraintTop_toTopOf="@id/user_avatar">
 
@@ -108,6 +113,15 @@
                             android:text="Tham gia từ 01/0/2021"
                             app:layout_constraintStart_toStartOf="@id/user_phone"
                             app:layout_constraintTop_toBottomOf="@id/user_phone" />
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:src="@drawable/ic_next"
+                            app:layout_constraintBottom_toBottomOf="@id/user_joindate"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/user_name" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -229,6 +243,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="Chờ xác nhận"
                             android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -269,6 +284,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="Chờ lấy hàng"
                             android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -309,6 +325,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="Đang giao"
                             android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -349,6 +366,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="Đã giao"
                             android:textSize="@dimen/textsize_2"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -372,6 +390,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="Đã hủy"
                             android:textSize="@dimen/textsize_2" />
                     </LinearLayout>
@@ -393,7 +412,7 @@
                         android:drawableStart="@drawable/ic_voucher"
                         android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:text="Mã giảm giá"
+                        android:text="Mã ưu đãi"
                         android:textColor="@color/black"
                         android:textSize="@dimen/textsize_4"
                         app:layout_constraintStart_toStartOf="parent"
@@ -499,12 +518,42 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/user_block_help"
+                    android:id="@+id/user_block_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:padding="10dp"
                     app:layout_constraintTop_toBottomOf="@id/user_block_wallet">
+
+                    <TextView
+                        android:id="@+id/user_setting"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_address"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:text="Địa chỉ"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/textsize_4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_next_small"
+                        app:layout_constraintBottom_toBottomOf="@id/user_setting"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/user_setting" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/user_block_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/user_block_address">
 
                     <TextView
                         android:id="@+id/user_help"
@@ -528,35 +577,6 @@
                         app:layout_constraintTop_toTopOf="@id/user_help" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/user_block_setting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/user_block_help">
-
-                    <TextView
-                        android:id="@+id/user_setting"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_settingacc"
-                        android:drawablePadding="10dp"
-                        android:gravity="center"
-                        android:text="Thiết lập tài khoản"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/textsize_4"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_next_small"
-                        app:layout_constraintBottom_toBottomOf="@id/user_setting"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/user_setting" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/user_btn_logout"
@@ -567,7 +587,7 @@
                     android:text="Đăng xuất"
                     android:textColor="@color/white"
                     android:visibility="gone"
-                    app:layout_constraintTop_toBottomOf="@id/user_block_setting" />
+                    app:layout_constraintTop_toBottomOf="@id/user_block_help" />
 
                 <View
                     android:layout_width="match_parent"
@@ -609,7 +629,7 @@
                     android:layout_height="1dp"
                     android:layout_marginHorizontal="15dp"
                     android:background="@color/dark_2"
-                    app:layout_constraintTop_toBottomOf="@id/user_block_help" />
+                    app:layout_constraintTop_toBottomOf="@id/user_block_address" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

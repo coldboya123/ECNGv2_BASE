@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.User.SettingAccount.Profile;
+package com.example.ecngv2.View.UserProfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;

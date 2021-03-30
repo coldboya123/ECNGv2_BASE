@@ -1,46 +1,44 @@
-package com.example.ecngv2.View.User.SettingAccount.Address;
+package com.example.ecngv2.View.Address;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.ecngv2.Model.Object.City;
 import com.example.ecngv2.Model.Object.District;
 import com.example.ecngv2.Model.Object.Ward;
 import com.example.ecngv2.Model.User.Address.ModelAddress;
 import com.example.ecngv2.R;
-import com.google.android.material.checkbox.MaterialCheckBox;
-import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditUserAddressActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddUserAddressActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_back;
-    AutoCompleteTextView txtCity, txtDistric, txtWard;
-    TextInputEditText txtName, txtPhone, txtAddress;
-    MaterialCheckBox checkBox;
-    AppCompatButton btn_save;
     List<City> listCity = new ArrayList<>();
+    ModelAddress modelAddress = new ModelAddress();
     List<District> listDistrict = new ArrayList<>();
     List<Ward> listWard = new ArrayList<>();
-    ModelAddress modelAddress = new ModelAddress();
+    AutoCompleteTextView txtCity, txtDistric, txtWard;
+    AppCompatButton btn_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_user_address);
+        setContentView(R.layout.activity_add_user_address);
 
         Window window = getWindow();
         @SuppressLint("UseCompatLoadingForDrawables") Drawable background = getDrawable(R.drawable.appbar_background);
@@ -51,26 +49,11 @@ public class EditUserAddressActivity extends AppCompatActivity implements View.O
 
         init();
 
-        txtName.setText(getIntent().getStringExtra("name"));
-        txtPhone.setText(getIntent().getStringExtra("phone"));
-
-        String address = getIntent().getStringExtra("address");
-        String[] arrAddress = address.split(",");
-        txtCity.setText(arrAddress[3].trim());
-        txtDistric.setText(arrAddress[2].trim());
-        txtWard.setText(arrAddress[1].trim());
-        txtAddress.setText(arrAddress[0].trim());
-
-        if (getIntent().getBooleanExtra("default", false)){
-            checkBox.setChecked(true);
-        }
-
         List<String> arrCity = new ArrayList<>();
         listCity = modelAddress.getCity("https://vapi.vnappmob.com/api/province/");
         for (int i=0; i<listCity.size(); i++){
             arrCity.add(listCity.get(i).getName());
         }
-
         txtCity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrCity));
 
         txtCity.setOnItemClickListener((adapterView, view, i, l) -> {
@@ -82,29 +65,25 @@ public class EditUserAddressActivity extends AppCompatActivity implements View.O
             txtDistric.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrDistrict));
         });
 
-        btn_back.setOnClickListener(this);
+
         txtDistric.setOnClickListener(this);
         txtWard.setOnClickListener(this);
+        btn_back.setOnClickListener(this);
         btn_save.setOnClickListener(this);
     }
 
     private void init(){
-        btn_back = findViewById(R.id.user_address_edit_btn_back);
-        txtName = findViewById(R.id.user_address_edit_txtname);
-        txtPhone = findViewById(R.id.user_address_edit_txtphone);
+        btn_back = findViewById(R.id.user_address_add_btn_back);
         txtCity = findViewById(R.id.user_address_edit_txtcity);
         txtDistric = findViewById(R.id.user_address_edit_txtdistric);
         txtWard = findViewById(R.id.user_address_edit_txtward);
-        txtAddress = findViewById(R.id.user_address_edit_txtaddress);
-        checkBox = findViewById(R.id.user_address_edit_checkbox);
         btn_save = findViewById(R.id.user_address_edit_btn_save);
     }
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.user_address_edit_btn_back:
+            case R.id.user_address_add_btn_back:
             case R.id.user_address_edit_btn_save:
                 finish();
                 break;

@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="5dp"
         app:layout_constraintBottom_toTopOf="@id/buynow"
+        android:textStyle="bold"
         android:layout_height="wrap_content"/>
     <androidx.appcompat.widget.AppCompatButton
         app:layout_constraintStart_toStartOf="parent"

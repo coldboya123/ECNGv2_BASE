@@ -138,8 +138,8 @@ public class HomeFragment extends Fragment {
         categoryList = new ArrayList<>();
 
         banners = new ArrayList<>();
-        banners.add(R.drawable.banner_home_1);
-        banners.add(R.drawable.banner_home_2);
+        banners.add(R.drawable.banner_home_5);
+        banners.add(R.drawable.banner_home_6);
         banners.add(R.drawable.banner_home_3);
         banners.add(R.drawable.banner_home_4);
         banners.add(R.drawable.banner_home_5);

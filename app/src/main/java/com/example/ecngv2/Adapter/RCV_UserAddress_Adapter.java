@@ -2,8 +2,6 @@ package com.example.ecngv2.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListPopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,9 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.UserAddress;
 import com.example.ecngv2.R;
-import com.example.ecngv2.View.User.SettingAccount.Address.EditUserAddressActivity;
+import com.example.ecngv2.View.Address.EditUserAddressActivity;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class RCV_UserAddress_Adapter extends RecyclerView.Adapter<RCV_UserAddress_Adapter.ViewHolder> {

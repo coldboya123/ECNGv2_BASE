@@ -1,4 +1,4 @@
-package com.example.ecngv2.View.User.SettingAccount.Profile;
+package com.example.ecngv2.View.UserProfile;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

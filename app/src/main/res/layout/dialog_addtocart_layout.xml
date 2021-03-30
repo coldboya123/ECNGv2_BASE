@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
         android:layout_marginTop="20dp"
-        android:background="#9000870d"
+        android:background="@color/primary_transparent"
         android:gravity="center_horizontal"
         android:paddingVertical="10dp"
         android:textSize="@dimen/textsize_4"
