@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
+        <activity android:name=".View.Favorite.FavoriteActivity"></activity>
         <activity android:name=".View.Voucher.VoucherActivity" />
         <activity android:name=".View.OrderManager.ShippingDetailActivity" />
         <activity android:name=".View.OrderManager.OrderDetail.OrderDetailActivity" />

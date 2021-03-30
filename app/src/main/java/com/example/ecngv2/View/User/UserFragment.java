@@ -2,12 +2,6 @@ package com.example.ecngv2.View.User;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.example.ecngv2.Presenter.User.UserPresenter;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.Address.UserAddressActivity;
+import com.example.ecngv2.View.Favorite.FavoriteActivity;
 import com.example.ecngv2.View.Login.LoginActivity;
 import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
-import com.example.ecngv2.View.Address.UserAddressActivity;
 import com.example.ecngv2.View.UserProfile.UserProfileActivity;
 import com.example.ecngv2.View.Voucher.VoucherActivity;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -31,12 +31,12 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     SwipeRefreshLayout refreshLayout;
     ShapeableImageView avatar;
     ImageView choxacnhan, cholayhang, danggiao, dagiao, dahuy;
-    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user;
+    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user, btn_fav;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
     TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
     boolean checkLogin = false;
-    Intent intent; 
+    Intent intent;
 
     public UserFragment() {
         // Required empty public constructor
@@ -66,10 +66,11 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         danggiao.setOnClickListener(this);
         dagiao.setOnClickListener(this);
         dahuy.setOnClickListener(this);
+        btn_fav.setOnClickListener(this);
         return v;
     }
 
-    private void init(View v){
+    private void init(View v) {
         refreshLayout = v.findViewById(R.id.refresh_user);
 
         block_user = v.findViewById(R.id.user_block_user);
@@ -93,11 +94,13 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         danggiao = v.findViewById(R.id.user_delivering);
         dagiao = v.findViewById(R.id.user_delivered);
         dahuy = v.findViewById(R.id.user_cancel);
+
+        btn_fav = v.findViewById(R.id.user_block_fav);
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.user_block_user:
                 startActivity(new Intent(getContext(), UserProfileActivity.class));
                 break;
@@ -140,18 +143,21 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 startActivity(intent);
                 break;
             case R.id.user_block_voucher:
-                if (checkLogin){
+                if (checkLogin) {
                     startActivity(new Intent(getContext(), VoucherActivity.class));
                 } else {
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }
                 break;
             case R.id.user_block_address:
-                if (checkLogin){
+                if (checkLogin) {
                     startActivity(new Intent(getContext(), UserAddressActivity.class));
                 } else {
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }
+                break;
+            case R.id.user_block_fav:
+                startActivity(new Intent(getContext(), FavoriteActivity.class));
                 break;
         }
     }
