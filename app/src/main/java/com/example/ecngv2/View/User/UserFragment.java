@@ -21,7 +21,9 @@ import com.example.ecngv2.View.Favorite.FavoriteActivity;
 import com.example.ecngv2.View.Login.LoginActivity;
 import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
+import com.example.ecngv2.View.RecentlyViewed.RecentlyViewedActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
+import com.example.ecngv2.View.Shop.testActivity;
 import com.example.ecngv2.View.UserProfile.UserProfileActivity;
 import com.example.ecngv2.View.Voucher.VoucherActivity;
 import com.google.android.material.imageview.ShapeableImageView;
@@ -31,7 +33,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     SwipeRefreshLayout refreshLayout;
     ShapeableImageView avatar;
     ImageView choxacnhan, cholayhang, danggiao, dagiao, dahuy;
-    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user, btn_fav;
+    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user, btn_fav, btn_recentlyviewed, btn_help;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
     TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
@@ -67,6 +69,8 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         dagiao.setOnClickListener(this);
         dahuy.setOnClickListener(this);
         btn_fav.setOnClickListener(this);
+        btn_recentlyviewed.setOnClickListener(this);
+        btn_help.setOnClickListener(this);
         return v;
     }
 
@@ -96,6 +100,8 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         dahuy = v.findViewById(R.id.user_cancel);
 
         btn_fav = v.findViewById(R.id.user_block_fav);
+        btn_recentlyviewed = v.findViewById(R.id.user_block_daxemganday);
+        btn_help = v.findViewById(R.id.user_block_help);
     }
 
     @Override
@@ -158,6 +164,12 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 break;
             case R.id.user_block_fav:
                 startActivity(new Intent(getContext(), FavoriteActivity.class));
+                break;
+            case R.id.user_block_daxemganday:
+                startActivity(new Intent(getContext(), RecentlyViewedActivity.class));
+                break;
+            case R.id.user_block_help:
+                startActivity(new Intent(getContext(), testActivity.class));
                 break;
         }
     }

@@ -1,6 +1,7 @@
 package com.example.ecngv2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.FavProduct;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.Product.ProductActivity;
+import com.example.ecngv2.View.Shop.ShopActivity;
 import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
@@ -41,6 +45,8 @@ public class RCV_FavProduct_Adapter extends RecyclerView.Adapter<RCV_FavProduct_
         holder.productimg.setImageResource(favProduct.getImg());
         holder.productname.setText(favProduct.getName());
         holder.productprice.setText(String.format("%,d", favProduct.getPrice())+" đ");
+        holder.block_shop.setOnClickListener(v -> context.startActivity(new Intent(context, ShopActivity.class)));
+        holder.block_product.setOnClickListener(v -> context.startActivity(new Intent(context, ProductActivity.class)));
     }
 
     @Override
@@ -52,6 +58,7 @@ public class RCV_FavProduct_Adapter extends RecyclerView.Adapter<RCV_FavProduct_
         TextView shopname, productname, productprice;
         ImageView productimg;
         ShapeableImageView shopimg;
+        ConstraintLayout block_shop, block_product;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +67,8 @@ public class RCV_FavProduct_Adapter extends RecyclerView.Adapter<RCV_FavProduct_
             productprice = itemView.findViewById(R.id.price);
             productimg = itemView.findViewById(R.id.img);
             shopimg = itemView.findViewById(R.id.avatar);
+            block_product = itemView.findViewById(R.id.block_product);
+            block_shop = itemView.findViewById(R.id.block_shop);
         }
     }
 }
