@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 
 import com.example.ecngv2.Adapter.RCV_Wallet_Adapter;
 import com.example.ecngv2.Model.Object.Cash;
@@ -21,6 +22,7 @@ public class WalletActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Cash> list;
+    ImageButton btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,14 @@ public class WalletActivity extends AppCompatActivity {
 
         init();
 
+        btn_back.setOnClickListener(v -> finish());
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         recyclerView.setAdapter(new RCV_Wallet_Adapter(this, list));
     }
 
     private void init() {
+        btn_back = findViewById(R.id.btn_back);
         recyclerView = findViewById(R.id.rcv_today);
         list = new ArrayList<>();
         list.add(new Cash("123ECNG", "01/04/2020", -1500000));

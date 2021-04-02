@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.ecngv2.Model.Object.Cash;
 import com.example.ecngv2.Model.Object.OrderManager;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class RCV_Wallet_Adapter extends RecyclerView.Adapter<RCV_Wallet_Adapter.
             holder.money.setTextColor(context.getColor(R.color.green));
         }else holder.money.setTextColor(context.getColor(R.color.red));
         holder.date.setText(cash.getDate());
-        holder.btn_vieworder.setOnClickListener(v -> context.startActivity(new Intent(context, OrderManager.class)));
+        holder.btn_vieworder.setOnClickListener(v -> context.startActivity(new Intent(context, OrderManagerActivity.class)));
     }
 
     @Override
