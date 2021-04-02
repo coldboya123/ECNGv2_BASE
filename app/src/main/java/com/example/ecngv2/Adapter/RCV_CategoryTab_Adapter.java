@@ -40,7 +40,7 @@ public class RCV_CategoryTab_Adapter extends RecyclerView.Adapter<RCV_CategoryTa
         holder.imageView.setImageResource(category.getSrc());
         holder.textView.setText(category.getTitle());
         if (selectedPosition == position) {
-            holder.cate_block.setBackground(context.getDrawable(R.drawable.border_primary_color));
+            holder.cate_block.setBackground(context.getDrawable(R.drawable.border_primary_color_5));
         } else {
             holder.cate_block.setBackground(null);
         }

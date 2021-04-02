@@ -158,15 +158,15 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
                     btn_sort_common.setTextColor(getColor(R.color.white));
                     check_sort_common = !check_sort_common;
 
-                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_fav.setTextColor(getColor(R.color.primary_color));
                     check_sort_fav = !check_sort_fav;
 
-                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_new.setTextColor(getColor(R.color.primary_color));
                     check_sort_new = !check_sort_new;
                 }else {
-                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_common.setTextColor(getColor(R.color.primary_color));
                     check_sort_common = !check_sort_common;
                 }
@@ -177,15 +177,15 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
                     btn_sort_fav.setTextColor(getColor(R.color.white));
                     check_sort_fav = !check_sort_fav;
 
-                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_common.setTextColor(getColor(R.color.primary_color));
                     check_sort_common = !check_sort_common;
 
-                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_new.setTextColor(getColor(R.color.primary_color));
                     check_sort_new = !check_sort_new;
                 }else {
-                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_fav.setTextColor(getColor(R.color.primary_color));
                     check_sort_fav = !check_sort_fav;
                 }
@@ -196,15 +196,15 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
                     btn_sort_new.setTextColor(getColor(R.color.white));
                     check_sort_new = !check_sort_new;
 
-                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_common.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_common.setTextColor(getColor(R.color.primary_color));
                     check_sort_common = !check_sort_common;
 
-                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_fav.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_fav.setTextColor(getColor(R.color.primary_color));
                     check_sort_fav = !check_sort_fav;
                 }else {
-                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color));
+                    btn_sort_new.setBackground(getDrawable(R.drawable.border_primary_color_5));
                     btn_sort_new.setTextColor(getColor(R.color.primary_color));
                     check_sort_new = !check_sort_new;
                 }

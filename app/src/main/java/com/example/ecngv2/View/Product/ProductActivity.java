@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -16,7 +14,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -272,7 +269,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     private void SetColorSelected(TextView temp, TextView selected) {
         temp.setBackground(getDrawable(R.drawable.border_dark));
         temp.setTextColor(getColor(R.color.black));
-        selected.setBackground(getDrawable(R.drawable.border_primary_color));
+        selected.setBackground(getDrawable(R.drawable.border_primary_color_5));
         selected.setTextColor(getColor(R.color.primary_color));
     }
 }

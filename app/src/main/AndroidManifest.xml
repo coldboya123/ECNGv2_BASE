@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
         tools:replace="android:label">
-        <activity android:name=".View.Shop.testActivity"></activity>
+        <activity android:name=".View.Wallet.WalletActivity"></activity>
+        <activity android:name=".View.Shop.testActivity" />
         <activity android:name=".View.RecentlyViewed.RecentlyViewedActivity" />
         <activity android:name=".View.Favorite.FavoriteActivity" />
         <activity android:name=".View.Voucher.VoucherActivity" />

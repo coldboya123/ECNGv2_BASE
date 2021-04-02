@@ -26,6 +26,7 @@ import com.example.ecngv2.View.Register.RegisterActivity;
 import com.example.ecngv2.View.Shop.testActivity;
 import com.example.ecngv2.View.UserProfile.UserProfileActivity;
 import com.example.ecngv2.View.Voucher.VoucherActivity;
+import com.example.ecngv2.View.Wallet.WalletActivity;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class UserFragment extends Fragment implements View.OnClickListener, IUserView {
@@ -33,7 +34,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
     SwipeRefreshLayout refreshLayout;
     ShapeableImageView avatar;
     ImageView choxacnhan, cholayhang, danggiao, dagiao, dahuy;
-    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user, btn_fav, btn_recentlyviewed, btn_help;
+    ConstraintLayout block_logined, block_logouted, btn_address, btn_voucher, block_user, btn_fav, btn_recentlyviewed, btn_help, btn_wallet;
     AppCompatButton btn_login, btn_logout, btn_register;
     UserPresenter presenter;
     TextView badge_choxacnhan, badge_cholayhang, badge_danggiao, badge_dagiao, ordermanager;
@@ -71,6 +72,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_fav.setOnClickListener(this);
         btn_recentlyviewed.setOnClickListener(this);
         btn_help.setOnClickListener(this);
+        btn_wallet.setOnClickListener(this);
         return v;
     }
 
@@ -102,6 +104,7 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
         btn_fav = v.findViewById(R.id.user_block_fav);
         btn_recentlyviewed = v.findViewById(R.id.user_block_daxemganday);
         btn_help = v.findViewById(R.id.user_block_help);
+        btn_wallet = v.findViewById(R.id.user_block_wallet);
     }
 
     @Override
@@ -170,6 +173,9 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 break;
             case R.id.user_block_help:
                 startActivity(new Intent(getContext(), testActivity.class));
+                break;
+            case R.id.user_block_wallet:
+                startActivity(new Intent(getContext(), WalletActivity.class));
                 break;
         }
     }
