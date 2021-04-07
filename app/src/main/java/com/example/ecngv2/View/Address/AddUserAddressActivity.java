@@ -1,12 +1,5 @@
 package com.example.ecngv2.View.Address;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.SearchView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,12 +7,17 @@ import android.text.InputType;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Adapter.RCV_AddressChooseCity_Adapter;
 import com.example.ecngv2.Adapter.RCV_AddressChooseDistrict_Adapter;
@@ -65,7 +63,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
 
         List<String> arrCity = new ArrayList<>();
         listCity = modelAddress.getCity("https://vapi.vnappmob.com/api/province/");
-        for (int i=0; i<listCity.size(); i++){
+        for (int i = 0; i < listCity.size(); i++) {
             arrCity.add(listCity.get(i).getName());
         }
 
@@ -76,7 +74,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
         btn_save.setOnClickListener(this);
     }
 
-    private void init(){
+    private void init() {
         btn_back = findViewById(R.id.user_address_add_btn_back);
         txtCity = findViewById(R.id.user_address_edit_txtcity);
         btn_save = findViewById(R.id.user_address_edit_btn_save);
@@ -84,7 +82,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.user_address_add_btn_back:
             case R.id.user_address_edit_btn_save:
                 finish();
@@ -100,7 +98,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
                 titleDistrict = layoutView.findViewById(R.id.district);
                 titleWard = layoutView.findViewById(R.id.ward);
 
-                recyclerView.getLayoutParams().height = MainActivity.DEVICE_HEIGHT_PX/2;
+                recyclerView.getLayoutParams().height = MainActivity.DEVICE_HEIGHT_PX / 2;
                 LinearLayout linearLayout1 = (LinearLayout) searchView.getChildAt(0);
                 LinearLayout linearLayout2 = (LinearLayout) linearLayout1.getChildAt(2);
                 LinearLayout linearLayout3 = (LinearLayout) linearLayout2.getChildAt(1);
@@ -124,9 +122,9 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
                     public boolean onQueryTextChange(String newText) {
                         newText = newText.toLowerCase();
                         List<City> newCityList = new ArrayList<>();
-                        for (City city: listCity){
+                        for (City city : listCity) {
                             String checkcity = city.getName().toLowerCase();
-                            if (checkcity.contains(newText)){
+                            if (checkcity.contains(newText)) {
                                 newCityList.add(city);
                             }
                         }
@@ -142,7 +140,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
     @Override
     public void OnSelectedCity(City city) {
         address = "";
-        address += city.getName() +", ";
+        address += city.getName() + ", ";
         titleCity.setText(city.getName() + " > ");
         titleDistrict.setVisibility(View.VISIBLE);
         listDistrict = modelAddress.getDistrict("https://vapi.vnappmob.com/api/province/district/" + city.getId());
@@ -160,9 +158,9 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
             public boolean onQueryTextChange(String newText) {
                 newText = newText.toLowerCase();
                 List<District> newDistrictList = new ArrayList<>();
-                for (District district: listDistrict){
+                for (District district : listDistrict) {
                     String checkDistrict = district.getName().toLowerCase();
-                    if (checkDistrict.contains(newText)){
+                    if (checkDistrict.contains(newText)) {
                         newDistrictList.add(district);
                     }
                 }
@@ -174,7 +172,7 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
 
     @Override
     public void OnSelectedDistrict(District district) {
-        address += district.getName() +", ";
+        address += district.getName() + ", ";
         titleDistrict.setText(district.getName() + " > ");
         titleWard.setVisibility(View.VISIBLE);
         listWard = modelAddress.getWard("https://vapi.vnappmob.com/api/province/ward/" + district.getId());
@@ -192,9 +190,9 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
             public boolean onQueryTextChange(String newText) {
                 newText = newText.toLowerCase();
                 List<Ward> newWardList = new ArrayList<>();
-                for (Ward ward: listWard){
+                for (Ward ward : listWard) {
                     String checkWard = ward.getName().toLowerCase();
-                    if (checkWard.contains(newText)){
+                    if (checkWard.contains(newText)) {
                         newWardList.add(ward);
                     }
                 }
