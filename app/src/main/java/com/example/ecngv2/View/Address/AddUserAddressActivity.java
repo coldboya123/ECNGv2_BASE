@@ -1,39 +1,53 @@
 package com.example.ecngv2.View.Address;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.InputType;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ecngv2.Adapter.RCV_AddressChooseCity_Adapter;
+import com.example.ecngv2.Adapter.RCV_AddressChooseDistrict_Adapter;
+import com.example.ecngv2.Adapter.RCV_AddressChooseWard_Adapter;
 import com.example.ecngv2.Model.Object.City;
 import com.example.ecngv2.Model.Object.District;
 import com.example.ecngv2.Model.Object.Ward;
 import com.example.ecngv2.Model.User.Address.ModelAddress;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.MainActivity.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddUserAddressActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddUserAddressActivity extends AppCompatActivity implements View.OnClickListener, IAddUserAddress {
 
     Button btn_back;
     List<City> listCity = new ArrayList<>();
     ModelAddress modelAddress = new ModelAddress();
     List<District> listDistrict = new ArrayList<>();
     List<Ward> listWard = new ArrayList<>();
-    AutoCompleteTextView txtCity, txtDistric, txtWard;
+    AutoCompleteTextView txtCity;
     AppCompatButton btn_save;
+    AlertDialog dialog;
+    SearchView searchView;
+    RecyclerView recyclerView;
+    TextView titleCity, titleDistrict, titleWard;
+    String address = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,20 +68,10 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
         for (int i=0; i<listCity.size(); i++){
             arrCity.add(listCity.get(i).getName());
         }
-        txtCity.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrCity));
 
-        txtCity.setOnItemClickListener((adapterView, view, i, l) -> {
-            List<String> arrDistrict = new ArrayList<>();
-            listDistrict = modelAddress.getDistrict("https://vapi.vnappmob.com/api/province/district/" + listCity.get(i).getId());
-            for (int j = 0; j < listDistrict.size(); j++) {
-                arrDistrict.add(listDistrict.get(j).getName());
-            }
-            txtDistric.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrDistrict));
-        });
-
-
-        txtDistric.setOnClickListener(this);
-        txtWard.setOnClickListener(this);
+        txtCity.setRawInputType(InputType.TYPE_NULL);
+        txtCity.setFocusable(true);
+        txtCity.setOnClickListener(this);
         btn_back.setOnClickListener(this);
         btn_save.setOnClickListener(this);
     }
@@ -75,8 +79,6 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
     private void init(){
         btn_back = findViewById(R.id.user_address_add_btn_back);
         txtCity = findViewById(R.id.user_address_edit_txtcity);
-        txtDistric = findViewById(R.id.user_address_edit_txtdistric);
-        txtWard = findViewById(R.id.user_address_edit_txtward);
         btn_save = findViewById(R.id.user_address_edit_btn_save);
     }
 
@@ -87,25 +89,126 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
             case R.id.user_address_edit_btn_save:
                 finish();
                 break;
-            case R.id.user_address_edit_txtdistric:
-                if (listDistrict.isEmpty()) {
-                    Toast.makeText(this, "Vui lòng chọn Tỉnh/Thành", Toast.LENGTH_SHORT).show();
-                } else {
-                    txtDistric.setOnItemClickListener((adapterView, view1, i, l) -> {
-                        List<String> arrWard = new ArrayList<>();
-                        listWard = modelAddress.getWard("https://vapi.vnappmob.com/api/province/ward/" + listDistrict.get(i).getId());
-                        for (int j = 0; j < listWard.size(); j++) {
-                            arrWard.add(listWard.get(j).getName());
+            case R.id.user_address_edit_txtcity:
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+                View layoutView = getLayoutInflater().inflate(R.layout.dialog_choose_address, null);
+                dialogBuilder.setView(layoutView);
+                dialog = dialogBuilder.create();
+                searchView = layoutView.findViewById(R.id.search);
+                recyclerView = layoutView.findViewById(R.id.rcv);
+                titleCity = layoutView.findViewById(R.id.city);
+                titleDistrict = layoutView.findViewById(R.id.district);
+                titleWard = layoutView.findViewById(R.id.ward);
+
+                recyclerView.getLayoutParams().height = MainActivity.DEVICE_HEIGHT_PX/2;
+                LinearLayout linearLayout1 = (LinearLayout) searchView.getChildAt(0);
+                LinearLayout linearLayout2 = (LinearLayout) linearLayout1.getChildAt(2);
+                LinearLayout linearLayout3 = (LinearLayout) linearLayout2.getChildAt(1);
+                AutoCompleteTextView autoComplete = (AutoCompleteTextView) linearLayout3.getChildAt(0);
+                autoComplete.setTextSize(15);
+                searchView.setOnClickListener(v1 -> {
+                    searchView.setIconified(false);
+                });
+                listCity = modelAddress.getCity("https://vapi.vnappmob.com/api/province/");
+                recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+                RCV_AddressChooseCity_Adapter adapter = new RCV_AddressChooseCity_Adapter(this, listCity, this);
+                recyclerView.setAdapter(adapter);
+
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        newText = newText.toLowerCase();
+                        List<City> newCityList = new ArrayList<>();
+                        for (City city: listCity){
+                            String checkcity = city.getName().toLowerCase();
+                            if (checkcity.contains(newText)){
+                                newCityList.add(city);
+                            }
                         }
-                        txtWard.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrWard));
-                    });
-                }
-                break;
-            case R.id.user_address_edit_txtward:
-                if (listWard.isEmpty()){
-                    Toast.makeText(this, "Vui lòng chọn Quận/Huyện", Toast.LENGTH_SHORT).show();
-                }
+                        adapter.setFilter(newCityList);
+                        return true;
+                    }
+                });
+                dialog.show();
                 break;
         }
+    }
+
+    @Override
+    public void OnSelectedCity(City city) {
+        address = "";
+        address += city.getName() +", ";
+        titleCity.setText(city.getName() + " > ");
+        titleDistrict.setVisibility(View.VISIBLE);
+        listDistrict = modelAddress.getDistrict("https://vapi.vnappmob.com/api/province/district/" + city.getId());
+        RCV_AddressChooseDistrict_Adapter adapter = new RCV_AddressChooseDistrict_Adapter(this, listDistrict, this);
+        recyclerView.setAdapter(adapter);
+        searchView.setQuery("", false);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                newText = newText.toLowerCase();
+                List<District> newDistrictList = new ArrayList<>();
+                for (District district: listDistrict){
+                    String checkDistrict = district.getName().toLowerCase();
+                    if (checkDistrict.contains(newText)){
+                        newDistrictList.add(district);
+                    }
+                }
+                adapter.setFilter(newDistrictList);
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void OnSelectedDistrict(District district) {
+        address += district.getName() +", ";
+        titleDistrict.setText(district.getName() + " > ");
+        titleWard.setVisibility(View.VISIBLE);
+        listWard = modelAddress.getWard("https://vapi.vnappmob.com/api/province/ward/" + district.getId());
+        RCV_AddressChooseWard_Adapter adapter = new RCV_AddressChooseWard_Adapter(this, listWard, this);
+        recyclerView.setAdapter(adapter);
+        searchView.setQuery("", false);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                newText = newText.toLowerCase();
+                List<Ward> newWardList = new ArrayList<>();
+                for (Ward ward: listWard){
+                    String checkWard = ward.getName().toLowerCase();
+                    if (checkWard.contains(newText)){
+                        newWardList.add(ward);
+                    }
+                }
+                adapter.setFilter(newWardList);
+                return true;
+            }
+        });
+    }
+
+    @Override
+    public void OnSelectedWard(Ward ward) {
+        address += ward.getName();
+        titleDistrict.setText(ward.getName());
+        dialog.hide();
+        txtCity.setText(address, false);
     }
 }
