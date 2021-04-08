@@ -147,12 +147,12 @@ public class HomeFragment extends Fragment {
 
         rcv_newproduct = v.findViewById(R.id.rcv_newproduct);
         productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.dongho, 10000000));
-        productList.add(new Product(R.drawable.matkinh, 10000000));
-        productList.add(new Product(R.drawable.laptop1, 10000000));
-        productList.add(new Product(R.drawable.laptop3, 10000000));
-        productList.add(new Product(R.drawable.laptop7, 10000000));
-        productList.add(new Product(R.drawable.laptop6, 10000000));
+        productList.add(new Product(R.drawable.dongho, 20000000));
+        productList.add(new Product(R.drawable.img_laptophppavilion, 14490000));
+        productList.add(new Product(R.drawable.img_ipadpro11, 25100000));
+        productList.add(new Product(R.drawable.img_laptoplenovoideapad, 23900000));
+        productList.add(new Product(R.drawable.img_galaxyzfold2, 50000000));
+        productList.add(new Product(R.drawable.img_applewatchs5lte, 17500000));
 
         banner = v.findViewById(R.id.banner);
     }

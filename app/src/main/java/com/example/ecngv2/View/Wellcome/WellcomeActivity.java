@@ -34,7 +34,7 @@ public class WellcomeActivity extends AppCompatActivity {
 
         new Thread(() -> {
             try{
-                Thread.sleep(500);
+                Thread.sleep(0);
             } catch (Exception e){
 
             }finally {

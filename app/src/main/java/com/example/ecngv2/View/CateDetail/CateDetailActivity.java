@@ -92,11 +92,12 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
 
         sliderView = findViewById(R.id.slide_banner);
         banners = new ArrayList<>();
-        banners.add(R.drawable.slider_1);
-        banners.add(R.drawable.slider_2);
-        banners.add(R.drawable.slider_3);
-        banners.add(R.drawable.slider_4);
-        banners.add(R.drawable.slider_5);
+        banners.add(R.drawable.banner_home_3);
+        banners.add(R.drawable.banner_home_4);
+        banners.add(R.drawable.banner_home_5);
+        banners.add(R.drawable.banner_home_6);
+        banners.add(R.drawable.banner_home_7);
+
 
         spinner_rating = findViewById(R.id.catedetail_sort_rating);
         list_rating_sort = new ArrayList<>();
@@ -229,38 +230,49 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void loadData(List<Product> list_products){
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.dienthoai3, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_thucung, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai2, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_dongho, 999, "Laptop DELL inpresion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.laptop, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dongho, 99, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.matkinh, 9, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Laptop DELL inpresion ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_trangsuc, 99, "Laptop DELL inpression ZT125 ECNG...", 20000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.cate_thoitrang, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
-        list_products.add(new Product(R.drawable.cate_thucpham, 999, "Laptop DELL inprsion ZT125 ECNG...", 999000000, (float) 5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
+        list_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
+        list_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
+        list_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
+        list_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
+        list_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
+        list_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
+        list_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
     }
 }

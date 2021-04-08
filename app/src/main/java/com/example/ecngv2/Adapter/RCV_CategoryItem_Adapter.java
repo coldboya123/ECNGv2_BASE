@@ -1,6 +1,7 @@
 package com.example.ecngv2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Model.Object.Category;
 import com.example.ecngv2.R;
+import com.example.ecngv2.View.CateDetail.CateDetailActivity;
 import com.example.ecngv2.View.MainActivity.MainActivity;
 
 import java.util.List;
@@ -37,6 +39,7 @@ public class RCV_CategoryItem_Adapter extends RecyclerView.Adapter<RCV_CategoryI
         Category category = list.get(position);
         holder.img.setImageResource(category.getSrc());
         holder.img.getLayoutParams().width = (int)(MainActivity.DEVICE_WIDTH_PX/3.2);
+        holder.img.setOnClickListener(v -> context.startActivity(new Intent(context, CateDetailActivity.class)));
     }
 
     @Override
