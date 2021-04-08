@@ -125,35 +125,58 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
                 getActivity().finish();
                 break;
             case R.id.user_ordermanager:
-                startActivity(new Intent(getContext(), OrderManagerActivity.class));
-                break;
             case R.id.user_confirm:
-                intent = new Intent(getContext(), OrderManagerActivity.class);
-                startActivity(intent);
+                if (checkLogin) {
+                    startActivity(new Intent(getContext(), OrderManagerActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_pickup:
-                intent = new Intent(getContext(), OrderManagerActivity.class);
-                intent.putExtra("position", 1);
-                startActivity(intent);
+                if (checkLogin) {
+                    intent = new Intent(getContext(), OrderManagerActivity.class);
+                    intent.putExtra("position", 1);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_delivering:
-                intent = new Intent(getContext(), OrderManagerActivity.class);
-                intent.putExtra("position", 2);
-                startActivity(intent);
+                if (checkLogin) {
+                    intent = new Intent(getContext(), OrderManagerActivity.class);
+                    intent.putExtra("position", 2);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_delivered:
-                intent = new Intent(getContext(), OrderManagerActivity.class);
-                intent.putExtra("position", 3);
-                startActivity(intent);
+                if (checkLogin) {
+                    intent = new Intent(getContext(), OrderManagerActivity.class);
+                    intent.putExtra("position", 3);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_cancel:
-                intent = new Intent(getContext(), OrderManagerActivity.class);
-                intent.putExtra("position", 4);
-                startActivity(intent);
+                if (checkLogin) {
+                    intent = new Intent(getContext(), OrderManagerActivity.class);
+                    intent.putExtra("position", 4);
+                    startActivity(intent);
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_block_voucher:
                 if (checkLogin) {
                     startActivity(new Intent(getContext(), VoucherActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 } else {
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }
@@ -161,21 +184,38 @@ public class UserFragment extends Fragment implements View.OnClickListener, IUse
             case R.id.user_block_address:
                 if (checkLogin) {
                     startActivity(new Intent(getContext(), UserAddressActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 } else {
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }
                 break;
             case R.id.user_block_fav:
-                startActivity(new Intent(getContext(), FavoriteActivity.class));
+                if (checkLogin) {
+                    startActivity(new Intent(getContext(), FavoriteActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_block_daxemganday:
-                startActivity(new Intent(getContext(), RecentlyViewedActivity.class));
+                if (checkLogin) {
+                    startActivity(new Intent(getContext(), RecentlyViewedActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
             case R.id.user_block_help:
                 startActivity(new Intent(getContext(), testActivity.class));
+                getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 break;
             case R.id.user_block_wallet:
-                startActivity(new Intent(getContext(), WalletActivity.class));
+                if (checkLogin) {
+                    startActivity(new Intent(getContext(), WalletActivity.class));
+                    getActivity().overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+                } else {
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }
                 break;
         }
     }

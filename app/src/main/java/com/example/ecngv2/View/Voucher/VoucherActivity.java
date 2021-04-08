@@ -52,6 +52,7 @@ public class VoucherActivity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()){
             case R.id.voucher_btn_back:
                 finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 break;
         }
     }
