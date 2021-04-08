@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -14,7 +15,7 @@ import com.example.ecngv2.Adapter.ViewPagerFavoriteAdapter;
 import com.example.ecngv2.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class FavoriteActivity extends AppCompatActivity {
+public class FavoriteActivity extends AppCompatActivity implements View.OnClickListener {
 
     TabLayout tabLayout;
     ViewPager viewPager;
@@ -36,12 +37,22 @@ public class FavoriteActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ViewPagerFavoriteAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
-        btn_back.setOnClickListener(v -> finish());
+        btn_back.setOnClickListener(this);
     }
 
     private void init() {
         tabLayout = findViewById(R.id.tab);
         viewPager = findViewById(R.id.viewpager);
         btn_back = findViewById(R.id.btn_back);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_back:
+                finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                break;
+        }
     }
 }

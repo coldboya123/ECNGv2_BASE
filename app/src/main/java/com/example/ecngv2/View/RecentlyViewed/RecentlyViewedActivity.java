@@ -19,7 +19,7 @@ import com.example.ecngv2.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecentlyViewedActivity extends AppCompatActivity {
+public class RecentlyViewedActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView recyclerView;
     List<FavProduct> list;
@@ -41,7 +41,7 @@ public class RecentlyViewedActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         recyclerView.setAdapter(new RCV_FavProduct_Adapter(this, list));
 
-        btn_back.setOnClickListener(v -> finish());
+        btn_back.setOnClickListener(this);
 
     }
 
@@ -58,5 +58,15 @@ public class RecentlyViewedActivity extends AppCompatActivity {
         list.add(new FavProduct(R.drawable.laptop5, "Jack gộp audio và mic 3.5mm | Jack gộpJack go audio và mic3 tai nghe 3.5 (Trắng)", 20000000, "apple_long_butterfly", R.drawable.avatar_user));
         list.add(new FavProduct(R.drawable.laptop6, "Jack gộp audio và mic 3.5mm | Jack gộpJack go audio và mic3 tai nghe 3.5 (Trắng)", 20000000, "apple_long_butterfly", R.drawable.avatar_user));
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_back:
+                finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+                break;
+        }
     }
 }

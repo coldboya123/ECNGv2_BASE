@@ -61,6 +61,7 @@ public class OrderManagerActivity extends AppCompatActivity implements View.OnCl
         switch (view.getId()){
             case R.id.ordermanager_btn_back:
                 finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 break;
         }
     }

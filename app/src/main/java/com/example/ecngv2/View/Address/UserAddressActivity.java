@@ -69,6 +69,7 @@ public class UserAddressActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()){
             case R.id.user_address_btn_back:
                 finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 break;
             case R.id.user_address_btn_add:
                 startActivity(new Intent(UserAddressActivity.this, AddUserAddressActivity.class));
