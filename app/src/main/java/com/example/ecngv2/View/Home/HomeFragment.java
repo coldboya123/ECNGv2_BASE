@@ -43,8 +43,7 @@ public class HomeFragment extends Fragment {
 
     SwipeRefreshLayout refreshLayout;
     SliderView sliderView;
-    List<Integer> list;
-    List<Integer> banners;
+    List<Integer> list, banners, listImg;
     List<Category> categoryList;
     SearchView searchView;
     ImageView banner;
@@ -136,6 +135,7 @@ public class HomeFragment extends Fragment {
         list = new ArrayList<>();
         recycler_category = v.findViewById(R.id.recycler_category);
         categoryList = new ArrayList<>();
+        banner = v.findViewById(R.id.banner);
 
         banners = new ArrayList<>();
         banners.add(R.drawable.banner_home_5);
@@ -147,13 +147,86 @@ public class HomeFragment extends Fragment {
 
         rcv_newproduct = v.findViewById(R.id.rcv_newproduct);
         productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.dongho, 20000000));
-        productList.add(new Product(R.drawable.img_laptophppavilion, 14490000));
-        productList.add(new Product(R.drawable.img_ipadpro11, 25100000));
-        productList.add(new Product(R.drawable.img_laptoplenovoideapad, 23900000));
-        productList.add(new Product(R.drawable.img_galaxyzfold2, 50000000));
-        productList.add(new Product(R.drawable.img_applewatchs5lte, 17500000));
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        productList.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
 
-        banner = v.findViewById(R.id.banner);
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        productList.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        productList.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        productList.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        productList.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        productList.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        productList.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        productList.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        productList.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        productList.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
+
     }
 }

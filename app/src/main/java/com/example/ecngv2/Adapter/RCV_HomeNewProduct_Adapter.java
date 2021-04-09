@@ -16,6 +16,7 @@ import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.Product.ProductActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RCV_HomeNewProduct_Adapter extends RecyclerView.Adapter<RCV_HomeNewProduct_Adapter.ViewHolder> {
@@ -40,7 +41,11 @@ public class RCV_HomeNewProduct_Adapter extends RecyclerView.Adapter<RCV_HomeNew
         Product product = list.get(position);
         holder.img.setImageResource(product.getImg());
         holder.price.setText(String.format("%,d", product.getPrice())+" đ");
-        holder.buynow.setOnClickListener(v -> context.startActivity(new Intent(context, ProductActivity.class)));
+        holder.buynow.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ProductActivity.class);
+            intent.putExtra("product", product);
+            context.startActivity(intent);
+        });
     }
 
     @Override

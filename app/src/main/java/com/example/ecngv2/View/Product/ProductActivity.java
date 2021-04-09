@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecngv2.Adapter.RCV_Product_Adapter;
 import com.example.ecngv2.Adapter.SliderViewProductAdapter;
+import com.example.ecngv2.Model.Object.Product;
 import com.example.ecngv2.R;
 import com.example.ecngv2.View.Cart.CartActivity;
 import com.example.ecngv2.View.Login.LoginActivity;
@@ -32,15 +34,12 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ProductActivity extends AppCompatActivity implements View.OnClickListener {
 
     AlertDialog alertDialog;
-    List<Integer> listImg;
     ConstraintLayout choose_type, topbar;
-    TextView txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
+    RatingBar ratingBar;
+    TextView txtProduct_name, txtProduct_price, txtPrice1, btn_plush, btn_minus, txt_number, color1, color2, color3, color4, color5, color_selected, viewShop;
     ImageButton btn_closeDialog, btn_back, btn_cart, btn_like;
     BottomSheetDialog dialog;
     int number;
@@ -48,6 +47,7 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
     AppCompatButton btn_buynow, btn_addtocart, dialog_btn_buybow, dialog_btn_addtocart;
     SliderView sliderView;
     boolean check_like = false;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +74,19 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         int statusBarHeight = (int) Math.ceil(25 * getResources().getDisplayMetrics().density);
         topbar.setPadding(0, statusBarHeight, 0, 0);
 
+        intent = getIntent();
+        Product product = (Product) intent.getSerializableExtra("product");
+
+        txtProduct_name.setText(product.getName());
+        ratingBar.setRating(product.getRating());
+        txtProduct_price.setText(String.format("%,d", product.getPrice()) + " đ");
+
         choose_type.setOnClickListener(this);
         btn_back.setOnClickListener(this);
         btn_cart.setOnClickListener(this);
         btn_like.setOnClickListener(this);
 
-        sliderView.setSliderAdapter(new SliderViewProductAdapter(this, listImg));
+        sliderView.setSliderAdapter(new SliderViewProductAdapter(this, product.getListImg()));
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
 
@@ -112,13 +119,10 @@ public class ProductActivity extends AppCompatActivity implements View.OnClickLi
         topbar = findViewById(R.id.product_topbar);
 
         sliderView = findViewById(R.id.slide_product);
-        listImg = new ArrayList<>();
-        listImg.add(R.drawable.laptop1);
-        listImg.add(R.drawable.laptop2);
-        listImg.add(R.drawable.laptop3);
-        listImg.add(R.drawable.laptop4);
-        listImg.add(R.drawable.laptop5);
-        listImg.add(R.drawable.laptop6);
+
+        txtProduct_name = findViewById(R.id.product_name);
+        txtProduct_price = findViewById(R.id.product_price);
+        ratingBar = findViewById(R.id.rating_product);
 
         choose_type = findViewById(R.id.choose_type);
         btn_back = findViewById(R.id.product_btn_back);

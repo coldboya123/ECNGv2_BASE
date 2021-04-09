@@ -45,7 +45,11 @@ public class RCV_HomeHintProduct_Adapter extends RecyclerView.Adapter<RCV_HomeHi
         holder.price.setText(String.format("%,d", product.getPrice())+" đ");
         holder.numrating.setText("("+product.getNumrating()+")");
         holder.ratingBar.setRating(product.getRating());
-        holder.cardView.setOnClickListener(view -> context.startActivity(new Intent(context, ProductActivity.class)));
+        holder.cardView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ProductActivity.class);
+            intent.putExtra("product", product);
+            context.startActivity(intent);
+        });
         holder.block.getLayoutParams().width = MainActivity.DEVICE_WIDTH_PX/2 -10;
     }
 

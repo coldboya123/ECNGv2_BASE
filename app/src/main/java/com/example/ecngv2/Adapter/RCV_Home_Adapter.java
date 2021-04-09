@@ -26,9 +26,10 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public RCV_Home_Adapter(Context context) {
         this.context = context;
     }
+    List<Integer> listImg;
 
     final int XML = 0;
-    final int HLPRODUCT = 1;
+    final int HOTPRODUCT = 1;
     final int CATE_PRODUCT = 2;
     final int HINT = 3;
 
@@ -40,7 +41,7 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             case XML:
                 v = LayoutInflater.from(context).inflate(R.layout.home_xemmualien, parent, false);
                 return new XML_Holder(v);
-            case HLPRODUCT:
+            case HOTPRODUCT:
                 v = LayoutInflater.from(context).inflate(R.layout.rcv_hot_product, parent, false);
                 return new HotProduct_Holder(v);
             case CATE_PRODUCT:
@@ -60,7 +61,7 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             case 0:
                 return XML;
             case 1:
-                return HLPRODUCT;
+                return HOTPRODUCT;
             case 2:
                 return CATE_PRODUCT;
             case 3:
@@ -95,63 +96,410 @@ public class RCV_Home_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     private void LoadData(){
         list_products = new ArrayList<>();
-        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
-        list_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
-        list_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
-        list_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
-        list_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        list_products.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        list_products.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        list_products.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        list_products.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        list_products.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        list_products.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        list_products.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        list_products.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        list_products.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
 
         hint_products = new ArrayList<>();
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
-        hint_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
-        hint_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
-        hint_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
-        hint_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
-        hint_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
-        hint_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_applewatchs5lte, 99, "Apple Watch S5 LTE 40mm viền thép dây thép bạc", 17592000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptophppavilion, 9, "Laptop HP Pavilion x360 dw1016TU i3 1115G4/4GB/256GB/Touch/Pen/Office H&S2019/Win10 (2H3Q0PA)", 14490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai1, 999, "Điện thoại iPhone 12 Pro 512GB", 36990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_airpodspro, 99, "Tai nghe Bluetooth AirPods Pro Wireless Charge Apple MWP22", 5490000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.dienthoai3, 999, "Điện thoại Realme C15", 15000000, (float) 5));
-        hint_products.add(new Product(R.drawable.dongho, 999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, (float) 5));
-        hint_products.add(new Product(R.drawable.img_laptopacernitro, 999, "Laptop Acer Nitro AN515 44 R9JM R5 4600H/8GB/512GB/4GB GTX1650/144Hz/Win10 (NH.Q9MSV.003)", 22990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_galaxyzfold2, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, (float) 4.5));
-        hint_products.add(new Product(R.drawable.img_ipadpro11, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, (float) 4.5));
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        hint_products.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        hint_products.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        hint_products.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        hint_products.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        hint_products.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        hint_products.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        hint_products.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        hint_products.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        hint_products.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        hint_products.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        hint_products.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        hint_products.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        hint_products.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        hint_products.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        hint_products.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        hint_products.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        hint_products.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        hint_products.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.dongho);
+        listImg.add(R.drawable.img_applewatchs6_1);
+        listImg.add(R.drawable.img_applewatchs6_2);
+        listImg.add(R.drawable.img_applewatchs6_3);
+        listImg.add(R.drawable.img_applewatchs6_4);
+        listImg.add(R.drawable.img_applewatchs6_5);
+        hint_products.add(new Product(R.drawable.dongho, (float)5,999, "Apple Watch S6 40mm viền nhôm dây cao su trắng", 20000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapads340);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_1);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_2);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_3);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_4);
+        listImg.add(R.drawable.img_laptoplenovoideapads340_5);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapads340, (float)4.5, 999, "Laptop Lenovo IdeaPad S340 14IIL i3 1005G1/8GB/512GB/Win10 (81VV003VVN)", 13990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_ipadpro11);
+        listImg.add(R.drawable.img_ipadpro11_1);
+        listImg.add(R.drawable.img_ipadpro11_2);
+        listImg.add(R.drawable.img_ipadpro11_3);
+        listImg.add(R.drawable.img_ipadpro11_4);
+        hint_products.add(new Product(R.drawable.img_ipadpro11, (float)4.5, 999, "Máy tính bảng iPad Pro 11 inch Wifi Cellular 128GB (2020)", 25190000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_laptoplenovoideapad);
+        listImg.add(R.drawable.img_laptoplenovoideapad_1);
+        listImg.add(R.drawable.img_laptoplenovoideapad_2);
+        listImg.add(R.drawable.img_laptoplenovoideapad_3);
+        listImg.add(R.drawable.img_laptoplenovoideapad_4);
+        hint_products.add(new Product(R.drawable.img_laptoplenovoideapad, (float)4.5, 99, "Laptop Lenovo IdeaPad Gaming 3 15IMH05 i7 10750H/8GB/512GB/4GB GTX1650/Win10 (81Y40068VN)", 23990000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_tuixachlouisvuitton);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_1);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_2);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_3);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_4);
+        listImg.add(R.drawable.img_tuixachlouisvuitton_5);
+        hint_products.add(new Product(R.drawable.img_tuixachlouisvuitton, (float) 5, 99, "Túi Xách Louis Vuitton Cluny BB Monogram", 55000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_galaxyzfold2);
+        listImg.add(R.drawable.img_galaxyzfold2_1);
+        listImg.add(R.drawable.img_galaxyzfold2_2);
+        listImg.add(R.drawable.img_galaxyzfold2_3);
+        listImg.add(R.drawable.img_galaxyzfold2_4);
+        listImg.add(R.drawable.img_galaxyzfold2_5);
+        listImg.add(R.drawable.img_galaxyzfold2_6);
+        listImg.add(R.drawable.img_galaxyzfold2_7);
+        hint_products.add(new Product(R.drawable.img_galaxyzfold2, (float) 4.5, 9, "Điện thoại Samsung Galaxy Z Fold2 5G", 50000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_cameragopro9);
+        listImg.add(R.drawable.img_cameragopro9_1);
+        listImg.add(R.drawable.img_cameragopro9_2);
+        listImg.add(R.drawable.img_cameragopro9_3);
+        listImg.add(R.drawable.img_cameragopro9_4);
+        hint_products.add(new Product(R.drawable.img_cameragopro9, (float) 5, 99, "Camera hành trình Gopro Hero 9", 10590000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_keyboardipad);
+        listImg.add(R.drawable.img_keyboardipad_1);
+        listImg.add(R.drawable.img_keyboardipad_2);
+        listImg.add(R.drawable.img_keyboardipad_3);
+        listImg.add(R.drawable.img_keyboardipad_4);
+        hint_products.add(new Product(R.drawable.img_keyboardipad, (float) 5, 99, "Bàn phím Magic Keyboard cho iPad Pro 12.9 inch 2020 chính hãng", 9500000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisexroja);
+        listImg.add(R.drawable.img_nuochoaunisexroja_1);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisexroja, (float) 5, 99, "Nước Hoa Unisex Roja Dove Parfum De La Nuit No 3 100ml", 25000000, listImg));
+
+        listImg = new ArrayList<>();
+        listImg.add(R.drawable.img_nuochoaunisextomford);
+        listImg.add(R.drawable.img_nuochoaunisextomford_1);
+        listImg.add(R.drawable.img_nuochoaunisextomford_2);
+        hint_products.add(new Product(R.drawable.img_nuochoaunisextomford, (float) 5, 99, "Nước Hoa Unisex Tom Ford Noir De Noir EDP, 100ml", 7429000, listImg));
+
     }
 
     public class XML_Holder extends RecyclerView.ViewHolder {

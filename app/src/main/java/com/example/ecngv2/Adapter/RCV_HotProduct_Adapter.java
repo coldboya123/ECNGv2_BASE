@@ -40,7 +40,11 @@ public class RCV_HotProduct_Adapter extends RecyclerView.Adapter<RCV_HotProduct_
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Product product = list.get(position);
         holder.img.setImageResource(product.getImg());
-        holder.img.setOnClickListener(view -> context.startActivity(new Intent(context, ProductActivity.class)));
+        holder.img.setOnClickListener(view -> {
+            Intent intent = new Intent(context, ProductActivity.class);
+            intent.putExtra("product", product);
+            context.startActivity(intent);
+        });
     }
 
     @Override

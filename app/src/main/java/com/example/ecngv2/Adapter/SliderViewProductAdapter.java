@@ -52,15 +52,11 @@ public class SliderViewProductAdapter extends com.smarteist.autoimageslider.Slid
         int sliderItem = mSliderItems.get(position);
 
         viewHolder.imageViewBackground.setImageResource(sliderItem);
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(context, ProductImage.class);
-                i.putExtra("list", (Serializable) mSliderItems);
-                i.putExtra("position", position);
-                context.startActivity(i);
-            }
+        viewHolder.itemView.setOnClickListener(v -> {
+            Intent i = new Intent(context, ProductImage.class);
+            i.putExtra("list", (Serializable) mSliderItems);
+            i.putExtra("position", position);
+            context.startActivity(i);
         });
     }
 
