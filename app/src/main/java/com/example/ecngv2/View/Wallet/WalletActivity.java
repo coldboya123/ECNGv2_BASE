@@ -44,6 +44,12 @@ public class WalletActivity extends AppCompatActivity {
         recyclerView.setAdapter(new RCV_Wallet_Adapter(this, list));
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
     private void init() {
         btn_back = findViewById(R.id.btn_back);
         recyclerView = findViewById(R.id.rcv_today);

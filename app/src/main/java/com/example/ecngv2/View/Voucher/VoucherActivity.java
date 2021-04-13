@@ -48,6 +48,12 @@ public class VoucherActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.voucher_btn_back:

@@ -81,11 +81,18 @@ public class AddUserAddressActivity extends AppCompatActivity implements View.On
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.user_address_add_btn_back:
             case R.id.user_address_edit_btn_save:
                 finish();
+                overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
                 break;
             case R.id.user_address_edit_txtcity:
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);

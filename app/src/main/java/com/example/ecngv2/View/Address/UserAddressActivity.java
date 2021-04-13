@@ -65,6 +65,12 @@ public class UserAddressActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.user_address_btn_back:
@@ -73,6 +79,7 @@ public class UserAddressActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.user_address_btn_add:
                 startActivity(new Intent(UserAddressActivity.this, AddUserAddressActivity.class));
+                overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
                 break;
         }
     }

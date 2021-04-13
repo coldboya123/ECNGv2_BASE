@@ -61,6 +61,12 @@ public class RecentlyViewedActivity extends AppCompatActivity implements View.On
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_back:
