@@ -52,7 +52,7 @@ public class RCV_Home_Category_Adapter extends RecyclerView.Adapter<RCV_Home_Cat
         return list.size();
     }
 
-    public class Holder extends RecyclerView.ViewHolder{
+    public static class Holder extends RecyclerView.ViewHolder{
         LinearLayout cate_block;
         ImageView imageView;
         TextView textView;

@@ -23,7 +23,7 @@ import com.example.ecngv2.View.MainActivity.MainActivity;
 import com.example.ecngv2.View.OrderManager.OrderManagerActivity;
 import com.example.ecngv2.View.RecentlyViewed.RecentlyViewedActivity;
 import com.example.ecngv2.View.Register.RegisterActivity;
-import com.example.ecngv2.View.Shop.testActivity;
+import com.example.ecngv2.View.Help.testActivity;
 import com.example.ecngv2.View.UserProfile.UserProfileActivity;
 import com.example.ecngv2.View.Voucher.VoucherActivity;
 import com.example.ecngv2.View.Wallet.WalletActivity;

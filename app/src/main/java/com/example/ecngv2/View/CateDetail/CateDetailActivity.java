@@ -147,6 +147,7 @@ public class CateDetailActivity extends AppCompatActivity implements View.OnClic
         rcv_product = findViewById(R.id.catedetail_rcv_product);
     }
 
+    @SuppressLint({"UseCompatLoadingForDrawables", "NonConstantResourceId"})
     @Override
     public void onClick(View view) {
         switch (view.getId()){

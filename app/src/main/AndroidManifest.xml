@@ -22,7 +22,7 @@
         tools:replace="android:label">
         <activity android:name=".View.Wallet.WalletActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".View.Shop.testActivity"
+        <activity android:name=".View.Help.testActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".View.RecentlyViewed.RecentlyViewedActivity"
             android:screenOrientation="portrait"/>

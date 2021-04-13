@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_2">
@@ -16,165 +15,204 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="120dp"
             app:contentScrim="@color/black"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.5"
-                    android:background="@drawable/shop_banner"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <ImageView
-                    android:id="@+id/shop_avatar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="50dp"
-                    android:fitsSystemWindows="false"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/avatar_shop"
-                    app:layout_constraintBottom_toTopOf="@id/mark"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/mark"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/shop_avatar" />
-
-                <TextView
-                    android:id="@+id/shop_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="apple_long_store"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/textsize_6"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/shop_avatar"
-                    app:layout_constraintTop_toTopOf="@id/shop_avatar" />
-
-                <TextView
-                    android:id="@+id/shop_numfollow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="199 người theo dõi"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/textsize_4"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/shop_name"
-                    app:layout_constraintTop_toBottomOf="@id/shop_name" />
-
-                <TextView
-                    android:id="@+id/shop_btn_follow"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/border_radius_primary_color"
-                    android:gravity="center"
-                    android:paddingVertical="5dp"
-                    android:text="Theo dõi"
-                    android:textColor="@color/primary_color"
-                    android:textSize="@dimen/textsize_3"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/shop_avatar" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/border_radius_primary_color"
-                    android:gravity="center"
-                    android:paddingVertical="5dp"
-                    android:text="Chat"
-                    android:textColor="@color/primary_color"
-                    android:textSize="@dimen/textsize_3"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@id/shop_btn_follow"
-                    app:layout_constraintStart_toStartOf="@id/shop_btn_follow"
-                    app:layout_constraintTop_toBottomOf="@id/shop_btn_follow" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/backdrop"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="50dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_app"
+                app:layout_collapseMode="pin" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:background="@null"
-                android:paddingVertical="5dp"
-                android:paddingEnd="10dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/appbar_background"
                 app:layout_collapseMode="pin"
+                app:menu="@menu/menu_toolbar"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <SearchView
+                    android:id="@+id/searchbar"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp">
-
-                    <ImageButton
-                        android:id="@+id/btn_back"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:src="@drawable/ic_back_shop"
-                        app:layout_constraintBottom_toBottomOf="@id/searchbar"
-                        app:layout_constraintEnd_toStartOf="@id/searchbar"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <SearchView
-                        android:id="@+id/searchbar"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="10dp"
-                        android:background="@drawable/searchbar_background"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btn_chat"
-                        app:layout_constraintStart_toEndOf="@id/btn_back"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageButton
-                        android:id="@+id/btn_chat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:background="@null"
-                        android:src="@drawable/ic_chat"
-                        app:layout_constraintBottom_toBottomOf="@id/searchbar"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/searchbar"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/searchbar_background"
+                    android:clickable="true"
+                    android:focusable="true" />
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/shop_tab"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_home"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="40dp"
-        app:layout_anchor="@id/mark"
-        app:layout_anchorGravity="top"
-        app:tabIndicatorColor="@color/primary_color"
-        app:tabRippleColor="@color/primary_color"
-        app:tabSelectedTextColor="@color/primary_color"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-        app:tabTextColor="@color/white"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/block_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/appbar_background"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/slide_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="5dp"
+                        android:elevation="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="start|bottom"
+                        app:sliderIndicatorMarginBottom="5dp"
+                        app:sliderIndicatorMarginLeft="5dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="@color/primary_color"
+                        app:sliderIndicatorUnselectedColor="@color/dark"
+                        app:sliderScrollTimeInSec="3"
+                        app:sliderStartAutoCycle="true" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/block_newproduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/background_radius_white"
+                        app:layout_constraintTop_toBottomOf="@id/slide_banner">
+
+                        <TextView
+                            android:id="@+id/txt_newproduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingStart="10dp"
+                            android:paddingTop="10dp"
+                            android:text="Sản phẩm"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/textsize_4"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:paddingTop="10dp"
+                            android:text=" mới hôm nay"
+                            android:textColor="@color/primary_color"
+                            android:textSize="@dimen/textsize_4"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/txt_newproduct"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableEnd="@drawable/ic_next"
+                            android:gravity="center_vertical"
+                            android:text="Xem thêm"
+                            android:textSize="@dimen/textsize_3"
+                            app:layout_constraintBottom_toBottomOf="@id/txt_newproduct"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_newproduct"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:padding="5dp"
+                            app:layout_constraintTop_toBottomOf="@id/txt_newproduct" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/radius5"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/banner_home_4" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="Danh Mục Nổi Bật"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/textsize_4"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/block_top" />
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/block_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txt_cate">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:background="@color/white"
+                            android:fitsSystemWindows="true"
+                            android:nestedScrollingEnabled="false" />
+                    </androidx.appcompat.widget.Toolbar>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@id/block_cate" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
