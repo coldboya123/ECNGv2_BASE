@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,8 +45,12 @@ public class HomeFragment extends Fragment {
     SearchView searchView;
     ImageView banner;
     List<Product> productList;
-    RecyclerView recycler_category, recycler_home, rcv_newproduct;
+    RecyclerView recycler_category, recycler_home, rcv_newproduct, recycler_category_hiden;
     androidx.appcompat.widget.Toolbar toolbar;
+
+    NestedScrollView nestedScrollView;
+    Boolean showCate = false;
+    CardView cateHiden;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,11 +110,27 @@ public class HomeFragment extends Fragment {
         categoryList.add(new Category("Trang Sức", R.drawable.cate_trangsuc));
         recycler_category.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         recycler_category.setAdapter(new RCV_Home_Category_Adapter(getContext(), categoryList));
+        recycler_category_hiden.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
+        recycler_category_hiden.setAdapter(new RCV_Home_Category_Adapter(getContext(), categoryList));
 
         //Set Adapter for RecyclerView Home
         RCV_Home_Adapter rcv_home_adapter = new RCV_Home_Adapter(getContext());
         recycler_home.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
         recycler_home.setAdapter(rcv_home_adapter);
+
+        nestedScrollView.setOnScrollChangeListener((NestedScrollView.OnScrollChangeListener) (v12, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+            if (scrollY >= ((LinearLayout) v12.getChildAt(0)).getChildAt(0).getMeasuredHeight()) {
+                if (!showCate){
+                    cateHiden.setVisibility(View.VISIBLE);
+                    showCate = true;
+                }
+            } else {
+                if (showCate){
+                    cateHiden.setVisibility(View.GONE);
+                    showCate = false;
+                }
+            }
+        });
 
         return v;
     }
@@ -123,6 +145,10 @@ public class HomeFragment extends Fragment {
         recycler_category = v.findViewById(R.id.recycler_category);
         categoryList = new ArrayList<>();
         banner = v.findViewById(R.id.banner);
+
+        nestedScrollView = v.findViewById(R.id.nestedScrollView);
+        cateHiden = v.findViewById(R.id.block_category_hiden);
+        recycler_category_hiden = v.findViewById(R.id.recycler_category_hiden);
 
         banners = new ArrayList<>();
         banners.add(R.drawable.banner_home_5);
